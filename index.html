@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontpage</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@heroicons/vue@2"></script>
+
+</head>
+<body>
+ <!-- Navigation Bar -->
+  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
+    <!-- Mobile Nav (Default) -->
+    <div class="flex items-center justify-between px-4 py-3 md:hidden">
+      <div class="flex items-center">
+        <img src="img/Tidslerne_Logo_Flower.png" alt="Tidslerne Logo" class="h-12 w-12">
+      </div>
+      <button id="mobileMenuBtn" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Tablet Nav -->
+    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
+      <div class="flex items-center">
+        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      </div>
+      <button id="tabletMenuBtn" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center justify-between px-8 py-2">
+      <div class="flex items-center">
+        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      </div>
+      
+      <!-- Menu items centered -->
+      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
+        <li><a href="#">STORIES AND GUIDES</a></li>
+        <li><a href="#">TREATMENTS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="membership.html">MEMBERSHIP</a></li>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="#">MORE</a></li>
+      </ul>
+      
+      <!-- Login button on the right -->
+      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
+        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+        <span class="text-lg uppercase">LOG IN</span>
+      </div>
+    </div>
+
+    <!-- Mobile/Tablet Menu (Hidden by default) -->
+    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
+      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
+        <li><a href="#" class="hover:text-gray-300 block transition">STORIES AND GUIDES</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">TREATMENTS</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">EVENTS</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">MEMBERSHIP</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">VIDEOS</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">MORE</a></li>
+      </ul>
+      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
+        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+        <span class="text-lg uppercase">LOG IN</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer to prevent content from being hidden under navbar -->
+  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
+  
+
+
+  <script>
+    // Toggle mobile/tablet menu
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
+    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileNavMenu');
+      menu.classList.toggle('hidden');
+      
+      // Adjust navigation spacer height when menu is open/closed
+      const nav = document.getElementById('stickyNav');
+      const navSpacer = document.getElementById('navSpacer');
+      setTimeout(() => {
+        navSpacer.style.height = nav.offsetHeight + 'px';
+      }, 10);
+    }
+
+    // Window resize handler
+    window.addEventListener('resize', function() {
+      const menu = document.getElementById('mobileNavMenu');
+      const nav = document.getElementById('stickyNav');
+      const navSpacer = document.getElementById('navSpacer');
+      
+      // Close mobile menu on desktop view
+      if (window.innerWidth >= 1024) {
+        menu.classList.add('hidden');
+      }
+      
+      // Update spacer height
+      navSpacer.style.height = nav.offsetHeight + 'px';
+    });
+
+    // Add shadow on scroll
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('stickyNav');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+  </script>
+
+<!-- Hero Section -->
+<section>
+  <!-- Mobile Layout -->
+  <div class="block md:hidden container mx-auto px-4 py-8">
+    <div class="flex flex-col items-center max-w-md mx-auto">
+      <!-- Logo Area -->
+      <div class="mb-4">
+        <img src="img/Tidslerne_Logo_Text_Only.png" alt="Tidslerne Text Logo" class="w-[244px] h-[107px] mx-auto"/>
+      </div>
+      
+      <!-- Community Image -->
+      <div class="mb-6">
+        <img src="img/community.png" alt="Cancer Community" class="w-full h-auto"/>
+      </div>
+      
+      <!-- Text Area -->
+      <div class="mb-6 text-center">
+        <h1 class="text-2xl font-medium mb-4">A patients' association</h1>
+        <p class="text-gray-700 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="relative w-full mb-6">
+        <input 
+          type="text" 
+          placeholder="Search" 
+          class="w-full h-12 rounded-lg bg-green-200 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+          <i class="fas fa-search text-lg text-gray-600"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Tablet Layout -->
+  <div class="hidden md:block lg:hidden container mx-auto px-6 py-10">
+    <div class="flex items-center justify-between">
+      <!-- Left Side Text Content -->
+      <div class="w-1/2 pr-8">
+        <h1 class="text-2xl mb-4 text-center">A patients' association</h1>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+        
+        <!-- Search Bar -->
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            placeholder="Search" 
+            class="w-full h-12 rounded-lg bg-green-200 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+            <i class="fas fa-search text-lg text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Side Image -->
+      <div class="w-1/2">
+        <img src="img/community.png" alt="Cancer Community" class="w-full h-auto"/>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Desktop Layout -->
+  <div class="hidden lg:block container mx-auto px-8 py-12">
+    <div class="flex items-start">
+      <!-- Left Side Logo and Text -->
+      <div class="w-2/5 pr-12">
+        <div class="mb-8 ml-38">
+          <img src="img/Tidslerne _logo_colored.png" alt="Tidslerne Full Logo" class="h-24"/>
+        </div>
+        
+        <h1 class="text-2xl mb-4 text-center">A patients' association</h1>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+        
+        <!-- Search Bar -->
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            placeholder="Search" 
+            class="w-full h-12 rounded-lg bg-green-200 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+            <i class="fas fa-search text-lg text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Side Image -->
+      <div class="w-3/5">
+        <img src="img/community.png" alt="Cancer Community" class="w-full h-auto"/>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="flex flex-col items-center min-h-[520px] bg-[#F5F5F5] px-4 py-8 md:py-12">
+  <!-- Heading -->
+  <div class="w-full text-center mb-6">
+    <h2 class="text-3xl">Our community start</h2>
+  </div>
+
+  <!-- Video Player -->
+  <div class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl mb-8 md:mb-12">
+    <div class="relative w-full aspect-video bg-gray-600 rounded overflow-hidden">
+      <!-- Video Play Button -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <button class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center pl-1">
+          <svg class="w-8 h-8 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="w-full max-w-6xl">
+    <!-- Title -->
+    <h3 class="text-[#2B682C] text-xl md:text-2xl font-medium mb-4 md:mb-6">Who are the Thistles?</h3>
+    
+    <!-- Text Content - Side by side on all screen sizes -->
+    <div class="flex flex-row gap-4 md:gap-12 mb-8 md:mb-12">
+      <div class="w-1/2">
+        <p class="text-gray-800 text-sm md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+      </div>
+      
+      <div class="w-1/2">
+        <p class="text-gray-800 text-sm md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+      </div>
+    </div>
+    
+    <!-- CTA Button -->
+    <div class="flex justify-center w-full mt-4 md:mt-8">
+      <a href="#" class="bg-[#580259] text-white text-center py-4 px-8 rounded-full uppercase font-medium text-sm md:text-base w-full md:w-auto md:min-w-[280px]">
+        Support our mission
+      </a>
+    </div>
+  </div>
+</section>  
+
+
+<section class="flex flex-col items-center mb-10 p-4 md:p-6">
+  <!-- Side by side with dividers on all screen sizes -->
+  <div class="flex flex-row gap-3 md:gap-4 lg:gap-8 mt-8 divide-x divide-solid divide-[#1C001D]">
+    
+    <!-- Vision Column -->
+    <div class="w-1/3 px-3 md:px-4">
+      <p class="text-[#121212] text-sm sm:text-base md:text-lg lg:text-xl text-center leading-relaxed mb-5">
+        Sentence<br>bla bla<br>about it 
+      </p>
+      <div class="flex justify-center">
+        <img src="icons/Vision.svg" alt="Vision Icon" class="w-[80px] h-[100px] sm:w-[100px] sm:h-[130px] md:w-[120px] md:h-[160px] lg:w-[150px] lg:h-[200px] mt-2"/>
+      </div>
+      <h3 class="uppercase text-[#05B505] text-xl sm:text-xl md:text-2xl lg:text-3xl mt-5 md:mt-6 text-center">Vision</h3>
+    </div>
+    
+    <!-- Mission Column -->
+    <div class="w-1/3 px-3 md:px-4">
+      <p class="text-[#121212] text-sm sm:text-base md:text-lg lg:text-xl text-center leading-relaxed mb-5">
+        Sentence<br>bla bla<br>about it
+      </p>
+      <div class="flex justify-center">
+        <img src="icons/Mision_V1.svg" alt="Mission Icon" class="w-[80px] h-[100px] sm:w-[80px] sm:h-[103px] sm:mt-3 md:w-[110px] md:h-[180px] lg:w-[135px] lg:h-[180px] mt-2"/>
+      </div>
+      <h3 class="uppercase text-[#05B505] text-xl sm:text-xl md:text-2xl lg:text-3xl mt-11 text-center">Mission</h3>
+    </div>
+    
+    <!-- Values Column -->
+    <div class="w-1/3 px-3 md:px-4">
+      <p class="text-[#121212] text-sm sm:text-base md:text-lg lg:text-xl text-center leading-relaxed mb-5">
+        Sentence<br>bla bla<br>about it
+      </p>
+      <div class="flex justify-center">
+        <img src="icons/Values_V1.svg" alt="Value Icon" class="w-[80px] h-[100px] sm:w-[100px] sm:h-[130px] md:w-[120px] md:h-[160px] lg:w-[150px] lg:h-[200px] mt-2"/>
+      </div>
+      <h3 class="uppercase text-[#05B505] text-xl sm:text-xl md:text-2xl lg:text-3xl mt-5 md:mt-6 text-center">Values</h3>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+ <section class="flex flex-col items-center mb-10 bg-gray-200  p-6">
+  <div class="max-w-md text-center">
+    <h2 class="text-4xl md:text-3xl mb-4 mt-6">Join our community</h2>
+  </div>
+ <div class="mt-5 flex justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[390px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
+          Sign up for membership
+         </a>
+        </div>
+       <div class="flex items-center justify-center ml-7">
+  <p class="text-[#121212] text-xl mt-10 leading-relaxed">
+    As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.
+  </p>
+</div>
+ </section>
+
+ <div class="max-w-md text-center mx-auto">
+    <h2 class="text-4xl md:text-3xl mb-4 mt-6">Treatments</h2>
+  </div>
+
+  <!-- MOBILE -->
+
+<div class="block md:hidden bg-purple-100 p-2 mt-10 w-[500px] h-[200px] sm:w-[650px] sm:-[200px] mx-auto mb-10">
+  <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="w-1/3 mr-4 float-left h-full mr-6 mb-4" />
+  <div>
+    <div class="flex space-x-2 mb-2">
+      <span class="bg-[#580259] text-white w-[144px] text-xs px-2 py-1 text-center rounded-lg">COMPLEMENTARY</span>
+      <span class="bg-[#580259] text-white text-xs w-[60px] px-2 py-1 text-center rounded-lg">BODY</span>
+    </div>
+    <h2 class="text-xl mb-2">RLD – Reflexology Lymphatic Drainage</h2>
+    <p class="text-sm">
+      Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...
+    </p>
+  </div>
+</div>
+
+  <!-- Desktop and tablet -->
+
+<div class="hidden md:block bg-purple-100 p-4 mx-auto flex-row mt-10 max-w-sm">
+  <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="w-full h-full justify-center mb-4" />
+  <div class="flex space-x-2 mb-2">
+    <span class="bg-[#580259] text-white text-xs w-[144px] text-center px-2 py-1 rounded-lg">COMPLEMENTARY</span>
+    <span class="bg-[#580259] text-white text-xs w-[60px] px-2 py-1 text-center rounded-lg">BODY</span>
+  </div>
+  <h2 class="text-lg mb-2">RLD – Reflexology Lymphatic Drainage</h2>
+  <p class="text-sm">
+    Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...
+  </p>
+</div>
+
+   <div class="mt-10 flex justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[390px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
+          Read more treatment options
+         </a>
+        </div>
+
+
+
+
+<div class="w-full bg-gray-200 p-4 mt-10 md:p-6">
+  <div class="max-w-6xl mx-auto">
+    <!-- Mobile-->
+    <div class="block md:hidden space-y-4">
+      <h3 class="text-3xl text-center mb-4">Thistle Newsletter</h3>
+      <div class="flex">
+        <div class="w-2/3">
+          <p class="text-left mt-7">
+            Sign up for our newsletter to get notified by our new Thistle publishings, articles, posts and events.
+          </p>
+        </div>
+        <div class="w-1/3 flex justify-end">  
+          <img src="icons/Newsletter_V1.svg" alt="Newsletter Icon" class="h-27 w-27" />
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <input type="email" placeholder="you@example.com" class="w-[600px] h-[48px] px-4 py-2 rounded-lg bg-green-200" />
+        <button class="bg-[#2B682C] text-white px-4 py-2 rounded-lg">Submit</button>
+      </div>
+    </div>
+    
+    <!-- For tablet/desktop: horizontal layout -->
+    <div class="hidden md:flex items-center justify-between">
+      <div class="w-2/3 pr-4">
+        <h2 class="text-xl lg:text-2xl mb-2">Thistle newsletter</h2>
+        <p class="mb-4 text-sm lg:text-base">
+          Sign up for our newsletter to get notified by our new Thistle publishings, articles, posts and events.
+        </p>
+        <div class="flex max-w-md space-x-6">
+          <input type="email" placeholder="you@example.com" class="flex-grow h-[45px] px-4 py-2 rounded-lg bg-green-100" />
+          <button class="bg-[#2B682C] text-white px-4 py-2 rounded-lg">Submit</button>
+        </div>
+      </div>
+      <div class="w-1/3 flex justify-end">
+        <img src="icons/Newsletter_V1.svg" alt="Newsletter Icon" class="h-60 w-60" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Mobile layout  -->
+<section class="block md:hidden bg-gray-100">
+  <div class="mx-auto">
+    <div class="p-4">
+      <h2 class="text-3xl text-center mb-5">Patient stories</h2>
+      <p class="text-center mb-4">
+        Learn about some of our members' stories of getting the support and guidance they needed through our association. 
+        Read about their journey and breakthroughs.
+      </p>
+    </div>
+    <div class="mt-5 flex justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[290px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
+          Our patient stories
+         </a>
+        </div>
+    <div class="w-full mt-10">
+      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-auto object-cover"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- Tablet layout  -->
+<section class="hidden md:flex lg:hidden bg-gray-100">
+  <div class="flex flex-row w-full">
+    <div class="w-1/2">
+      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-full object-cover"/>
+    </div>
+    <div class="w-1/2 p-8 flex flex-col justify-center">
+      <h2 class="text-3xl font-semibold mb-3">Patient stories</h2>
+      <p class="text-base">
+        Learn about some of our members' stories of getting the support and guidance they needed through our association. 
+        Read about their journey and breakthroughs.
+      </p>
+      <div class="mt-10 flex justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[350px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
+         Our patient stories
+         </a>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Desktop layout  -->
+<section class="hidden lg:block bg-gray-100 py-10">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-center">
+      <div class="w-1/2 pr-8">
+        <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-auto "/>
+      </div>
+      <div class="w-1/2 pl-8">
+        <h2 class="text-3xl mb-3">Patient stories</h2>
+        <p class="text-base max-w-md">
+          Learn about some of our members' stories of getting the support and guidance they needed through our association. 
+          Read about their journey and breakthroughs.
+        </p>
+      </div>
+    </div>
+      <div class="mt-10 flex justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[390px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
+          Read more treatment options
+         </a>
+        </div>
+  </div>
+</section>
+
+
+<footer class="bg-[#2B682C] text-white py-8 px-6">
+  <div class="container mx-auto">
+    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+    <div class="flex flex-col md:flex-row md:justify-between">
+      
+      <!-- Protector Section -->
+      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
+        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
+        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
+        <div class="md:text-left mx-auto">
+          <p class="font-medium text-center">GHITA NØRBY</p>
+          <p class="text-sm text-center">Commander of the Order</p>
+          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
+          <p class="text-sm text-center">Danish Theatre</p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
+        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
+        <div class="text-center">
+          <p class="mb-2">The Danish Cancer Society Thistles</p>
+          <p class="mb-4">by Chairman Mai Nielsen</p>
+          
+          <p class="mb-1">Ådalsparken 29,</p>
+          <p class="mb-4">6710 Esbjerg V</p>
+          
+          <p class="mb-1">CVR 1742 0291</p>
+          <p class="mb-1">T: 7020-0515</p>
+          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+          
+          <p class="mt-4 mb-1">Electronic invoicing:</p>
+          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
+        </div>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
+        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+        
+        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
+        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
+          <!-- Instagram -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+          </div>
+          
+          <!-- Facebook -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+          </div>
+          
+          <!-- Facebook Closed Group -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-xs text-center mt-16">
+      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

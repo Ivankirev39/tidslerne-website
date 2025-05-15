@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@heroicons/vue@2"></script>
+
+</head>
+<body>
+ <!-- Navigation Bar -->
+  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
+    <!-- Mobile Nav (Default) -->
+    <div class="flex items-center justify-between px-4 py-3 md:hidden">
+      <div class="flex items-center">
+        <img src="img/Tidslerne_Logo_Flower.png" alt="Tidslerne Logo" class="h-12 w-12">
+      </div>
+      <button id="mobileMenuBtn" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Tablet Nav -->
+    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
+      <div class="flex items-center">
+        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      </div>
+      <button id="tabletMenuBtn" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center justify-between px-8 py-2">
+      <div class="flex items-center">
+        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      </div>
+      
+      <!-- Menu items centered -->
+      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
+        <li><a href="index.html">STORIES AND GUIDES</a></li>
+        <li><a href="#">TREATMENTS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="#">MEMBERSHIP</a></li>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="#">MORE</a></li>
+      </ul>
+      
+      <!-- Login button on the right -->
+      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
+        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+        <span class="text-lg uppercase">LOG IN</span>
+      </div>
+    </div>
+
+    <!-- Mobile/Tablet Menu (Hidden by default) -->
+    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
+      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
+        <li><a href="#" class="hover:text-gray-300 block transition">STORIES AND GUIDES</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">TREATMENTS</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">EVENTS</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">MEMBERSHIP</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">VIDEOS</a></li>
+        <li><a href="#" class="hover:text-gray-300 block transition">MORE</a></li>
+      </ul>
+      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
+        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+        <span class="text-lg uppercase">LOG IN</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer to prevent content from being hidden under navbar -->
+  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
+  
+
+
+  <script>
+    // Toggle mobile/tablet menu
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
+    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileNavMenu');
+      menu.classList.toggle('hidden');
+      
+      // Adjust navigation spacer height when menu is open/closed
+      const nav = document.getElementById('stickyNav');
+      const navSpacer = document.getElementById('navSpacer');
+      setTimeout(() => {
+        navSpacer.style.height = nav.offsetHeight + 'px';
+      }, 10);
+    }
+
+    // Window resize handler
+    window.addEventListener('resize', function() {
+      const menu = document.getElementById('mobileNavMenu');
+      const nav = document.getElementById('stickyNav');
+      const navSpacer = document.getElementById('navSpacer');
+      
+      // Close mobile menu on desktop view
+      if (window.innerWidth >= 1024) {
+        menu.classList.add('hidden');
+      }
+      
+      // Update spacer height
+      navSpacer.style.height = nav.offsetHeight + 'px';
+    });
+
+    // Add shadow on scroll
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('stickyNav');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+  </script>
+
+
+
+
+<!-- Hero Section Container -->
+<section class="w-full bg-white">
+  <!-- Mobile Design (default) -->
+  <div class="md:hidden px-4 py-8 flex flex-col items-center">
+    <img src="img/dorota-trzaska.png" alt="People Guiding" class="w-full mb-4">
+    <h1 class="text-3xl text-center mt-4 mb-2">Take advantage of our membership benefits</h1>
+    <a href="#" class="bg-[#580259] text-white text-center font-medium rounded-full py-3 px-8 mt-6 w-64">BECOME A MEMBER</a>
+  </div>
+
+  <!-- Tablet Design -->
+<div class="hidden md:block lg:hidden">
+  <div class="flex flex-row w-full">
+    <div class="w-1/2 px-8 py-12 flex flex-col justify-center">
+      <h1 class="text-3xl mb-4">Take advantage of our membership benefits</h1>
+      <p class="text-base mb-6">As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.</p>
+      <a href="#" class="bg-[#580259] text-white text-center font-medium rounded-full py-3 px-8 w-64 mx-auto">BECOME A MEMBER</a>
+    </div>
+    <div class="w-1/2">
+      <img src="img/dorota-trzaska.png" alt="People Guiding" class="h-full w-full object-cover">
+    </div>
+  </div>
+</div>
+
+  <!-- Desktop Design -->
+<div class="hidden lg:block">
+  <div class="flex flex-row w-full">
+    <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
+      <h1 class="text-4xl mb-25">Take advantage of our membership benefits</h1>
+      <p class="text-xl mb-6">As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.</p>
+      <a href="#" class="bg-[#580259] text-white text-center w-[320px] h-[76px] font-medium rounded-full text-xl flex items-center justify-center mx-auto">
+        BECOME A MEMBER
+      </a>
+    </div>
+    <div class="w-1/2 h-full">
+      <img src="img/dorota-trzaska.png" alt="People Guiding" class="h-full w-full object-cover">
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="flex flex-col items-center min-h-[320px] bg-[#F5F5F5] px-4 py-8 md:py-12">
+ 
+  <div class="w-full text-center mb-6">
+    <h2 class="text-3xl">Why should you sign up?</h2>
+  </div>
+
+  <!-- Content Section -->
+  <div class="w-full max-w-6xl">
+    <h3 class="text-[#2B682C] text-xl md:text-2xl font-medium mb-4 md:mb-6">Benefits</h3>
+    
+    <!-- Text Content  -->
+    <div class="flex flex-row gap-4 md:gap-12 mb-8 md:mb-12">
+      <div class="w-1/2">
+        <p class="text-gray-800 text-lg md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+      </div>
+      
+      <div class="w-1/2">
+        <p class="text-gray-800 text-lg md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+        </p>
+      </div>
+    </div>
+    
+  </div>
+</section>  
+
+<div class="w-full p-4">
+  <div class="max-w-6xl mx-auto">
+    <!-- Mobile -->
+    <div class="md:hidden space-y-4">
+      <h2 class="text-3xl text-center">How do we charge?</h2>
+      <p class="text-lg text-gray-700">
+        The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
+      </p>
+      <p class="text-lg text-gray-700">
+        If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household
+      </p>
+      <div class="flex justify-center mt-4">
+        <img src="icons/Payment_Card.svg" alt="Donate Icon" class="h-40 w-40"/>
+      </div>
+      <div class="flex justify-center mt-2">
+        <button class="bg-[#580259] text-white text-lg h-[55px] font-medium px-8 py-2 rounded-full">
+          SIGN UP FOR MEMBERSHIP
+        </button>
+      </div>
+    </div>
+
+    <!-- Tablet -->
+    <div class="hidden md:block lg:hidden">
+      <div class="flex flex-col md:flex-row items-start">
+        <div class="md:w-2/3 pr-4">
+          <div class="w-full">
+            <h2 class="text-3xl text-center">How do we charge?</h2>
+          </div>
+          <p class="text-sm text-gray-700 mt-10">
+            The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
+          </p>
+          <p class="text-sm text-gray-700 mt-2">
+            If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household
+          </p>
+        </div>
+        <div class="md:w-1/3 flex flex-col items-center mt-4 md:mt-0">
+          <img src="icons/Payment_Card.svg" alt="Donate Icon" class="h-37 w-37"/>
+          <button class="bg-[#580259] text-white text-lg w-[294px] h-[55px] font-medium px-8 py-2 rounded-full mt-4">
+            SIGN UP FOR MEMBERSHIP
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop -->
+    <div class="hidden lg:block">
+      <div class="flex items-start">
+        <div class="w-2/3 pr-8">
+          <div class="w-full">
+            <h2 class="text-3xl text-center mb-10">How do we charge?</h2>
+          </div>
+          <p class="text-base text-gray-700">
+            The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
+          </p>
+          <p class="text-base text-gray-700 mt-4">
+            If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household
+          </p>
+        </div>
+        <div class="w-1/3 flex flex-col items-center">
+          <img src="icons/Payment_Card.svg" alt="Donate Icon" class="h-50 w-50"/>
+          <button class="bg-[#580259] text-white text-lg h-[65px] font-medium px-12 py-3 rounded-full mt-6 text-lg">
+            SIGN UP FOR MEMBERSHIP
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="min-h-[320px] bg-[#F5F5F5] px-4 py-8 md:py-12">
+  <div class="w-full text-center mb-6">
+    <h2 class="text-3xl">Why should you sign up?</h2>
+  </div>
+
+  <div class="flex flex-col items-center md:flex-row justify-center mb-20 gap-4 mt-10">
+    <div class="bg-purple-100 w-full md:w-1/3 max-w-sm p-4 flex flex-col items-center">
+      <img src="img/boat-trip.png" alt="Boat Picture" class="mb-4 h-full w-full object-cover" />
+      <p class="text-center text-[#580259] text-xl">Boat Trip</p>
+    </div>
+
+    <div class="bg-purple-100 w-full md:w-1/3 max-w-sm p-4 flex flex-col items-center">
+      <img src="img/meeting.png" alt="Meeting" class="mb-4 h-full w-full object-cover" />
+      <p class="text-center text-[#580259] text-xl">Self help course</p>
+    </div>
+
+    <div class="bg-purple-100 w-full md:w-1/3 max-w-sm p-4 flex flex-col items-center">
+      <img src="img/socialmedia.png" alt="Social Media" class="mb-4 h-full w-full object-cover" />
+      <p class="text-center text-[#580259] text-xl">Closed Facebook Group</p>
+    </div>
+  </div>
+</section>
+
+ <!-- Gonna delete the other three when we are converting it to WORDPRESS -->
+
+<section class="px-4 py-8 max-w-7xl mx-auto">
+  <h2 class="text-4xl text-center mb-10">Testimonials</h2>
+    <div class="flex flex-col items-center md:flex-row md:justify-between md:space-x-4 lg:space-x-8 max-w-6xl mx-auto">
+    
+    <!-- Testimonials -->
+    <div class="relative flex flex-col items-center bg-green-100 mt-20 pt-16 w-[320px] md:w-1/3 h-[260px] px-4 pb-4 rounded mb-16 md:mb-0">
+      <div class="absolute -top-12">
+        <img src="https://picsum.photos/200/300" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+      </div>
+      <p class="text-gray-700 text-center text-xl mt-5">Sentence bla bla about it</p>
+      <h3 class="text-3xl font-semibold mt-10">MIKKEL</h3>
+    </div>
+    
+    <div class="relative flex flex-col items-center bg-green-100 mt-20 pt-16 w-[320px] md:w-1/3 h-[260px] px-4 pb-4 rounded mb-16 md:mb-0">
+      <div class="absolute -top-12">
+        <img src="https://picsum.photos/200/300" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+      </div>
+      <p class="text-gray-700 text-center text-xl mt-5">Sentence bla bla about it</p>
+      <h3 class="text-3xl font-semibold mt-10">MIKKEL</h3>
+    </div>
+    
+    <div class="relative flex flex-col items-center bg-green-100 mt-20 pt-16 w-[320px] md:w-1/3 h-[260px] px-4 pb-4 rounded">
+      <div class="absolute -top-12">
+        <img src="https://picsum.photos/200/300" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+      </div>
+      <p class="text-gray-700 text-center text-xl mt-5">Sentence bla bla about it</p>
+      <h3 class="text-3xl font-semibold mt-10">MIKKEL</h3>
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+<footer class="bg-[#2B682C] text-white py-8 px-6">
+  <div class="container mx-auto">
+    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+    <div class="flex flex-col md:flex-row md:justify-between">
+      
+      <!-- Protector Section -->
+      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
+        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
+        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
+        <div class="md:text-left mx-auto">
+          <p class="font-medium text-center">GHITA NØRBY</p>
+          <p class="text-sm text-center">Commander of the Order</p>
+          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
+          <p class="text-sm text-center">Danish Theatre</p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
+        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
+        <div class="text-center">
+          <p class="mb-2">The Danish Cancer Society Thistles</p>
+          <p class="mb-4">by Chairman Mai Nielsen</p>
+          
+          <p class="mb-1">Ådalsparken 29,</p>
+          <p class="mb-4">6710 Esbjerg V</p>
+          
+          <p class="mb-1">CVR 1742 0291</p>
+          <p class="mb-1">T: 7020-0515</p>
+          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+          
+          <p class="mt-4 mb-1">Electronic invoicing:</p>
+          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
+        </div>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
+        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+        
+        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
+        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
+          <!-- Instagram -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+          </div>
+          
+          <!-- Facebook -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+          </div>
+          
+          <!-- Facebook Closed Group -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-xs text-center mt-16">
+      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+    </div>
+  </div>
+</footer>
+</body>
+</html>
