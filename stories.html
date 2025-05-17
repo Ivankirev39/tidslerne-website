@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories and Guides</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@heroicons/vue@2"></script>
+
+</head>
+<body>
+ <!-- Navigation Bar -->
+  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
+    <!-- Mobile Nav (Default) -->
+    <div class="flex items-center justify-between px-4 py-3 md:hidden">
+      <div class="flex items-center">
+        <img src="img/Tidslerne_Logo_Flower.png" alt="Tidslerne Logo" class="h-12 w-12">
+      </div>
+      <button id="mobileMenuBtn" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Tablet Nav -->
+    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
+      <div class="flex items-center">
+        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      </div>
+      <button id="tabletMenuBtn" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center justify-between px-8 py-2">
+      <div class="flex items-center">
+        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      </div>
+      
+      <!-- Menu items centered -->
+      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
+        <li><a href="index.html">STORIES AND GUIDES</a></li>
+        <li><a href="treatments.html">TREATMENTS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="membership.html">MEMBERSHIP</a></li>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="#">MORE</a></li>
+      </ul>
+      
+      <!-- Login button on the right -->
+      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
+        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+        <span class="text-lg uppercase">LOG IN</span>
+      </div>
+    </div>
+
+    <!-- Mobile/Tablet Menu (Hidden by default) -->
+    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
+      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
+        <li><a href="index.html">STORIES AND GUIDES</a></li>
+        <li><a href="treatments.html">TREATMENTS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="membership.html">MEMBERSHIP</a></li>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="#">MORE</a></li>
+      </ul>
+      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
+        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+        <span class="text-lg uppercase">LOG IN</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer to prevent content from being hidden under navbar -->
+  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
+  
+
+
+  <script>
+    // Toggle mobile/tablet menu
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
+    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileNavMenu');
+      menu.classList.toggle('hidden');
+      
+      // Adjust navigation spacer height when menu is open/closed
+      const nav = document.getElementById('stickyNav');
+      const navSpacer = document.getElementById('navSpacer');
+      setTimeout(() => {
+        navSpacer.style.height = nav.offsetHeight + 'px';
+      }, 10);
+    }
+
+    // Window resize handler
+    window.addEventListener('resize', function() {
+      const menu = document.getElementById('mobileNavMenu');
+      const nav = document.getElementById('stickyNav');
+      const navSpacer = document.getElementById('navSpacer');
+      
+      // Close mobile menu on desktop view
+      if (window.innerWidth >= 1024) {
+        menu.classList.add('hidden');
+      }
+      
+      // Update spacer height
+      navSpacer.style.height = nav.offsetHeight + 'px';
+    });
+
+    // Add shadow on scroll
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('stickyNav');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+  </script>
+
+  <!-- Hero Section Container -->
+<section class="w-full bg-white">
+  <!-- Mobile Design (default) -->
+  <div class="md:hidden px-4 py-8 flex flex-col items-center">
+    <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full mb-4">
+    <h1 class="text-3xl text-center mt-4 mb-2">Stories and Guides</h1>
+    <p class="text-base mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
+  </div>
+
+  <!-- Tablet Design -->
+<div class="hidden md:block lg:hidden">
+  <div class="flex flex-row w-full">
+    <div class="w-1/2 px-8 py-12 flex flex-col justify-center">
+      <h1 class="text-3xl mb-4">Stories and Guides</h1>
+      <p class="text-base mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
+    </div>
+    <div class="w-1/2">
+      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="h-full w-full object-cover">
+    </div>
+  </div>
+</div>
+
+  <!-- Desktop Design -->
+<div class="hidden lg:block">
+  <div class="flex flex-row w-full">
+    <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
+      <h1 class="text-4xl mb-25">Stories and Guides</h1>
+      <p class="text-xl mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
+    </div>
+    <div class="w-1/2 h-full">
+      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="h-full w-full object-cover">
+    </div>
+  </div>
+</div>
+</section>

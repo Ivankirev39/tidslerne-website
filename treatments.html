@@ -46,7 +46,7 @@
         <li><a href="events.html">EVENTS</a></li>
         <li><a href="membership.html">MEMBERSHIP</a></li>
         <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="#">MORE</a></li>
+        <li><a href="stories.html">MORE</a></li>
       </ul>
       
       <!-- Login button on the right -->
@@ -64,7 +64,7 @@
         <li><a href="events.html">EVENTS</a></li>
         <li><a href="membership.html">MEMBERSHIP</a></li>
         <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="#">MORE</a></li>
+        <li><a href="stories.html">MORE</a></li>
       </ul>
       <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
         <i class="fas fa-sign-in-alt text-lg mr-2"></i>
@@ -151,9 +151,201 @@
       <h1 class="text-4xl mb-6">Check out our events and sign up</h1>
       <p class="text-xl mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
     </div>
-    <div class="w-1/2 h-140 overflow-hidden">
+    <div class="w-1/2 h-105 overflow-hidden">
       <img src="img/blood-bank.png" alt="Blood Bank Image" class="h-full w-full object-cover object-center">
     </div>
   </div>
 </div>
 </section>
+
+
+<!-- Tab selector container with heading -->
+<div class="w-full bg-gray-200 py-8 px-4">
+  <h2 class="text-center text-2xl md:text-2xl lg:text-3xl font-medium text-[#2B682C] mb-6 md:mb-8 lg:mb-10">Choose a category</h2>
+  
+  <!-- Mobile layout (stacked 2x3) -->
+  <div class="tab-container flex flex-wrap justify-center gap-4 w-full md:hidden">
+    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#580259] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>COMPLEMENTARY</button>
+    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>CONVENTIONAL</button>
+    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>CANNABIS</button>
+    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>ABROAD</button>
+    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
+  </div>
+  
+  <!-- Tablet layout (horizontal row with smaller buttons) -->
+  <div class="tab-container hidden md:flex lg:hidden flex-nowrap justify-center space-x-2 w-full px-4">
+    <button class="flex-1 px-2 py-3 bg-[#580259] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>COMPLEMENTARY</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>CONVENTIONAL</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>CANNABIS</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>ABROAD</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
+  </div>
+  
+  <!-- Desktop layout (horizontal row with larger buttons) -->
+  <div class="tab-container hidden lg:flex flex-nowrap justify-center space-x-4 w-full max-w-none px-8 lg:px-24">
+    <button class="flex-1 px-4 py-4 bg-[#580259] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=1>COMPLEMENTARY</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=2>CONVENTIONAL</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=3>CANNABIS</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=4>ABROAD</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
+  </div>
+</div>
+
+<!-- Content panels -->
+ <div class="bg-gray-200 w-full">
+<div class="panels container mx-auto">
+  <div class="panel" key="1">
+<div class="flex min-h-[520px] flex-col items-center px-4 py-8 md:py-12">
+  <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
+    <!-- Card 1 -->
+    <div class="flex h-auto w-full flex-col flex-wrap overflow-hidden rounded-md bg-purple-100 p-4 sm:flex-row md:flex-row">
+      <!-- Image -->
+      <div class="flex w-full items-center justify-center p-4 md:w-2/7">
+        <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex w-full flex-col p-6 md:w-3/7">
+        <!-- Tags -->
+        <div class="mb-4 flex gap-4">
+          <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
+          <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
+        </div>
+
+        <!-- Text content and button row -->
+        <div class="flex flex-grow flex-col justify-between">
+          <div>
+            <p class="mb-2 text-lg font-medium text-gray-800">Lisbeth Becker-Christensen</p>
+            <p class="mb-2 text-sm font-medium text-gray-800">January 14th 2024</p>
+            <h3 class="mb-4 text-2xl text-gray-900">RLD – Reflexology Lymphatic Drainage</h3>
+            <p class="mb-4 text-gray-700">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="flex w-full flex-col items-center justify-center p-4 md:w-auto">
+        <button class="w-full rounded-md bg-[#580259] px-6 py-3 font-medium text-white hover:bg-purple-900 md:w-auto cursor-pointer">READ ARTICLE</button>
+      </div>
+      </div>
+      </div>
+      <div class="flex justify-center bg-gray-200 mt-15 w-full">
+      <a href="#" class="bg-[#580259] text-white text-center py-4 px-8 rounded-full uppercase font-medium !text-2xl md:text-base w-full md:w-auto md:min-w-[280px]">
+        All Complementary Treatments
+      </a>
+    </div>
+      </div>
+
+  </div>
+  <p class="panel text-center hidden" key="2">Content for CONVENTIONAL</p>
+  <p class="panel text-center hidden" key="3">Content for CANNABIS</p>
+  <p class="panel text-center hidden" key="4">Content for ABROAD</p>
+  <p class="panel text-center hidden" key="5">Content for SEQUELAE</p>
+</div>
+ </div>
+
+
+<script>
+const tabs = document.querySelectorAll(".tab-container button");
+const panels = document.getElementsByClassName("panel");
+
+tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
+
+function handleTabClick(e) {
+  const targetKey = e.target.getAttribute("key");
+  
+  tabs.forEach((tab) => {
+    tab.classList.remove("bg-[#580259]");
+    tab.classList.add("bg-[#2B682C]");
+  });
+  
+  document.querySelectorAll(`.tab-container button[key="${targetKey}"]`).forEach(tab => {
+    tab.classList.remove("bg-[#2B682C]");
+    tab.classList.add("bg-[#580259]");
+  });
+  
+  for (const panel of panels) {
+    const key = panel.getAttribute("key");
+    if (key === targetKey) {
+      panel.classList.remove("hidden");
+    } else {
+      panel.classList.add("hidden");
+    }
+  }
+}
+</script>
+
+
+
+
+<footer class="bg-[#2B682C] text-white py-8 px-6">
+  <div class="container mx-auto">
+    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+    <div class="flex flex-col md:flex-row md:justify-between">
+      
+      <!-- Protector Section -->
+      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
+        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
+        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
+        <div class="md:text-left mx-auto">
+          <p class="font-medium text-center">GHITA NØRBY</p>
+          <p class="text-sm text-center">Commander of the Order</p>
+          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
+          <p class="text-sm text-center">Danish Theatre</p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
+        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
+        <div class="text-center">
+          <p class="mb-2">The Danish Cancer Society Thistles</p>
+          <p class="mb-4">by Chairman Mai Nielsen</p>
+          
+          <p class="mb-1">Ådalsparken 29,</p>
+          <p class="mb-4">6710 Esbjerg V</p>
+          
+          <p class="mb-1">CVR 1742 0291</p>
+          <p class="mb-1">T: 7020-0515</p>
+          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+          
+          <p class="mt-4 mb-1">Electronic invoicing:</p>
+          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
+        </div>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
+        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+        
+        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
+        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
+          <!-- Instagram -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+          </div>
+          
+          <!-- Facebook -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+          </div>
+          
+          <!-- Facebook Closed Group -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-xs text-center mt-16">
+      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+    </div>
+  </div>
+</footer>
+
+
