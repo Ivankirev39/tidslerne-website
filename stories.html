@@ -156,3 +156,333 @@
   </div>
 </div>
 </section>
+
+
+<section class="flex min-h-[520px] flex-col items-center bg-gray-200 px-4 py-8 md:py-12">
+
+
+  <!-- Heading -->
+
+
+  
+  <div class="w-full text-center mb-6">
+    <h2 class="text-3xl">Our patients' stories</h2>
+  </div>
+  
+
+
+
+  <!-- Cards div -->
+  <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
+    <!-- Card 1 -->
+    <div class="flex h-auto w-full flex-col justify-center overflow-hidden rounded-md bg-purple-100 p-4 md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap">
+      <!-- Image -->
+      <div class="flex h-auto w-full items-center justify-center p-2 md:p-4">
+        <img src="img/nature-pic.png" alt="Picture of a woman in the nature" class="max-h-[360px] w-auto object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex w-full flex-grow flex-col justify-between p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="mb-2 flex gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
+          </div>
+          <!-- Text -->
+          <p class="mb-2 text-lg font-medium text-gray-800">Christina Bauer</p>
+           <p class="mb-2 text-sm font-medium text-gray-800">June 10, 2024</p>
+          <h3 class="mb-2 text-2xl text-gray-900">Breast cancer – cancer-free without chemo and radiation</h3>
+          <p class="mb-4 text-gray-700">I believe that making healthy decisions is of great importance for our health and well-being. I have discovered that my body responds positively when I give the body the right messages and support the body...</p>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="flex w-auto flex-col items-center justify-center p-4">
+        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium uppercase text-white hover:bg-purple-900">Read article</Article></button>
+      </div>
+    </div>
+  </div>
+
+<div class="flex flex-col mt-10 items-center justify-center w-auto p-4">
+        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium text-white text-xl hover:bg-purple-900">
+          ALL PATIENTS' STORIES
+        </button>
+      </div>
+
+
+</section>
+
+<section class="flex flex-col items-center justify-center p-4 md:p-8 lg:p-10">
+  <!-- Heading Section -->
+  <div class="text-center mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-medium">Diet and body</h2>
+  </div>
+
+  <!-- Publications Section -->
+  <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-24">
+    <!-- Leaflet Section -->
+    <div class="flex flex-col items-center w-full max-w-sm">
+      <span class="text-[#356902] font-medium text-lg mb-6 text-center">Our new leaflet</span>
+      <div class="mb-8 w-full max-w-xs mt-20 flex justify-center">
+        <img src="img/Tidslerne-folder-2024-grafik.jpg" alt="Leaflet Image" class="w-full h-auto max-h-[240px] object-contain mx-auto">
+      </div>
+      <div class="flex justify-center mt-7 w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-3 px-6 rounded-lg">
+          <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
+          <span>Get leaflet</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Magazine Section -->
+    <div class="flex flex-col items-center w-full max-w-sm mt-8 lg:mt-0">
+      <span class="text-[#356902] font-medium text-lg mb-6 text-center">New magazine number</span>
+      <div class="mb-8 w-full max-w-xs flex justify-center">
+        <img src="img/forside_1_25_mini.jpg" alt="Magazine Image" class="w-full h-auto max-h-[320px] object-contain mx-auto">
+      </div>
+      <div class="flex justify-center w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-3 px-6 rounded-lg">
+          <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
+          <span>Get magazine</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Read All Magazines Button -->
+  <div class="mt-16 flex justify-center w-full">
+    <a href="#" class="bg-[#580259] text-white py-4 px-8 rounded-full uppercase font-semibold text-lg tracking-wide flex items-center justify-center w-full max-w-md mx-auto">
+      Read all our magazines
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Tab selector container with heading -->
+<div class="w-full bg-gray-200 py-8 px-4">
+      <div class="w-full text-center mt-5 mb-10">
+    <h2 class="text-4xl">Our patients' stories</h2>
+  </div>
+  <h2 class="text-center text-2xl md:text-2xl lg:text-3xl font-medium text-[#2B682C] mb-6 md:mb-8 lg:mb-10">Choose a category</h2>
+  
+  <!-- Mobile layout (stacked 2x3) -->
+  <div class="tab-container flex flex-wrap justify-center gap-4 w-full md:hidden">
+    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#580259] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>BUDWIG CURE</button>
+    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>DIETARY ADVICE</button>
+    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>VITAMINS</button>
+    <button class="w-[calc(25%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>BODY</button>
+  </div>
+  
+  <!-- Tablet layout (horizontal row with smaller buttons) -->
+  <div class="tab-container hidden md:flex lg:hidden flex-nowrap justify-center space-x-2 w-full px-4">
+    <button class="flex-1 px-2 py-3 bg-[#580259] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>BUDWIG CURE</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>DIETARY ADVICE</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>VITAMINS</button>
+    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>BODY</button>
+  </div>
+  
+  <!-- Desktop layout (horizontal row with larger buttons) -->
+  <div class="tab-container hidden lg:flex flex-nowrap justify-center space-x-4 w-full max-w-none px-8 lg:px-24">
+    <button class="flex-1 px-4 py-4 bg-[#580259] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=1>BUDWIG CURE</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=2>DIETARY ADVICE</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=3>VITAMINS</button>
+    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=4>BODY</button>
+  </div>
+</div>
+
+<!-- Content panels -->
+ <div class="bg-gray-200 w-full">
+<div class="panels container mx-auto">
+  <div class="panel" key="1">
+    <p>Content for BUDWIG CURE</p>
+  </div>
+  <p class="panel hidden" key="2">Content for CONVENTIONAL</p>
+  <p class="panel hidden" key="3">Content for CANNABIS</p>
+  <div class="panel hidden" key="4">
+    <div class="flex min-h-[520px] flex-col items-center bg-gray-200 px-4 py-8 md:py-12">
+  <!-- Cards div -->
+  <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
+    <!-- Card 1 -->
+    <div class="flex h-auto w-full flex-col justify-center overflow-hidden rounded-md bg-purple-100 p-4 md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap">
+      <!-- Image -->
+      <div class="flex h-auto w-full items-center justify-center p-2 md:p-4">
+        <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="max-h-[360px] w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex w-full flex-grow flex-col justify-between p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="mb-2 flex gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
+          </div>
+          <!-- Text -->
+          <p class="mb-2 text-lg font-medium text-gray-800">Lisbeth Becker-Christensen</p>
+           <p class="mb-2 text-sm font-medium text-gray-800">January 14th 2024</p>
+          <h3 class="mb-2 text-2xl text-gray-900">RLD – Reflexology Lymphatic Drainage</h3>
+          <p class="mb-4 text-gray-700">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both...</p>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="flex w-auto flex-col items-center justify-center p-4">
+        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium uppercase text-white hover:bg-purple-900">Read article</Article></button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+ </div>
+
+
+<script>
+const tabs = document.querySelectorAll(".tab-container button");
+const panels = document.getElementsByClassName("panel");
+
+tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
+
+function handleTabClick(e) {
+  const targetKey = e.target.getAttribute("key");
+  
+  tabs.forEach((tab) => {
+    tab.classList.remove("bg-[#580259]");
+    tab.classList.add("bg-[#2B682C]");
+  });
+  
+  document.querySelectorAll(`.tab-container button[key="${targetKey}"]`).forEach(tab => {
+    tab.classList.remove("bg-[#2B682C]");
+    tab.classList.add("bg-[#580259]");
+  });
+  
+  for (const panel of panels) {
+    const key = panel.getAttribute("key");
+    if (key === targetKey) {
+      panel.classList.remove("hidden");
+    } else {
+      panel.classList.add("hidden");
+    }
+  }
+}
+</script>
+
+<div class="flex bg-gray-200 justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[300px] mb-10 h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
+          All Articles
+         </a>
+        </div>
+
+
+<section class="flex flex-col items-center justify-center p-4 md:p-8 lg:p-10">
+  <!-- Heading Section -->
+  <div class="text-center mb-4 md:mb-6">
+    <h2 class="text-2xl md:text-3xl mb-2">Guides</h2>
+  </div>
+
+  <p class="text-lg md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.  Bla bla</p>
+
+  <!-- Instructions Section -->
+  <div class="w-full flex flex-col lg:flex-row justify-center items-center mt-2 md:mt-6 gap-15">
+    <!-- Book recommendations Section -->
+    <div class="flex flex-col items-center w-auto p-6 lg:p-15">
+      <span class="text-[#356902] font-medium mb-3">Book recommendations</span>
+      <div class="mb-6 w-28 h-32 rounded-md flex flex-col items-center justify-center">
+        <div class="flex-grow flex items-center justify-center w-full">
+          <img src="icons/Book_recommondation.svg" alt="Book Icon" class="w-60 h-60">
+        </div>
+      </div>
+      <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-2 px-4 rounded-lg w-35 h-13">
+        <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
+        <span>Get PDF</span>
+      </button>
+    </div>
+
+    <!-- Informative links Section -->
+    <div class="flex flex-col items-center w-auto p-6 lg:p-15">
+      <span class="text-[#356902] font-medium">Informative links</span>
+      <div class="mb-6">
+        <div class="h-24 flex items-center justify-center mt-10">
+          <img src="icons/Link.svg" alt="Hyperink Icon" class="w-35 h-35">
+        </div>
+      </div>
+      <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-2 px-4 rounded-lg w-35 h-13">
+        <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
+        <span>Get PDF</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-[#2B682C] text-white py-8 px-6">
+  <div class="container mx-auto">
+    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+    <div class="flex flex-col md:flex-row md:justify-between">
+      
+      <!-- Protector Section -->
+      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
+        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
+        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
+        <div class="md:text-left mx-auto">
+          <p class="font-medium text-center">GHITA NØRBY</p>
+          <p class="text-sm text-center">Commander of the Order</p>
+          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
+          <p class="text-sm text-center">Danish Theatre</p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
+        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
+        <div class="text-center">
+          <p class="mb-2">The Danish Cancer Society Thistles</p>
+          <p class="mb-4">by Chairman Mai Nielsen</p>
+          
+          <p class="mb-1">Ådalsparken 29,</p>
+          <p class="mb-4">6710 Esbjerg V</p>
+          
+          <p class="mb-1">CVR 1742 0291</p>
+          <p class="mb-1">T: 7020-0515</p>
+          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+          
+          <p class="mt-4 mb-1">Electronic invoicing:</p>
+          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
+        </div>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
+        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+        
+        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
+        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
+          <!-- Instagram -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+          </div>
+          
+          <!-- Facebook -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+          </div>
+          
+          <!-- Facebook Closed Group -->
+          <div class="flex flex-col items-center md:flex-row md:items-center">
+            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
+            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-xs text-center mt-16">
+      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+    </div>
+  </div>
+</footer>

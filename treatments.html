@@ -189,52 +189,47 @@
     <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=4>ABROAD</button>
     <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
   </div>
+  
 </div>
 
 <!-- Content panels -->
  <div class="bg-gray-200 w-full">
 <div class="panels container mx-auto">
   <div class="panel" key="1">
-<div class="flex min-h-[520px] flex-col items-center px-4 py-8 md:py-12">
+<div class="flex min-h-[520px] flex-col items-center bg-gray-200 px-4 py-8 md:py-12">
+  <!-- Cards div -->
   <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
     <!-- Card 1 -->
-    <div class="flex h-auto w-full flex-col flex-wrap overflow-hidden rounded-md bg-purple-100 p-4 sm:flex-row md:flex-row">
+    <div class="flex h-auto w-full flex-col justify-center overflow-hidden rounded-md bg-purple-100 p-4 md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap">
       <!-- Image -->
-      <div class="flex w-full items-center justify-center p-4 md:w-2/7">
-        <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="h-full w-full object-cover" />
+      <div class="flex h-auto w-full items-center justify-center p-2 md:p-4">
+        <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="max-h-[360px] w-full object-cover" />
       </div>
 
       <!-- Content -->
-      <div class="flex w-full flex-col p-6 md:w-3/7">
-        <!-- Tags -->
-        <div class="mb-4 flex gap-4">
-          <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
-          <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
-        </div>
-
-        <!-- Text content and button row -->
-        <div class="flex flex-grow flex-col justify-between">
-          <div>
-            <p class="mb-2 text-lg font-medium text-gray-800">Lisbeth Becker-Christensen</p>
-            <p class="mb-2 text-sm font-medium text-gray-800">January 14th 2024</p>
-            <h3 class="mb-4 text-2xl text-gray-900">RLD – Reflexology Lymphatic Drainage</h3>
-            <p class="mb-4 text-gray-700">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...</p>
+      <div class="flex w-full flex-grow flex-col justify-between p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="mb-2 flex gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
           </div>
+          <!-- Text -->
+          <p class="mb-2 text-lg font-medium text-gray-800">Lisbeth Becker-Christensen</p>
+           <p class="mb-2 text-sm font-medium text-gray-800">January 14th 2024</p>
+          <h3 class="mb-2 text-2xl text-gray-900">RLD – Reflexology Lymphatic Drainage</h3>
+          <p class="mb-4 text-gray-700">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...</p>
         </div>
       </div>
 
       <!-- Button -->
-      <div class="flex w-full flex-col items-center justify-center p-4 md:w-auto">
-        <button class="w-full rounded-md bg-[#580259] px-6 py-3 font-medium text-white hover:bg-purple-900 md:w-auto cursor-pointer">READ ARTICLE</button>
+      <div class="flex w-auto flex-col items-center justify-center p-4">
+        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium uppercase text-white hover:bg-purple-900">Read article</Article></button>
       </div>
-      </div>
-      </div>
-      <div class="flex justify-center bg-gray-200 mt-15 w-full">
-      <a href="#" class="bg-[#580259] text-white text-center py-4 px-8 rounded-full uppercase font-medium !text-2xl md:text-base w-full md:w-auto md:min-w-[280px]">
-        All Complementary Treatments
-      </a>
     </div>
-      </div>
+  </div>
+</div>
+
 
   </div>
   <p class="panel text-center hidden" key="2">Content for CONVENTIONAL</p>
@@ -243,6 +238,9 @@
   <p class="panel text-center hidden" key="5">Content for SEQUELAE</p>
 </div>
  </div>
+
+
+  
 
 
 <script>
@@ -275,7 +273,11 @@ function handleTabClick(e) {
 }
 </script>
 
-
+<div class=" flex bg-gray-200 justify-center">
+         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[500px] mb-10 h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
+          All complementary treatments
+         </a>
+        </div>
 
 
 <footer class="bg-[#2B682C] text-white py-8 px-6">
