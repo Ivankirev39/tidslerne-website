@@ -11,22 +11,65 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .desktop-menu li a, .desktop-login span, .m-t-menu li a, .m-t-login span {
-  font-size:clamp(0.6rem, 1vw, 1rem);
+  font-size:clamp(0.8rem, 1vw, 1.2rem);
   font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p{
-  font-size: clamp(0.8rem, 1.2vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.4vw, 1.4rem);
   font-weight: 400;
 }
 
 h1 {
-  font-size: clamp(1.5rem, 2vw, 2.6rem);
+  font-size: clamp(1.5rem, 1.8vw, 2.6rem);
 }
 
 h2 {
   font-size: clamp(1.2rem, 1.8vw, 2.4rem);
 }
+
+
+
+/* Spacing below navigation bar */
+body {
+  padding-top: 40px;
+}
+@media (min-width: 768px) {
+  body { padding-top: 60px; }
+}
+@media (min-width: 1024px) {
+  body { padding-top: 76px; }
+}
+
+/* Navigation */
+.desktop-menu a {
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;    /* this prevents stacking of words */
+ }
+
+.desktop-menu a::after {
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -4px;
+  width:0;
+  height: 2px;
+  background: #fff;
+  transition: width .2s ease;
+ }
+
+.desktop-menu a:hover::after, .desktop-menu a:focus::after {
+  width: 100%;
+ }
+
+
+
+
+
+
+
 
 
 /* media queries */

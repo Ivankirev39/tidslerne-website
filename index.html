@@ -12,135 +12,79 @@
 </head>
 <body>
  <!-- Navigation Bar -->
-<nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
-  <!-- Mobile Nav (Default) -->
-  <div class="flex items-center justify-between px-4 py-3 md:hidden">
-    <div class="flex p-4 items-center">
-      <img src="img/Tidslerne_Logo_Flower.png" alt="Tidslerne Logo" class="h-10 sm:h-12 md:h-14 w-auto transition-all duration-300">
+<nav class="w-full bg-[#2B682C] text-white fixed top-0 z-50">
+    <div class="flex items-center justify-between h-auto mx-auto px-8 py-2">
+      <!-- Logo Left -->
+      <div class="flex items-center">
+        <a href="index.html" class="flex items-center">
+          <img src="img/Logo_white.png" alt="Tidslerne Logo" class="h-8 md:h-10 lg:h-12 w-auto" />
+        </a>
+      </div>
+      <!-- Menu Center -->
+      <div class="flex justify-center">
+        <ul class="desktop-menu hidden lg:flex items-center gap-10 p-2 uppercase">
+          <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+          <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+          <li><a href="events.html"><h4>Events</h4></a></li>
+          <li><a href="membership.html"><h4>Membership</h4></a></li>
+          <li><a href="videos.html"><h4>Videos</h4></a></li>
+          <li><a href="#"><h4>More</h4></a></li>
+          <li><a id="frontpage-link" href="index.html"><h4>Frontpage</h4></a></li>
+        </ul>
+      </div>
+      <!-- Login Right -->
+      <div class="flex justify-end items-center cursor-pointer">
+        <div class="desktop-login hidden lg:flex items-center border border-[#2EA836] rounded-md py-2 px-4 w-auto gap-2 hover:bg-white hover:text-[#2B682C] transition duration-300">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="uppercase"><h4>LOG IN</h4></span>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl ml-4" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
-    <button id="mobileMenuBtn" class="text-white text-2xl">
-      <i class="fas fa-bars"></i>
+  <!-- Mobile/Tablet Menu (hidden by default) -->
+  <div id="mobileNavMenu" class="hidden fixed top-0 h-2/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center overflow-hidden p-4">
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white text-3xl" aria-label="Close menu">
+      <i class="fas fa-times"></i>
     </button>
-  </div>
-
-  <!-- Tablet Nav -->
-  <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
-    <div class="flex items-center">
-      <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 md:h-12 lg:h-14 w-auto transition-all duration-300">
-    </div>
-    <button id="tabletMenuBtn" class="text-white text-2xl">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-
-  <!-- Desktop Nav -->
-  <div class="hidden lg:flex items-center justify-between px-8 py-2">
-    <div class="flex items-center">
-      <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-    </div>
-    <ul class="desktop-menu flex justify-center gap-6 uppercase mx-auto">
-      <li><a href="stories.html">STORIES AND GUIDES</a></li>
-      <li><a href="treatments.html">TREATMENTS</a></li>
-      <li><a href="events.html">EVENTS</a></li>
-      <li><a href="membership.html">MEMBERSHIP</a></li>
-      <li><a href="videos.html">VIDEOS</a></li>
-      <li><a href="#">MORE</a></li>
+    <ul class="flex flex-col items-center gap-6 p-2 uppercase">
+      <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+      <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+      <li><a href="events.html"><h4>Events</h4></a></li>
+      <li><a href="membership.html"><h4>Membership</h4></a></li>
+      <li><a href="videos.html"><h4>Videos</h4></a></li>
+      <li><a href="#"><h4>More</h4></a></li>
+      <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
     </ul>
-    <div class="desktop-login flex items-center border-2 border-[#2EA836] px-4 py-1">
-      <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-      <span class="uppercase">LOG IN</span>
-    </div>
-  </div>
-
-  <!-- Mobile/Tablet Menu (Hidden by default) -->
-  <div id="mobileNavMenu" class="hidden flex-col items-center px-6 py-4 bg-[#2B682C]">
-    <ul class="m-t-menu flex flex-col items-center justify-center space-y-4 uppercase">
-      <li><a href="#">STORIES AND GUIDES</a></li>
-      <li><a href="treatments.html">TREATMENTS</a></li>
-      <li><a href="events.html">EVENTS</a></li>
-      <li><a href="membership.html">MEMBERSHIP</a></li>
-      <li><a href="videos.html">VIDEOS</a></li>
-      <li><a href="#">MORE</a></li>
-    </ul>
-    <div class="m-t-login flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit mt-4">
-      <i class="fas fa-sign-in-alt mr-2"></i>
-      <span class="uppercase">LOG IN</span>
+    <div class="desktop-login flex mt-4 cursor-pointer gap-2 border border-[#2EA836] rounded-md py-2 px-4 w-auto items-center">
+      <i class="fas fa-sign-in-alt"></i>
+      <span class="uppercase"><h4>LOG IN</h4></span>
     </div>
   </div>
 </nav>
-
-  <!-- Spacer to prevent content from being hidden under navbar -->
-  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
   
 
 
-  <script>
-    // Toggle mobile/tablet menu
-    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
-    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
 
-    function toggleMenu() {
-      const menu = document.getElementById('mobileNavMenu');
-      menu.classList.toggle('hidden');
-      
-      // Adjust navigation spacer height when menu is open/closed
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      setTimeout(() => {
-        navSpacer.style.height = nav.offsetHeight + 'px';
-      }, 10);
-    }
-
-    // Window resize handler
-    window.addEventListener('resize', function() {
-      const menu = document.getElementById('mobileNavMenu');
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      
-      // Close mobile menu on desktop view
-      if (window.innerWidth >= 1024) {
-        menu.classList.add('hidden');
-      }
-      
-      // Update spacer height
-      navSpacer.style.height = nav.offsetHeight + 'px';
-    });
-
-    // Add shadow on scroll
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('stickyNav');
-      if (window.scrollY > 10) {
-        nav.classList.add('shadow-md');
-      } else {
-        nav.classList.remove('shadow-md');
-      }
-    });
-  </script>
 
 <!-- Hero Section -->
 <section>
-  <!-- Mobile Layout -->
-  <div class="block md:hidden container mx-auto px-4 py-8">
+  <!-- <div class="block md:hidden container mx-auto px-4 py-8">
     <div class="flex flex-col items-center max-w-md mx-auto">
-      <!-- Logo Area -->
       <div class="mb-4">
-        <img src="img/Tidslerne_Logo_Text_Only.png" alt="Tidslerne Text Logo" class="w-[244px] h-[107px] mx-auto"/>
+        <img src="img/svg-hero-frontpage.png" alt="Tidslerne Text Logo" class="w-[244px] h-[107px] mx-auto"/>
       </div>
       
-      <!-- Community Image -->
       <div class="mb-6">
-        <img src="img/community.png" alt="Cancer Community" class="w-full h-auto"/>
+        <img src="img/tidslerne_frontpage_hero.jpg" alt="Members Community" class="w-full h-auto"/>
       </div>
       
-      <!-- Text Area -->
       <div class="mb-6 text-center">
-        <h1 class="text-2xl font-medium mb-4">A patients' association</h1>
-        <p class="text-gray-700 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
-        </p>
+        <h1 class="font-medium mb-4">Together Through Cancer – With Care, Knowledge & Compassion</h1>
       </div>
       
-      <!-- Search Bar -->
       <div class="relative w-full mb-6">
         <input 
           type="text" 
@@ -154,17 +98,12 @@
     </div>
   </div>
   
-  <!-- Tablet Layout -->
   <div class="hidden md:block lg:hidden container mx-auto px-6 py-10">
     <div class="flex items-center justify-between">
-      <!-- Left Side Text Content -->
       <div class="w-1/2 pr-8">
-        <h1 class="text-2xl mb-4 text-center">A patients' association</h1>
-        <p class="text-gray-700 leading-relaxed mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
-        </p>
+        <h1 class="mb-4 text-center">Together Through Cancer – With Care, Knowledge & Compassion</h1>
+      
         
-        <!-- Search Bar -->
         <div class="relative w-full">
           <input 
             type="text" 
@@ -177,28 +116,21 @@
         </div>
       </div>
       
-      <!-- Right Side Image -->
       <div class="w-1/2">
-        <img src="img/community.png" alt="Cancer Community" class="w-full h-auto"/>
+        <img src="img/tidslerne_frontpage_hero.jpg" alt="Cancer Community" class="w-full h-auto"/>
       </div>
     </div>
   </div>
   
-  <!-- Desktop Layout -->
   <div class="hidden lg:block container mx-auto px-8 py-12">
     <div class="flex items-start">
-      <!-- Left Side Logo and Text -->
       <div class="w-2/5 pr-12">
-        <div class="mb-8 ml-38">
-          <img src="img/Tidslerne _logo_colored.png" alt="Tidslerne Full Logo" class="h-24"/>
+        <div class="mb-8">
+          <img src="img/svg-hero-frontpage.png" alt="Tidslerne Full Logo" class="h-auto w-full"/>
         </div>
         
-        <h1 class="text-2xl mb-4 text-center">A patients' association</h1>
-        <p class="text-gray-700 leading-relaxed mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
-        </p>
+        <h1 class="mb-4 text-center">Together Through Cancer – With Care, Knowledge & Compassion</h1>
         
-        <!-- Search Bar -->
         <div class="relative w-full">
           <input 
             type="text" 
@@ -211,19 +143,38 @@
         </div>
       </div>
       
-      <!-- Right Side Image -->
       <div class="w-3/5">
-        <img src="img/community.png" alt="Cancer Community" class="w-full h-auto"/>
+        <img src="img/tidslerne_frontpage_hero.jpg" alt="Cancer Community" class="w-full h-auto"/>
       </div>
     </div>
+  </div> -->
+  <div class="flex flex-col-reverse md:flex-row items-center md:justify-between mx-auto px-8 py-2 md:py-4">
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-between p-2 md:p-6">
+      <img src="img/logo-text-frontpage.png" alt="Tidslerne text logo" class="max-w-xs md:max-w-2xs lg:max-w-md w-full h-auto mx-auto md:mx-0 mb-2 md:mb-4 p-4">
+      <h1 class="mb-10 text-center">Together Through Cancer – With Care, Knowledge & Compassion</h1>
+      <div class="relative w-full max-w-md mb-4">
+        <input 
+        type="text"
+        placeholder="Search"
+        class="w-full h-12 rounded-lg bg-gray-300 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-[#580259]/50" />
+        <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+          <i class="fas fa-search text-lg text-gray-800"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2 flex justify-center p-2 md:p-6">
+      <img src="img/tidslerne_frontpage_hero.jpg" alt="Members Community Group Photo" class="w-full h-auto md:max-w-full rounded-lg shadow-md">
+    </div>
   </div>
+
 </section>
  
 
 <section class="flex flex-col items-center min-h-[520px] bg-[#F5F5F5] px-4 py-8 md:py-12">
   <!-- Heading -->
   <div class="w-full text-center mb-6">
-    <h2 class="text-3xl">Our community start</h2>
+    <h2>Who are the Thistles</h2>
   </div>
 
   <!-- Video Player -->
@@ -242,20 +193,18 @@
 
   <!-- Content Section -->
   <div class="w-full max-w-6xl">
-    <!-- Title -->
-    <h3 class="text-[#2B682C] text-xl md:text-2xl font-medium mb-4 md:mb-6">Who are the Thistles?</h3>
     
     <!-- Text Content - Side by side on all screen sizes -->
     <div class="flex flex-row gap-4 md:gap-12 mb-8 md:mb-12">
       <div class="w-1/2">
         <p class="text-gray-800">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+          We are a voluntary, independent patient association founded in 1991, and we act as a  bridge between conventional and complementary (alternative) cancer treatment. We  are among the few associations that also provide knowledge about treatment abroad.
         </p>
       </div>
       
       <div class="w-1/2">
         <p class="text-gray-800">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
+          The association is primarily run by patient members and is independent of the pharmaceutical industry and doctors. Thistles arranges self-help courses and workshops for its members at a very limited out-of-pocket cost.
         </p>
       </div>
     </div>
@@ -315,7 +264,7 @@
 
  <section class="flex flex-col items-center mb-10 bg-gray-200  p-6">
   <div class="max-w-md text-center">
-    <h2 class="text-4xl md:text-3xl mb-4 mt-6">Join our community</h2>
+    <h2 class="mb-4 mt-6">Join our community</h2>
   </div>
  <div class="mt-5 flex justify-center">
          <a href="membership.html" class="bg-[#580259] text-[#F5F5F5] w-[390px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
@@ -330,7 +279,7 @@
  </section>
 
  <div class="max-w-md text-center mx-auto">
-    <h2 class="text-4xl md:text-3xl mb-4 mt-6">Treatments</h2>
+    <h2 class="mb-4 mt-6">Treatments</h2>
   </div>
 
   <!-- MOBILE -->
@@ -342,7 +291,7 @@
       <span class="bg-[#580259] text-white w-[144px] text-xs px-2 py-1 text-center rounded-lg">COMPLEMENTARY</span>
       <span class="bg-[#580259] text-white text-xs w-[60px] px-2 py-1 text-center rounded-lg">BODY</span>
     </div>
-    <h2 class="text-xl mb-2">RLD – Reflexology Lymphatic Drainage</h2>
+    <h2 class="mb-2">RLD – Reflexology Lymphatic Drainage</h2>
     <p>
       Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...
     </p>
@@ -357,7 +306,7 @@
     <span class="bg-[#580259] text-white text-xs w-[144px] text-center px-2 py-1 rounded-lg">COMPLEMENTARY</span>
     <span class="bg-[#580259] text-white text-xs w-[60px] px-2 py-1 text-center rounded-lg">BODY</span>
   </div>
-  <h2 class="text-lg mb-2">RLD – Reflexology Lymphatic Drainage</h2>
+  <h2 class="mb-2">RLD – Reflexology Lymphatic Drainage</h2>
   <p>
     Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...
   </p>
@@ -376,7 +325,7 @@
   <div class="max-w-6xl mx-auto">
     <!-- Mobile-->
     <div class="block md:hidden space-y-4">
-      <h3 class="text-3xl text-center mb-4">Thistle Newsletter</h3>
+      <h2 class="text-center mb-4">Updates, Insights & Inspiration from Tidslerne</h2>
       <div class="flex">
         <div class="w-2/3">
           <p class="text-left mt-7">
@@ -396,7 +345,7 @@
     <!-- For tablet/desktop: horizontal layout -->
     <div class="hidden md:flex items-center justify-between">
       <div class="w-2/3 pr-4">
-        <h2 class="text-xl lg:text-2xl mb-2">Thistle newsletter</h2>
+        <h2 class="mb-2">Updates, Insights & Inspiration from Tidslerne</h2>
         <p class="mb-4">
           Sign up for our newsletter to get notified by our new Thistle publishings, articles, posts and events.
         </p>
@@ -418,7 +367,7 @@
 <section class="block md:hidden bg-gray-100">
   <div class="mx-auto">
     <div class="p-4">
-      <h2 class="text-3xl text-center mb-5">Patient stories</h2>
+      <h2 class="text-center mb-5">Shared Experiences</h2>
       <p class="text-center mb-4">
         Learn about some of our members' stories of getting the support and guidance they needed through our association. 
         Read about their journey and breakthroughs.
@@ -443,7 +392,7 @@
       <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-full object-cover"/>
     </div>
     <div class="w-1/2 p-8 flex flex-col justify-center">
-      <h2 class="text-3xl font-semibold mb-3">Patient stories</h2>
+      <h2 class="mb-3">Shared Experiences</h2>
       <p>
         Learn about some of our members' stories of getting the support and guidance they needed through our association. 
         Read about their journey and breakthroughs.
@@ -465,7 +414,7 @@
         <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-auto "/>
       </div>
       <div class="w-1/2 pl-8">
-        <h2 class="text-3xl mb-3">Patient stories</h2>
+        <h2 class="mb-3">Shared Experiences</h2>
         <p class="max-w-md">
           Learn about some of our members' stories of getting the support and guidance they needed through our association. 
           Read about their journey and breakthroughs.
@@ -488,7 +437,7 @@
       
       <!-- Protector Section -->
       <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
-        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
+        <h2 class="mb-4 mx-auto">Protector</h2>
         <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
         <div class="md:text-left mx-auto">
           <p class="font-medium text-center">GHITA NØRBY</p>
@@ -500,7 +449,7 @@
 
       <!-- Contact Section -->
       <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
-        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
+        <h2 class="font-light mb-4 text-center">Contact us</h2>
         <div class="text-center">
           <p class="mb-2">The Danish Cancer Society Thistles</p>
           <p class="mb-4">by Chairman Mai Nielsen</p>
@@ -519,7 +468,7 @@
 
       <!-- Social Media Section -->
       <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
-        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+        <h2 class="font-light mb-6 text-center md:text-left">Our Social Media</h2>
         
         <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
         <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
@@ -550,6 +499,24 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobileMenuBtn').onclick = function() {
+    document.getElementById('mobileNavMenu').classList.remove('hidden');
+  };
+  document.getElementById('closeMobileMenu').onclick = function() {
+    document.getElementById('mobileNavMenu').classList.add('hidden');
+  };
+
+  // Hide "Frontpage" link on index.html only
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+    var frontpageLink = document.getElementById('frontpage-link');
+    if(frontpageLink) frontpageLink.style.display = 'none';
+    var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
+    if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
+  }
+</script>
 
 </body>
 </html>

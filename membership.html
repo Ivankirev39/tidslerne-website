@@ -12,114 +12,63 @@
 </head>
 <body>
  <!-- Navigation Bar -->
-  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
-    <!-- Mobile Nav (Default) -->
-    <div class="flex items-center justify-between px-4 py-3 md:hidden">
-      <div class="flex items-center">
-        <img src="img/Tidslerne_Logo_Flower.png" alt="Tidslerne Logo" class="h-12 w-12">
+ <nav class="w-full p-0 m-0 relative z-50 bg-[#2B682C] text-white">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="flex items-center justify-between py-2 lg:py-0 min-h-[56px]">
+      <!-- Logo Left -->
+      <div class="flex-1 flex items-center min-w-[120px]">
+        <a href="index.html" class="flex items-center">
+          <img src="img/Logo_white.png" alt="Tidslerne Logo"
+               class="h-10 md:h-12 lg:h-14 xl:h-16 w-auto transition-all duration-300" />
+        </a>
       </div>
-      <button id="mobileMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Tablet Nav -->
-    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
-      <div class="flex items-center">
-        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
+      <!-- Menu Center -->
+      <div class="flex-1 flex justify-center">
+        <div class="hidden lg:flex items-center gap-x-8">
+          <a href="stories.html"><h4>Stories and Guides</h4></a>
+          <a href="treatments.html"><h4>Treatments</h4></a>
+          <a href="events.html"><h4>Events</h4></a>
+          <a href="membership.html"><h4>Membership</h4></a>
+          <a href="videos.html"><h4>Videos</h4></a>
+          <a href="#"><h4>More</h4></a>
+          <a id="frontpage-link" href="index.html" class="ml-2"><h4>Frontpage</h4></a>
+        </div>
       </div>
-      <button id="tabletMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center justify-between px-8 py-2">
-      <div class="flex items-center">
-        <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="w-[150px] h-[60px]">
-      </div>
-      
-      <!-- Menu items centered -->
-      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="treatments.html">TREATMENTS</a></li>
-        <li><a href="events.html">EVENTS</a></li>
-        <li><a href="#">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="stories.html">MORE</a></li>
-      </ul>
-      
-      <!-- Login button on the right -->
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
+      <!-- Login Right -->
+      <div class="flex-1 flex justify-end">
+        <div class="hidden lg:flex items-center border-2 border-[#2EA836] px-4 py-1 rounded transition-all duration-200 hover:bg-[#2EA836] hover:text-white hover:shadow-lg cursor-pointer">
+          <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+          <span class="uppercase">LOG IN</span>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl ml-4">
+          <span class="sr-only">Open menu</span>
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
-
-    <!-- Mobile/Tablet Menu (Hidden by default) -->
-    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
-      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="treatments.html">TREATMENTS</a></li>
-        <li><a href="events.html">EVENTS</a></li>
-        <li><a href="#">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="stories.html">MORE</a></li>
-      </ul>
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
-      </div>
+  </div>
+  <!-- Mobile/Tablet Menu (hidden by default) -->
+  <div id="mobileNavMenu" class="hidden fixed inset-0 z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center">
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white text-3xl">
+      <span class="sr-only">Close menu</span>
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="flex flex-col items-center gap-6 uppercase text-lg">
+      <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+      <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+      <li><a href="events.html"><h4>Events</h4></a></li>
+      <li><a href="membership.html"><h4>Membership</h4></a></li>
+      <li><a href="videos.html"><h4>Videos</h4></a></li>
+      <li><a href="#"><h4>More</h4></a></li>
+      <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
+    </ul>
+    <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 mt-8 rounded transition-all duration-200 hover:bg-[#2EA836] hover:text-white hover:shadow-lg cursor-pointer">
+      <i class="fas fa-sign-in-alt text-lg mr-2"></i>
+      <span class="uppercase">LOG IN</span>
     </div>
-  </nav>
-
-  <!-- Spacer to prevent content from being hidden under navbar -->
-  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
-  
-
-
-  <script>
-    // Toggle mobile/tablet menu
-    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
-    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
-
-    function toggleMenu() {
-      const menu = document.getElementById('mobileNavMenu');
-      menu.classList.toggle('hidden');
-      
-      // Adjust navigation spacer height when menu is open/closed
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      setTimeout(() => {
-        navSpacer.style.height = nav.offsetHeight + 'px';
-      }, 10);
-    }
-
-    // Window resize handler
-    window.addEventListener('resize', function() {
-      const menu = document.getElementById('mobileNavMenu');
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      
-      // Close mobile menu on desktop view
-      if (window.innerWidth >= 1024) {
-        menu.classList.add('hidden');
-      }
-      
-      // Update spacer height
-      navSpacer.style.height = nav.offsetHeight + 'px';
-    });
-
-    // Add shadow on scroll
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('stickyNav');
-      if (window.scrollY > 10) {
-        nav.classList.add('shadow-md');
-      } else {
-        nav.classList.remove('shadow-md');
-      }
-    });
-  </script>
+  </div>
+</nav>
 
 
 
@@ -391,5 +340,23 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobileMenuBtn').onclick = function() {
+    document.getElementById('mobileNavMenu').classList.remove('hidden');
+  };
+  document.getElementById('closeMobileMenu').onclick = function() {
+    document.getElementById('mobileNavMenu').classList.add('hidden');
+  };
+
+  // Hide "Frontpage" link on index.html only
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+    var frontpageLink = document.getElementById('frontpage-link');
+    if(frontpageLink) frontpageLink.style.display = 'none';
+    var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
+    if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
+  }
+</script>
 </body>
 </html>
