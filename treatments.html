@@ -12,348 +12,976 @@
 </head>
 <body>
  <!-- Navigation Bar -->
-  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
-    <!-- Mobile Nav (Default) -->
-    <div class="flex items-center justify-between px-4 py-3 md:hidden">
+<nav class="w-full bg-[#2B682C] text-[#ededed] fixed top-0 z-50 shadow-md">
+    <div class="flex items-center justify-between h-auto mx-auto px-8 py-2">
+      <!-- Logo Left -->
       <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
+        <a href="index.html" class="flex items-center">
+          <img src="img/Logo_white.png" alt="Tidslerne Logo" class="h-8 md:h-10 lg:h-12 w-auto" />
         </a>
       </div>
-      <button id="mobileMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
+      <!-- Menu Center -->
+      <div class="flex justify-center">
+        <ul class="desktop-menu hidden lg:flex items-center gap-10 p-2 uppercase">
+          <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+          <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+          <li><a href="events.html"><h4>Events</h4></a></li>
+          <li><a href="membership.html"><h4>Membership</h4></a></li>
+          <li><a href="videos.html"><h4>Videos</h4></a></li>
+          <li><a href="#"><h4>More</h4></a></li>
+          <li><a id="frontpage-link" href="index.html"><h4>Frontpage</h4></a></li>
+        </ul>
+      </div>
+      <!-- Login Right -->
+      <div class="flex justify-end items-center cursor-pointer">
+        <div class="desktop-login hidden lg:flex items-center border border-[#ededed] rounded-md py-2 px-4 w-auto gap-2 hover:bg-[#ededed] hover:text-[#2B682C] transition duration-300">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="uppercase"><h4>LOG IN</h4></span>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-[#ededed] text-2xl ml-4" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile/Tablet Menu (hidden by default) -->
+    <div id="mobileNavMenu" class="hidden fixed top-0 h-3/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center p-4">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-[#ededed] text-2xl" aria-label="Close menu">
+        <i class="fas fa-times"></i>
       </button>
-    </div>
-
-    <!-- Tablet Nav -->
-    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-        </a>
-      </div>
-      <button id="tabletMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center justify-between px-8 py-2">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-        </a>
-      </div>
-      
-      <!-- Menu items centered -->
-      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="#">TREATMENTS</a></li>
-        <li><a href="events.html">EVENTS</a></li>
-        <li><a href="membership.html">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="stories.html">MORE</a></li>
+      <ul class="m-t-menu flex flex-col items-center gap-6 p-2 uppercase">
+        <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+        <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+        <li><a href="events.html"><h4>Events</h4></a></li>
+        <li><a href="membership.html"><h4>Membership</h4></a></li>
+        <li><a href="videos.html"><h4>Videos</h4></a></li>
+        <li><a href="#"><h4>More</h4></a></li>
+        <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
       </ul>
-      
-      <!-- Login button on the right -->
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
+      <div class="m-t-login flex mt-4 cursor-pointer gap-2 border border-[#ededed] rounded-md py-2 px-4 w-auto items-center">
+        <i class="fas fa-sign-in-alt"></i>
+        <span class="uppercase"><h4>LOG IN</h4></span>
       </div>
     </div>
+</nav>
 
-    <!-- Mobile/Tablet Menu (Hidden by default) -->
-    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
-      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="#">TREATMENTS</a></li>
-        <li><a href="events.html">EVENTS</a></li>
-        <li><a href="membership.html">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="stories.html">MORE</a></li>
-      </ul>
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
-      </div>
+
+  <!-- Hero Section -->
+
+<section class="flex flex-col items-center mt-12 sm:mt-13 md:mt-14 lg:mt-15">
+  <div class="flex flex-col-reverse md:flex-row w-full">
+    <div class="w-full md:w-1/2 px-12 py-16 flex flex-col items-center justify-center">
+      <h1 class="text-center mb-8 md:mb-15 lg:mb-17 py-3">Comprehensive cancer treatment options and support</h1>
+      <p class="text-left mb-6">Discover a wide range of cancer treatment options tailored to your needs. We provide up-to-date information and resources to help you make informed decisions and access the support you deserve.</p>
     </div>
-  </nav>
-
-  <!-- Spacer to prevent content from being hidden under navbar -->
-  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
-  
-
-
-  <script>
-    // Toggle mobile/tablet menu
-    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
-    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
-
-    function toggleMenu() {
-      const menu = document.getElementById('mobileNavMenu');
-      menu.classList.toggle('hidden');
-      
-      // Adjust navigation spacer height when menu is open/closed
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      setTimeout(() => {
-        navSpacer.style.height = nav.offsetHeight + 'px';
-      }, 10);
-    }
-
-    // Window resize handler
-    window.addEventListener('resize', function() {
-      const menu = document.getElementById('mobileNavMenu');
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      
-      // Close mobile menu on desktop view
-      if (window.innerWidth >= 1024) {
-        menu.classList.add('hidden');
-      }
-      
-      // Update spacer height
-      navSpacer.style.height = nav.offsetHeight + 'px';
-    });
-
-    // Add shadow on scroll
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('stickyNav');
-      if (window.scrollY > 10) {
-        nav.classList.add('shadow-md');
-      } else {
-        nav.classList.remove('shadow-md');
-      }
-    });
-  </script>
-
-<section>
-<!-- Mobile Design (default) -->
-<div class="md:hidden px-4 py-8 flex flex-col items-center">
-  <div class="w-full h-64 overflow-hidden">
-    <img src="img/blood-bank.png" alt="Blood Bank Image" class="w-full h-full object-cover">
-  </div>
-  <h1 class="text-3xl text-center mt-4 mb-2">Check out our events and sign up</h1>
-  <p class="mx-5 text-lg mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
-</div>
-
-<!-- Tablet Design -->
-<div class="hidden md:block lg:hidden">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-8 py-12 flex flex-col justify-center">
-      <h1 class="text-3xl mb-4">Check out our events and sign up</h1>
-      <p class="text-base mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
-    </div>
-    <div class="w-1/2 h-full overflow-hidden">
-      <img src="img/blood-bank.png" alt="Blood Bank Image" class="h-full w-full object-cover">
+    <div class="w-full md:w-1/2 aspect-[4/3] md:aspect-auto">
+      <img src="img/treatments-page-hero.jpg" alt="fill" class="h-full w-full mb-4 md:mb-0 object-cover">
     </div>
   </div>
-</div>
-
-<!-- Desktop Design -->
-<div class="hidden lg:block">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
-      <h1 class="text-4xl mb-6">Check out our events and sign up</h1>
-      <p class="text-xl mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
-    </div>
-    <div class="w-1/2 h-105 overflow-hidden">
-      <img src="img/blood-bank.png" alt="Blood Bank Image" class="h-full w-full object-cover object-center">
-    </div>
-  </div>
-</div>
 </section>
 
 
-<!-- Tab selector container with heading -->
-<div class="w-full bg-gray-200 py-8 px-4">
-  <h2 class="text-center text-2xl md:text-2xl lg:text-3xl font-medium text-[#2B682C] mb-6 md:mb-8 lg:mb-10">Choose a category</h2>
-  
-  <!-- Mobile layout (stacked 2x3) -->
-  <div class="tab-container flex flex-wrap justify-center gap-4 w-full md:hidden">
-    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#580259] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>COMPLEMENTARY</button>
-    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>CONVENTIONAL</button>
-    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>CANNABIS</button>
-    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>ABROAD</button>
-    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
-  </div>
-  
-  <!-- Tablet layout (horizontal row with smaller buttons) -->
-  <div class="tab-container hidden md:flex lg:hidden flex-nowrap justify-center space-x-2 w-full px-4">
-    <button class="flex-1 px-2 py-3 bg-[#580259] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>COMPLEMENTARY</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>CONVENTIONAL</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>CANNABIS</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>ABROAD</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
-  </div>
-  
-  <!-- Desktop layout (horizontal row with larger buttons) -->
-  <div class="tab-container hidden lg:flex flex-nowrap justify-center space-x-4 w-full max-w-none px-8 lg:px-24">
-    <button class="flex-1 px-4 py-4 bg-[#580259] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=1>COMPLEMENTARY</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=2>CONVENTIONAL</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=3>CANNABIS</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=4>ABROAD</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=5>SEQUELAE</button>
-  </div>
-  
-</div>
+<!-- Treatments categories section -->
 
-<!-- Content panels -->
- <div class="bg-gray-200 w-full">
-<div class="panels container mx-auto">
-  <div class="panel" key="1">
-<div class="flex min-h-[520px] flex-col items-center bg-gray-200 px-4 py-8 md:py-12">
-  <!-- Cards div -->
-  <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
-    <!-- Card 1 -->
-    <div class="flex h-auto w-full flex-col justify-center overflow-hidden rounded-md bg-purple-100 p-4 md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap">
-      <!-- Image -->
-      <div class="flex h-auto w-full items-center justify-center p-2 md:p-4">
-        <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="max-h-[360px] w-full object-cover" />
-      </div>
+<section class="tab-section">
+  <!-- Tab selector container with heading -->
+  <div class="w-full bg-[#D9D9D9]/40 py-8 px-4">
+        <div class="w-full text-center mt-5 mb-10">
+      <h2>Cancer Treatments</h2>
+    </div>
+    <h3 class="text-center text-[#2B682C] mb-6 md:mb-8 lg:mb-10">Choose a category</h3>
+    
 
-      <!-- Content -->
-      <div class="flex w-full flex-grow flex-col justify-between p-4 md:p-6">
-        <div>
-          <!-- Tags -->
-          <div class="mb-2 flex gap-4">
-            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
-            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
+    <div class="tab-container flex flex-wrap justify-center gap-4 w-full px-4">
+      <button class="bg-[#580259] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="1">
+        COMPLEMENTARY
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="2">
+        CONVENTIONAL
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="3">
+        CANNABIS
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="4">
+        ABROAD
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="5">
+        SEQUELAE
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="content-section">
+
+  <!-- Content panels for each category -->
+ <div class="bg-[#D9D9D9]/40 w-full">
+    <div class="panels container mx-auto">
+
+      <!-- COMPLEMENTARY -->
+      <div class="panel" key="1">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-craniosacral-therapy.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cathrine Rahbek</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">Can craniosacral therapy reduce dry mouth?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">The quick answer is: Maybe. More on that later. First, a little about me and the background of my research project. My name is Cathrine Rahbek and I am a trained physiotherapist and craniosacral therapist and had not planned to do research at all, but then</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-acupuncture.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Catrine Saramarie Marcussen</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">What can acupuncture do when it comes to cancer?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Cancer affects far too many people and costs many lives every year. But thank goodness there are also many who get well, and some even experience a better and more intense life afterwards.Anne tells her story to encourage and inspire others. Unfortunately, Anne has had cancer twice in the same place. The first time she went the way of medicine, but the second time she supplemented the path of medicine with the help of the alternative world</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Dorthe Helbring</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">The magic mushrooms clean up</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
           </div>
-          <!-- Text -->
-          <p class="mb-2 text-lg font-medium text-gray-800">Lisbeth Becker-Christensen</p>
-           <p class="mb-2 text-sm font-medium text-gray-800">January 14th 2024</p>
-          <h3 class="mb-2 text-2xl text-gray-900">RLD – Reflexology Lymphatic Drainage</h3>
-          <p class="mb-4 text-gray-700">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...</p>
+
+          <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10 mb-12">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL COMPLEMENTARY TREATMENTS 
+            </a>
+          </div>
+
         </div>
       </div>
 
-      <!-- Button -->
-      <div class="flex w-auto flex-col items-center justify-center p-4">
-        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium uppercase text-white hover:bg-purple-900">Read article</Article></button>
+      <!-- CONVENTIONAL -->
+      <div class="panel HIDDEN" key="2">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-craniosacral-therapy.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cathrine Rahbek</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">Can craniosacral therapy reduce dry mouth?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">The quick answer is: Maybe. More on that later. First, a little about me and the background of my research project. My name is Cathrine Rahbek and I am a trained physiotherapist and craniosacral therapist and had not planned to do research at all, but then</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-acupuncture.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Catrine Saramarie Marcussen</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">What can acupuncture do when it comes to cancer?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Cancer affects far too many people and costs many lives every year. But thank goodness there are also many who get well, and some even experience a better and more intense life afterwards.Anne tells her story to encourage and inspire others. Unfortunately, Anne has had cancer twice in the same place. The first time she went the way of medicine, but the second time she supplemented the path of medicine with the help of the alternative world</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Dorthe Helbring</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">The magic mushrooms clean up</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10 mb-12">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL COMPLEMENTARY TREATMENTS 
+            </a>
+          </div>
+
+        </div>
       </div>
+
+
+      <!-- CANNABIS -->
+      <div class="panel hidden" key="3">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-craniosacral-therapy.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cathrine Rahbek</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">Can craniosacral therapy reduce dry mouth?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">The quick answer is: Maybe. More on that later. First, a little about me and the background of my research project. My name is Cathrine Rahbek and I am a trained physiotherapist and craniosacral therapist and had not planned to do research at all, but then</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-acupuncture.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Catrine Saramarie Marcussen</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">What can acupuncture do when it comes to cancer?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Cancer affects far too many people and costs many lives every year. But thank goodness there are also many who get well, and some even experience a better and more intense life afterwards.Anne tells her story to encourage and inspire others. Unfortunately, Anne has had cancer twice in the same place. The first time she went the way of medicine, but the second time she supplemented the path of medicine with the help of the alternative world</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Dorthe Helbring</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">The magic mushrooms clean up</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10 mb-12">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL COMPLEMENTARY TREATMENTS 
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ABROAD -->
+      <div class="panel hidden" key="4">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-craniosacral-therapy.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cathrine Rahbek</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">Can craniosacral therapy reduce dry mouth?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">The quick answer is: Maybe. More on that later. First, a little about me and the background of my research project. My name is Cathrine Rahbek and I am a trained physiotherapist and craniosacral therapist and had not planned to do research at all, but then</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-acupuncture.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Catrine Saramarie Marcussen</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">What can acupuncture do when it comes to cancer?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Cancer affects far too many people and costs many lives every year. But thank goodness there are also many who get well, and some even experience a better and more intense life afterwards.Anne tells her story to encourage and inspire others. Unfortunately, Anne has had cancer twice in the same place. The first time she went the way of medicine, but the second time she supplemented the path of medicine with the help of the alternative world</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Dorthe Helbring</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">The magic mushrooms clean up</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10 mb-12">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL COMPLEMENTARY TREATMENTS 
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- SEQUELAE -->
+      <div class="panel hidden" key="5">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-craniosacral-therapy.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cathrine Rahbek</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">Can craniosacral therapy reduce dry mouth?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">The quick answer is: Maybe. More on that later. First, a little about me and the background of my research project. My name is Cathrine Rahbek and I am a trained physiotherapist and craniosacral therapist and had not planned to do research at all, but then</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-acupuncture.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Catrine Saramarie Marcussen</p>
+                  <p class="mb-2">June 10, 2024</p>
+                  <h3 class="mb-2">What can acupuncture do when it comes to cancer?</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Cancer affects far too many people and costs many lives every year. But thank goodness there are also many who get well, and some even experience a better and more intense life afterwards.Anne tells her story to encourage and inspire others. Unfortunately, Anne has had cancer twice in the same place. The first time she went the way of medicine, but the second time she supplemented the path of medicine with the help of the alternative world</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Dorthe Helbring</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">The magic mushrooms clean up</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10 mb-12">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL COMPLEMENTARY TREATMENTS 
+            </a>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
 
 
-  </div>
-  <p class="panel text-center hidden" key="2">Content for CONVENTIONAL</p>
-  <p class="panel text-center hidden" key="3">Content for CANNABIS</p>
-  <p class="panel text-center hidden" key="4">Content for ABROAD</p>
-  <p class="panel text-center hidden" key="5">Content for SEQUELAE</p>
-</div>
- </div>
+
+
 
 
   
 
 
-<script>
-const tabs = document.querySelectorAll(".tab-container button");
-const panels = document.getElementsByClassName("panel");
 
-tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
-
-function handleTabClick(e) {
-  const targetKey = e.target.getAttribute("key");
-  
-  tabs.forEach((tab) => {
-    tab.classList.remove("bg-[#580259]");
-    tab.classList.add("bg-[#2B682C]");
-  });
-  
-  document.querySelectorAll(`.tab-container button[key="${targetKey}"]`).forEach(tab => {
-    tab.classList.remove("bg-[#2B682C]");
-    tab.classList.add("bg-[#580259]");
-  });
-  
-  for (const panel of panels) {
-    const key = panel.getAttribute("key");
-    if (key === targetKey) {
-      panel.classList.remove("hidden");
-    } else {
-      panel.classList.add("hidden");
-    }
-  }
-}
-</script>
-
-<div class=" flex bg-gray-200 justify-center">
-         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[500px] mb-10 h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
-          All complementary treatments
-         </a>
-        </div>
-
-
-<footer class="bg-[#2B682C] text-white py-8 px-6">
-  <div class="container mx-auto">
-    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
-    <div class="flex flex-col md:flex-row md:justify-between">
-      
-      <!-- Protector Section -->
-      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
-        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
-        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
-        <div class="md:text-left mx-auto">
-          <p class="font-medium text-center">GHITA NØRBY</p>
-          <p class="text-sm text-center">Commander of the Order</p>
-          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
-          <p class="text-sm text-center">Danish Theatre</p>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
-        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
-        <div class="text-center">
-          <p class="mb-2">The Danish Cancer Society Thistles</p>
-          <p class="mb-4">by Chairman Mai Nielsen</p>
-          
-          <p class="mb-1">Ådalsparken 29,</p>
-          <p class="mb-4">6710 Esbjerg V</p>
-          
-          <p class="mb-1">CVR 1742 0291</p>
-          <p class="mb-1">T: 7020-0515</p>
-          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
-          
-          <p class="mt-4 mb-1">Electronic invoicing:</p>
-          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
-        </div>
-      </div>
-
-      <!-- Social Media Section -->
-      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
-        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+  <footer class="bg-[#121212] text-[#ededed] py-8 px-4 md:px-6">
+    <div class="container mx-auto">
+      <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+      <div class="flex flex-col md:flex-row md:justify-between gap-8">
         
-        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
-        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
-          <!-- Instagram -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+        <!-- Protector Section -->
+        <div class="flex flex-col items-center md:w-1/3">
+          <h3 class="mb-6">Protector</h3>
+          <img src="img/footer-protector.jpg" alt="Protector Photo" class="w-32 h-auto mb-4">
+          <div class="text-center">
+            <p>GHITA NØRBY</p>
+            <p>Commander of the Order</p>
+            <p>of the Dannebrog Actor at the Royal</p>
           </div>
-          
-          <!-- Facebook -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="md:w-1/3 flex flex-col items-center">
+          <h3 class="mb-6">Contact us</h3>
+          <div class="text-center">
+            <p>The Danish Cancer Society Thistles</p>
+            <p class="mb-4">by Chairman Mai Nielsen</p>
+            
+            <p>Ådalsparken 29,</p>
+            <p class="mb-4">6710 Esbjerg V</p>
+            
+            <p>CVR 1742 0291</p>
+            <p>T: 7020-0515</p>
+            <p>E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+            
+            <p class="mb-1">Electronic invoicing:</p>
+            <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
           </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="md:w-1/3 flex flex-col items-center">
+          <h3 class="mb-6">Our Social Media</h3>
           
-          <!-- Facebook Closed Group -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          <div class="flex flex-col items-center md:items-start gap-6">
+            <!-- Instagram -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-instagram text-[#2EA836] text-3xl"></i>
+              <a href="#">Instagram</a>
+            </div>
+            
+            <!-- Facebook -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+              <a href="https://www.facebook.com/tidslernedk/">Facebook</a>
+            </div>
+            
+            <!-- Facebook Closed Group -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+              <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header">Facebook closed group</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Copyright -->
-    <div class="text-xs text-center mt-16">
-      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+      <!-- Copyright -->
+      <div class="copyright text-center mt-12  md:mt-16">
+        © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').onclick = function() {
+      document.getElementById('mobileNavMenu').classList.remove('hidden');
+    };
+    document.getElementById('closeMobileMenu').onclick = function() {
+      document.getElementById('mobileNavMenu').classList.add('hidden');
+    };
+
+    // Hide "Frontpage" link on index.html only
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+      var frontpageLink = document.getElementById('frontpage-link');
+      if(frontpageLink) frontpageLink.style.display = 'none';
+      var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
+      if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
+    }
+
+    const tabs = document.querySelectorAll(".tab-container button");
+    const panels = document.getElementsByClassName("panel");
+
+    tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
+
+    function handleTabClick(e) {
+      const targetKey = e.target.getAttribute("key");
+      
+      tabs.forEach((tab) => {
+        tab.classList.remove("bg-[#580259]");
+        tab.classList.add("bg-[#2B682C]");
+      });
+      
+      document.querySelectorAll(`.tab-container button[key="${targetKey}"]`).forEach(tab => {
+        tab.classList.remove("bg-[#2B682C]");
+        tab.classList.add("bg-[#580259]");
+      });
+      
+      for (const panel of panels) {
+        const key = panel.getAttribute("key");
+        if (key === targetKey) {
+          panel.classList.remove("hidden");
+        } else {
+          panel.classList.add("hidden");
+        }
+      }
+    }
+  </script>
+
+</body>
 
 

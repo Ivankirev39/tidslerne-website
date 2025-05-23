@@ -12,7 +12,7 @@
 </head>
 <body>
  <!-- Navigation Bar -->
-<nav class="w-full bg-[#2B682C] text-white fixed top-0 z-50">
+<nav class="w-full bg-[#2B682C] text-[#ededed] fixed top-0 z-50 shadow-md">
     <div class="flex items-center justify-between h-auto mx-auto px-8 py-2">
       <!-- Logo Left -->
       <div class="flex items-center">
@@ -34,35 +34,35 @@
       </div>
       <!-- Login Right -->
       <div class="flex justify-end items-center cursor-pointer">
-        <div class="desktop-login hidden lg:flex items-center border border-[#2EA836] rounded-md py-2 px-4 w-auto gap-2 hover:bg-white hover:text-[#2B682C] transition duration-300">
+        <div class="desktop-login hidden lg:flex items-center border border-[#ededed] rounded-md py-2 px-4 w-auto gap-2 hover:bg-[#ededed] hover:text-[#2B682C] transition duration-300">
           <i class="fas fa-sign-in-alt"></i>
           <span class="uppercase"><h4>LOG IN</h4></span>
         </div>
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl ml-4" aria-label="Open menu">
+        <button id="mobileMenuBtn" class="lg:hidden text-[#ededed] text-2xl ml-4" aria-label="Open menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
-  <!-- Mobile/Tablet Menu (hidden by default) -->
-  <div id="mobileNavMenu" class="hidden fixed top-0 h-2/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center overflow-hidden p-4">
-    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white text-3xl" aria-label="Close menu">
-      <i class="fas fa-times"></i>
-    </button>
-    <ul class="flex flex-col items-center gap-6 p-2 uppercase">
-      <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
-      <li><a href="treatments.html"><h4>Treatments</h4></a></li>
-      <li><a href="events.html"><h4>Events</h4></a></li>
-      <li><a href="membership.html"><h4>Membership</h4></a></li>
-      <li><a href="videos.html"><h4>Videos</h4></a></li>
-      <li><a href="#"><h4>More</h4></a></li>
-      <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
-    </ul>
-    <div class="desktop-login flex mt-4 cursor-pointer gap-2 border border-[#2EA836] rounded-md py-2 px-4 w-auto items-center">
-      <i class="fas fa-sign-in-alt"></i>
-      <span class="uppercase"><h4>LOG IN</h4></span>
+    <!-- Mobile/Tablet Menu (hidden by default) -->
+    <div id="mobileNavMenu" class="hidden fixed top-0 h-3/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center p-4">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-[#ededed] text-2xl" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="m-t-menu flex flex-col items-center gap-6 p-2 uppercase">
+        <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+        <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+        <li><a href="events.html"><h4>Events</h4></a></li>
+        <li><a href="membership.html"><h4>Membership</h4></a></li>
+        <li><a href="videos.html"><h4>Videos</h4></a></li>
+        <li><a href="#"><h4>More</h4></a></li>
+        <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
+      </ul>
+      <div class="m-t-login flex mt-4 cursor-pointer gap-2 border border-[#ededed] rounded-md py-2 px-4 w-auto items-center">
+        <i class="fas fa-sign-in-alt"></i>
+        <span class="uppercase"><h4>LOG IN</h4></span>
+      </div>
     </div>
-  </div>
 </nav>
   
 
@@ -70,190 +70,119 @@
 
 
 <!-- Hero Section -->
-<section>
-  <!-- <div class="block md:hidden container mx-auto px-4 py-8">
-    <div class="flex flex-col items-center max-w-md mx-auto">
-      <div class="mb-4">
-        <img src="img/svg-hero-frontpage.png" alt="Tidslerne Text Logo" class="w-[244px] h-[107px] mx-auto"/>
-      </div>
-      
-      <div class="mb-6">
-        <img src="img/tidslerne_frontpage_hero.jpg" alt="Members Community" class="w-full h-auto"/>
-      </div>
-      
-      <div class="mb-6 text-center">
-        <h1 class="font-medium mb-4">Together Through Cancer – With Care, Knowledge & Compassion</h1>
-      </div>
-      
-      <div class="relative w-full mb-6">
-        <input 
-          type="text" 
-          placeholder="Search" 
-          class="w-full h-12 rounded-lg bg-green-200 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400"
-        />
-        <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
-          <i class="fas fa-search text-lg text-gray-600"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="hidden md:block lg:hidden container mx-auto px-6 py-10">
-    <div class="flex items-center justify-between">
-      <div class="w-1/2 pr-8">
-        <h1 class="mb-4 text-center">Together Through Cancer – With Care, Knowledge & Compassion</h1>
-      
-        
-        <div class="relative w-full">
-          <input 
-            type="text" 
-            placeholder="Search" 
-            class="w-full h-12 rounded-lg bg-green-200 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400"
-          />
-          <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
-            <i class="fas fa-search text-lg text-gray-600"></i>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w-1/2">
-        <img src="img/tidslerne_frontpage_hero.jpg" alt="Cancer Community" class="w-full h-auto"/>
-      </div>
-    </div>
-  </div>
-  
-  <div class="hidden lg:block container mx-auto px-8 py-12">
-    <div class="flex items-start">
-      <div class="w-2/5 pr-12">
-        <div class="mb-8">
-          <img src="img/svg-hero-frontpage.png" alt="Tidslerne Full Logo" class="h-auto w-full"/>
-        </div>
-        
-        <h1 class="mb-4 text-center">Together Through Cancer – With Care, Knowledge & Compassion</h1>
-        
-        <div class="relative w-full">
-          <input 
-            type="text" 
-            placeholder="Search" 
-            class="w-full h-12 rounded-lg bg-green-200 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400"
-          />
-          <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
-            <i class="fas fa-search text-lg text-gray-600"></i>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w-3/5">
-        <img src="img/tidslerne_frontpage_hero.jpg" alt="Cancer Community" class="w-full h-auto"/>
-      </div>
-    </div>
-  </div> -->
-  <div class="flex flex-col-reverse md:flex-row items-center md:justify-between mx-auto px-8 py-2 md:py-4">
-    <div class="w-full md:w-1/2 flex flex-col items-center justify-between p-2 md:p-6">
-      <img src="img/logo-text-frontpage.png" alt="Tidslerne text logo" class="max-w-xs md:max-w-2xs lg:max-w-md w-full h-auto mx-auto md:mx-0 mb-2 md:mb-4 p-4">
-      <h1 class="mb-10 text-center">Together Through Cancer – With Care, Knowledge & Compassion</h1>
-      <div class="relative w-full max-w-md mb-4">
+<section class="lg:min-h-[400px] sm:min-h-[300px] min-h-[200px] mt-16">
+
+  <div class="flex flex-col-reverse md:flex-row items-center md:justify-between lg:justify-center px-8 py-2 md:py-4">
+    <!-- content left -->
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-between gap-2 lg:gap-4 p-2 md:p-6">
+      <img src="img/logo-text-frontpage.png" alt="Tidslerne text logo" class="max-w-xs md:max-w-2xs lg:max-w-sm w-full h-auto mx-auto md:mx-0 p-4">
+      <h1 class="md:mb-12 text-center p-4">Together Through Cancer – With Care, Knowledge & Compassion</h1>
+      <!-- searchbar -->
+      <div class="relative w-full max-w-sm mb-4">
         <input 
         type="text"
         placeholder="Search"
-        class="w-full h-12 rounded-lg bg-gray-300 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-[#580259]/50" />
+        class="w-full h-12 rounded-lg bg-gray-300 py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-[#580259]/50"/>
         <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
-          <i class="fas fa-search text-lg text-gray-800"></i>
+          <i class="fas fa-search"></i>
         </div>
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 flex justify-center p-2 md:p-6">
-      <img src="img/tidslerne_frontpage_hero.jpg" alt="Members Community Group Photo" class="w-full h-auto md:max-w-full rounded-lg shadow-md">
+    <!-- image-right -->
+    <div class="w-full md:w-1/2 flex justify-center items-center p-2 md:p-6 rounded-md">
+      <img src="img/tidslerne_frontpage_hero.jpg" alt="Members Community Group Photo" class="w-full h-auto rounded-md">
     </div>
   </div>
 
 </section>
  
 
-<section class="flex flex-col items-center min-h-[520px] bg-[#F5F5F5] px-4 py-8 md:py-12">
-  <!-- Heading -->
-  <div class="w-full text-center mb-6">
-    <h2>Who are the Thistles</h2>
+
+<!-- About us -->
+ 
+<section class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] bg-[#D9D9D9]/40 mx-auto px-8 py-6 md:py-8">
+
+    <!-- Heading -->
+  <div class="w-full text-center py-4 my-4 md:mb-8">
+    <h2>Who are the Thistles?</h2>
   </div>
 
-  <!-- Video Player -->
-  <div class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl mb-8 md:mb-12">
-    <div class="relative w-full aspect-video bg-gray-600 rounded overflow-hidden">
-      <!-- Video Play Button -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <button class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center pl-1">
-          <svg class="w-8 h-8 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+   <!-- Responsive YouTube Video -->
+  <div class="relative w-full md:max-w-lg lg:max-w-3xl mx-auto aspect-video rounded-md overflow-hidden shadow-md mb-4">
+      <iframe
+        src="https://www.youtube.com/embed/rjm7kX3w57k?si=s0A4wy0xaHYy3XwR"
+        title="Who are the Thistles - YouTube video"
+        allowfullscreen
+        class="absolute top-0 left-0 w-full h-full"
+      ></iframe>
   </div>
 
-  <!-- Content Section -->
-  <div class="w-full max-w-6xl">
-    
-    <!-- Text Content - Side by side on all screen sizes -->
-    <div class="flex flex-row gap-4 md:gap-12 mb-8 md:mb-12">
-      <div class="w-1/2">
-        <p class="text-gray-800">
+    <!-- Content Section -->
+  <div class="w-full p-6 md:p-8 lg:px-15 lg:py-8">
+    <!-- Text Content -->
+    <div class="flex flex-col md:flex-row mb-8 md:mb-12">
+      <div class="w-full md:w-1/2 p-4 md:p-8 lg:px-12">
+        <p>
           We are a voluntary, independent patient association founded in 1991, and we act as a  bridge between conventional and complementary (alternative) cancer treatment. We  are among the few associations that also provide knowledge about treatment abroad.
         </p>
       </div>
-      
-      <div class="w-1/2">
-        <p class="text-gray-800">
+      <div class="w-full md:w-1/2 p-4 md:p-8 lg:px-12">
+        <p>
           The association is primarily run by patient members and is independent of the pharmaceutical industry and doctors. Thistles arranges self-help courses and workshops for its members at a very limited out-of-pocket cost.
         </p>
       </div>
     </div>
-    
-    <!-- CTA Button -->
-    <div class="flex justify-center w-full mt-4 md:mt-8">
-      <a href="videos.html" class="bg-[#580259] text-white text-center py-4 px-8 rounded-full uppercase font-medium text-sm md:text-base w-full md:w-auto md:min-w-[280px]">
+
+    <!-- CTA -->
+     <div class="flex justify-center w-full">
+      <a href="#"
+        class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center">
         Support our mission
       </a>
-    </div>
+     </div>
   </div>
+
 </section>  
 
 
-<section class="flex flex-col items-center mb-10 p-4 md:p-6">
-  <!-- Side by side with dividers on all screen sizes -->
-  <div class="flex flex-row gap-3 md:gap-4 lg:gap-8 mt-8 divide-x divide-solid divide-[#1C001D]">
+<!-- Banner -->
+
+<section class="flex justify-center items-center lg:min-h-[500px] sm:min-h-[300px] min-h-[200px] mx-auto px-8 py-8 md:py-10">
+  <div class="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-8 mt-8 w-full md:divide-x md:divide-solid divide-[#1C001D]">
     
     <!-- Vision Column -->
-    <div class="w-1/3 px-3 md:px-4">
-      <p class="text-[#121212] text-center leading-relaxed mb-5">
-        Sentence<br>bla bla<br>about it 
+    <div class="w-full md:w-1/3 px-3 md:px-6 flex flex-col items-center justify-between">
+      <p class="p-4 mb-5">
+        The thistle stands resilient – sharp, beautiful, 
+        and unyielding. Like those facing cancer, it endures through the harshest conditions, a symbol of courage, healing, and hope.    
       </p>
-      <div class="flex justify-center">
-        <img src="icons/Vision.svg" alt="Vision Icon" class="w-[80px] h-[100px] sm:w-[100px] sm:h-[130px] md:w-[120px] md:h-[160px] lg:w-[150px] lg:h-[200px] mt-2"/>
+      <div class="flex justify-center items-end h-20 md:h-30 mb-2">
+        <img src="img/vision.png" alt="Vision Icon" class="max-h-full w-auto p-2"/>
       </div>
-      <h3 class="uppercase text-[#05B505] text-xl sm:text-xl md:text-2xl lg:text-3xl mt-5 md:mt-6 text-center">Vision</h3>
+      <h3 class="uppercase text-center p-2 text-[#2EA836]">Vision</h3>
     </div>
     
     <!-- Mission Column -->
-    <div class="w-1/3 px-3 md:px-4">
-      <p class="text-[#121212] text-center leading-relaxed mb-5">
-        Sentence<br>bla bla<br>about it
+    <div class="w-full md:w-1/3 px-3 md:px-6 flex flex-col items-center justify-between">
+      <p class="p-4 mb-5">
+        Thistles works for a positive and open dialogue between therapist and patient, as well as for information about side effects and evidence for treatment options.
       </p>
-      <div class="flex justify-center">
-        <img src="icons/Mision_V1.svg" alt="Mission Icon" class="w-[80px] h-[100px] sm:w-[80px] sm:h-[103px] sm:mt-3 md:w-[110px] md:h-[180px] lg:w-[135px] lg:h-[180px] mt-2"/>
+      <div class="flex justify-center items-end h-20 md:h-30 mb-2">
+        <img src="img/mission.png" alt="Mission Icon" class="max-h-full w-auto p-2"/>
       </div>
-      <h3 class="uppercase text-[#05B505] text-xl sm:text-xl md:text-2xl lg:text-3xl mt-11 text-center">Mission</h3>
+      <h3 class="uppercase text-center p-2 text-[#2EA836]">Mission</h3>
     </div>
     
     <!-- Values Column -->
-    <div class="w-1/3 px-3 md:px-4">
-      <p class="text-[#121212] text-center leading-relaxed mb-5">
-        Sentence<br>bla bla<br>about it
+    <div class="w-full md:w-1/3 px-3 md:px-6 flex flex-col items-center justify-between">
+      <p class="p-4 mb-5">
+        We support our members in choosing or not choosing treatment. We humans are individuals, and each patient must find their own path.
       </p>
-      <div class="flex justify-center">
-        <img src="icons/Values_V1.svg" alt="Value Icon" class="w-[80px] h-[100px] sm:w-[100px] sm:h-[130px] md:w-[120px] md:h-[160px] lg:w-[150px] lg:h-[200px] mt-2"/>
+      <div class="flex justify-center items-end h-20 md:h-30">
+        <img src="img/values.png" alt="Values Icon" class="max-h-full w-auto p-2"/>
       </div>
-      <h3 class="uppercase text-[#05B505] text-xl sm:text-xl md:text-2xl lg:text-3xl mt-5 md:mt-6 text-center">Values</h3>
+      <h3 class="uppercase text-center p-2 text-[#2EA836]">Values</h3>
     </div>
   </div>
 </section>
@@ -261,244 +190,363 @@
 
 
 
+  <!-- Membership CTA -->
 
- <section class="flex flex-col items-center mb-10 bg-gray-200  p-6">
-  <div class="max-w-md text-center">
-    <h2 class="mb-4 mt-6">Join our community</h2>
-  </div>
- <div class="mt-5 flex justify-center">
-         <a href="membership.html" class="bg-[#580259] text-[#F5F5F5] w-[390px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
-          Sign up for membership
-         </a>
-        </div>
-       <div class="flex items-center justify-center ml-7">
-  <p class="text-[#121212] mt-10 leading-relaxed">
-    As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.
-  </p>
-</div>
- </section>
-
- <div class="max-w-md text-center mx-auto">
-    <h2 class="mb-4 mt-6">Treatments</h2>
-  </div>
-
-  <!-- MOBILE -->
-
-<div class="block md:hidden bg-purple-100 p-2 mt-10 w-[500px] h-[200px] sm:w-[650px] sm:-[200px] mx-auto mb-10">
-  <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="w-1/3 mr-4 float-left h-full mr-6 mb-4" />
-  <div>
-    <div class="flex space-x-2 mb-2">
-      <span class="bg-[#580259] text-white w-[144px] text-xs px-2 py-1 text-center rounded-lg">COMPLEMENTARY</span>
-      <span class="bg-[#580259] text-white text-xs w-[60px] px-2 py-1 text-center rounded-lg">BODY</span>
+<section class="flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-12 lg:min-h-[320px] sm:min-h-[260px] min-h-[230px] bg-[#D9D9D9]/40 mx-auto px-15 py-10 md:py-6">
+  <div class="flex flex-col items-center justify-center px-8 lg:px-20">
+    <div class="w-full text-center py-4 mb-4 md:mb-6">
+      <h2>Find Connection and Support</h2>
     </div>
-    <h2 class="mb-2">RLD – Reflexology Lymphatic Drainage</h2>
+    <div class="flex justify-center w-full">
+      <a href="#"
+        class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+        SIGN UP FOR MEMBERSHIP
+      </a>
+    </div>
+  </div>
+  
+  <div class="flex items-center justify-center max-w-[800px] px-8 lg:px-20">
     <p>
-      Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...
+      As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.
     </p>
   </div>
-</div>
+</section>
 
-  <!-- Desktop and tablet -->
 
-<div class="hidden md:block bg-purple-100 p-4 mx-auto flex-row mt-10 max-w-sm">
-  <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="w-full h-full justify-center mb-4" />
-  <div class="flex space-x-2 mb-2">
-    <span class="bg-[#580259] text-white text-xs w-[144px] text-center px-2 py-1 rounded-lg">COMPLEMENTARY</span>
-    <span class="bg-[#580259] text-white text-xs w-[60px] px-2 py-1 text-center rounded-lg">BODY</span>
+
+
+<!-- Treatments -->
+
+<section class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+  <!-- Heading -->
+  <div class="w-full text-center py-2 my-8 md:my-12">
+    <h2>Cancer Treatments</h2>
   </div>
-  <h2 class="mb-2">RLD – Reflexology Lymphatic Drainage</h2>
-  <p>
-    Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack...
-  </p>
-</div>
+  
 
-   <div class="mt-10 flex justify-center">
-         <a href="treatments.html" class="bg-[#580259] text-[#F5F5F5] w-[390px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
-          Read more treatment options
-         </a>
-        </div>
+  <!-- Cards div -->
+  <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-8 sm:px-10">
 
-
-
-
-<div class="w-full bg-gray-200 p-4 mt-10 md:p-6">
-  <div class="max-w-6xl mx-auto">
-    <!-- Mobile-->
-    <div class="block md:hidden space-y-4">
-      <h2 class="text-center mb-4">Updates, Insights & Inspiration from Tidslerne</h2>
-      <div class="flex">
-        <div class="w-2/3">
-          <p class="text-left mt-7">
-            Sign up for our newsletter to get notified by our new Thistle publishings, articles, posts and events.
-          </p>
-        </div>
-        <div class="w-1/3 flex justify-end">  
-          <img src="icons/Newsletter_V1.svg" alt="Newsletter Icon" class="h-27 w-27" />
-        </div>
+    <!-- Card 1 -->
+    <div class="flex flex-col md:flex-col md:flex-wrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+    
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] p-4">
+        <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
       </div>
-      <div class="flex space-x-2">
-        <input type="email" placeholder="you@example.com" class="w-[600px] h-[48px] px-4 py-2 rounded-lg bg-green-200" />
-        <button class="bg-[#2B682C] text-white px-4 py-2 rounded-lg">Submit</button>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+          </div>
+          <!-- Text -->
+          <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
       </div>
+
     </div>
     
-    <!-- For tablet/desktop: horizontal layout -->
-    <div class="hidden md:flex items-center justify-between">
-      <div class="w-2/3 pr-4">
-        <h2 class="mb-2">Updates, Insights & Inspiration from Tidslerne</h2>
-        <p class="mb-4">
-          Sign up for our newsletter to get notified by our new Thistle publishings, articles, posts and events.
-        </p>
-        <div class="flex max-w-md space-x-6">
-          <input type="email" placeholder="you@example.com" class="flex-grow h-[45px] px-4 py-2 rounded-lg bg-green-100" />
-          <button class="bg-[#2B682C] text-white px-4 py-2 rounded-lg">Submit</button>
+    <!--Card 2-->
+   <div class="flex flex-col md:flex-col md:flex-wrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+    
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] p-4">
+        <img src="img/treatments-craniosacral-therapy.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>  
+          </div>
+          <!-- Text -->
+          <h3 class="mb-2">Can craniosacral therapy reduce dry mouth?</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">The quick answer is: Maybe. More on that later. First, a little about me and the background of my research project. My name is Cathrine Rahbek and I am a trained physiotherapist and craniosacral therapist and had not planned to do research at all, but then</p>
         </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
       </div>
-      <div class="w-1/3 flex justify-end">
-        <img src="icons/Newsletter_V1.svg" alt="Newsletter Icon" class="h-60 w-60" />
+
+    </div>
+
+    <!--Card 3-->
+    <div class="flex flex-col md:flex-col md:flex-wrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+    
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] p-4">
+        <img src="img/treatments-acupuncture.jpg" alt="fill" class="h-full w-full object-cover" />
       </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+          </div>
+          <!-- Text -->
+          <h3 class="mb-2">What can acupuncture do when it comes to cancer?</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Cancer affects far too many people and costs many lives every year. But thank goodness there are also many who get well, and some even experience a better and more intense life afterwards.Anne tells her story to encourage and inspire others. Unfortunately, Anne has had cancer twice in the same place. The first time she went the way of medicine, but the second time she supplemented the path of medicine with the help of the alternative world.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Card 4 -->
+    <div class="flex flex-col md:flex-col md:flex-wrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+    
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] p-4">
+        <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+          </div>
+          <!-- Text -->
+          <h3 class="mb-2">The magic mushrooms clean up</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Card 5 -->
+    <div class="flex flex-col md:flex-col md:flex-wrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+    
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] p-4">
+        <img src="img/treatments-brest-cancer.jpeg" alt="fill" class="h-full w-full object-cover"/>
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+  
+          </div>
+          <!-- Text -->
+          <h3 class="mb-2">Breast cancer – cancer-free without chemo and radiation</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">I believe that making healthy decisions is of great importance for our health and well-being. I have discovered that my body responds positively when I give the body the right messages and support the body with a healthy lifestyle.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
+    </div>
+    
+    <!-- Card 6 -->
+    <div class="flex flex-col md:flex-col md:flex-wrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+    
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] p-4">
+        <img src="img/treatments-prostate-cancer.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+          </div>
+          <!-- Text -->
+          <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- CTA Button -->
+  <div class="flex justify-center w-full md:mt-8">
+    <a href="#"
+      class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+      READ MORE TREATMENT OPIONS
+    </a>
+  </div>
+
+</section> 
+
+
+
+<!-- Newsletter -->
+
+<section class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 lg:min-h-[320px] sm:min-h-[260px] min-h-[230px] bg-[#D9D9D9]/40 mx-auto sm:px-15 py-10 md:py-6 overflow-x-hidden">
+  <div class="flex flex-col items-center justify-center px-8 lg:px-20 h-20 md:h-30">
+    <div class="w-full text-center text-nowrap py-2">
+      <h2>Updates, Insights & Inspiration from Tidslerne</h2>
+    </div>
+    <img src="img/newsletter.png" alt="Newsletter icon" class="max-h-full w-auto p-2">
+  </div>
+  
+  <div class="flex flex-col items-center justify-center text-center max-w-[600px] px-8 lg:px-20">
+    <p>
+      Sign up for our newsletter to get notified by our new Thistle publishings, articles, posts and events.
+    </p>
+    <div class="flex max-w-md space-x-6 mt-6">
+      <input type="email" placeholder="you@example.com" class="flex-grow h-[45px] px-4 py-2 rounded-md bg-[#2EA836]/20 cursor-pointer"/>
+      <button class="bg-[#2B682C] text-[#ededed] px-4 py-2 rounded-md cursor-pointer">Submit</button>
     </div>
   </div>
-</div>
+</section>
 
 
 
-<!-- Mobile layout  -->
-<section class="block md:hidden bg-gray-100">
-  <div class="mx-auto">
-    <div class="p-4">
-      <h2 class="text-center mb-5">Shared Experiences</h2>
-      <p class="text-center mb-4">
+<!-- Patient stories -->
+
+
+<section class="flex flex-col items-center">
+  <div class="flex flex-col-reverse md:flex-row w-full">
+    <div class="md:w-1/2 w-full aspect-[4/3] md:aspect-auto">
+      <img src="img/patient-stories.jpg" alt="Woman Smiling" class="w-full h-full object-cover"/>
+    </div>
+    <div class="md:w-1/2 w-full flex flex-col justify-center items-center p-6 md:p-10">
+      <h2 class="mb-3 md:mb-10 lg:mb-12 py-3">Shared Experiences</h2>
+      <p class="md:max-w-[40vw] max-w-[75vw]">
         Learn about some of our members' stories of getting the support and guidance they needed through our association. 
         Read about their journey and breakthroughs.
       </p>
-    </div>
-    <div class="mt-5 flex justify-center">
-         <a href="stories.html" class="bg-[#580259] text-[#F5F5F5] w-[290px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
+      <div class="flex justify-center w-full mt-4 md:mt-10">
+        <a href="#"
+          class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
           Our patient stories
-         </a>
-        </div>
-    <div class="w-full mt-10">
-      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-auto object-cover"/>
-    </div>
-  </div>
-</section>
-
-
-<!-- Tablet layout  -->
-<section class="hidden md:flex lg:hidden bg-gray-100">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2">
-      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-full object-cover"/>
-    </div>
-    <div class="w-1/2 p-8 flex flex-col justify-center">
-      <h2 class="mb-3">Shared Experiences</h2>
-      <p>
-        Learn about some of our members' stories of getting the support and guidance they needed through our association. 
-        Read about their journey and breakthroughs.
-      </p>
-      <div class="mt-10 flex justify-center">
-         <a href="stories.html" class="bg-[#580259] text-[#F5F5F5] w-[350px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
-         Our patient stories
-         </a>
-        </div>
-    </div>
-  </div>
-</section>
-
-<!-- Desktop layout  -->
-<section class="hidden lg:block bg-gray-100 py-10">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex items-center justify-center">
-      <div class="w-1/2 pr-8">
-        <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full h-auto "/>
-      </div>
-      <div class="w-1/2 pl-8">
-        <h2 class="mb-3">Shared Experiences</h2>
-        <p class="max-w-md">
-          Learn about some of our members' stories of getting the support and guidance they needed through our association. 
-          Read about their journey and breakthroughs.
-        </p>
+        </a>
       </div>
     </div>
-      <div class="mt-10 flex justify-center">
-         <a href="stories.html" class="bg-[#580259] text-[#F5F5F5] w-[290px] h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-lg">
-          our patient stories
-         </a>
-        </div>
   </div>
 </section>
 
 
-<footer class="bg-[#2B682C] text-white py-8 px-6">
+
+
+<footer class="bg-[#121212] text-[#ededed] py-8 px-4 md:px-6">
   <div class="container mx-auto">
     <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
-    <div class="flex flex-col md:flex-row md:justify-between">
+    <div class="flex flex-col md:flex-row md:justify-between gap-8">
       
       <!-- Protector Section -->
-      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
-        <h2 class="mb-4 mx-auto">Protector</h2>
-        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
-        <div class="md:text-left mx-auto">
-          <p class="font-medium text-center">GHITA NØRBY</p>
-          <p class="text-center">Commander of the Order</p>
-          <p class="text-center">of the Dannebrog Actor at the Royal</p>
-          <p class="text-center">Danish Theatre</p>
+      <div class="flex flex-col items-center md:w-1/3">
+        <h3 class="mb-6">Protector</h3>
+        <img src="img/footer-protector.jpg" alt="Protector Photo" class="w-32 h-auto mb-4">
+        <div class="text-center">
+          <p>GHITA NØRBY</p>
+          <p>Commander of the Order</p>
+          <p>of the Dannebrog Actor at the Royal</p>
         </div>
       </div>
 
       <!-- Contact Section -->
-      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
-        <h2 class="font-light mb-4 text-center">Contact us</h2>
+      <div class="md:w-1/3 flex flex-col items-center">
+        <h3 class="mb-6">Contact us</h3>
         <div class="text-center">
-          <p class="mb-2">The Danish Cancer Society Thistles</p>
+          <p>The Danish Cancer Society Thistles</p>
           <p class="mb-4">by Chairman Mai Nielsen</p>
           
-          <p class="mb-1">Ådalsparken 29,</p>
+          <p>Ådalsparken 29,</p>
           <p class="mb-4">6710 Esbjerg V</p>
           
-          <p class="mb-1">CVR 1742 0291</p>
-          <p class="mb-1">T: 7020-0515</p>
-          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+          <p>CVR 1742 0291</p>
+          <p>T: 7020-0515</p>
+          <p>E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
           
-          <p class="mt-4 mb-1">Electronic invoicing:</p>
+          <p class="mb-1">Electronic invoicing:</p>
           <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
         </div>
       </div>
 
       <!-- Social Media Section -->
-      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
-        <h2 class="font-light mb-6 text-center md:text-left">Our Social Media</h2>
+      <div class="md:w-1/3 flex flex-col items-center">
+        <h3 class="mb-6">Our Social Media</h3>
         
-        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
-        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
+        <div class="flex flex-col items-center md:items-start gap-6">
           <!-- Instagram -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <i class="fab fa-instagram text-[#2EA836] text-3xl"></i>
+            <a href="#">Instagram</a>
           </div>
           
           <!-- Facebook -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+            <a href="https://www.facebook.com/tidslernedk/">Facebook</a>
           </div>
           
           <!-- Facebook Closed Group -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header">Facebook closed group</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Copyright -->
-    <div class="text-xs text-center mt-16">
+    <div class="copyright text-center mt-12  md:mt-16">
       © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
     </div>
   </div>
 </footer>
+
 
 <script>
   // Mobile menu toggle

@@ -12,456 +12,492 @@
 </head>
 <body>
  <!-- Navigation Bar -->
-  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
-    <!-- Mobile Nav (Default) -->
-    <div class="flex items-center justify-between px-4 py-3 md:hidden">
+  <nav class="w-full bg-[#2B682C] text-[#ededed] fixed top-0 z-50 shadow-md">
+    <div class="flex items-center justify-between h-auto mx-auto px-8 py-2">
+      <!-- Logo Left -->
       <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
+        <a href="index.html" class="flex items-center">
+          <img src="img/Logo_white.png" alt="Tidslerne Logo" class="h-8 md:h-10 lg:h-12 w-auto" />
         </a>
       </div>
-      <button id="mobileMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Tablet Nav -->
-    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-        </a>
+      <!-- Menu Center -->
+      <div class="flex justify-center">
+        <ul class="desktop-menu hidden lg:flex items-center gap-10 p-2 uppercase">
+          <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+          <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+          <li><a href="events.html"><h4>Events</h4></a></li>
+          <li><a href="membership.html"><h4>Membership</h4></a></li>
+          <li><a href="videos.html"><h4>Videos</h4></a></li>
+          <li><a href="#"><h4>More</h4></a></li>
+          <li><a id="frontpage-link" href="index.html"><h4>Frontpage</h4></a></li>
+        </ul>
       </div>
-      <button id="tabletMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center justify-between px-8 py-2">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-        </a>
-      </div>
-      
-      <!-- Menu items centered -->
-      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="treatments.html">TREATMENTS</a></li>
-        <li><a href="#">EVENTS</a></li>
-        <li><a href="membership.html">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="stories.html">MORE</a></li>
-      </ul>
-      
-      <!-- Login button on the right -->
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
+      <!-- Login Right -->
+      <div class="flex justify-end items-center cursor-pointer">
+        <div class="desktop-login hidden lg:flex items-center border border-[#ededed] rounded-md py-2 px-4 w-auto gap-2 hover:bg-[#ededed] hover:text-[#2B682C] transition duration-300">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="uppercase"><h4>LOG IN</h4></span>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-[#ededed] text-2xl ml-4" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
-
-      <!-- Mobile/Tablet Menu (Hidden by default) -->
-    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
-      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="treatments.html">TREATMENTS</a></li>
-        <li><a href="#">EVENTS</a></li>
-        <li><a href="membership.html">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="stories.html">MORE</a></li>
-      </ul>
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Spacer to prevent content from being hidden under navbar -->
-  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
-  
-
-
-  <script>
-    // Toggle mobile/tablet menu
-    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
-    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
-
-    function toggleMenu() {
-      const menu = document.getElementById('mobileNavMenu');
-      menu.classList.toggle('hidden');
-      
-      // Adjust navigation spacer height when menu is open/closed
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      setTimeout(() => {
-        navSpacer.style.height = nav.offsetHeight + 'px';
-      }, 10);
-    }
-
-    // Window resize handler
-    window.addEventListener('resize', function() {
-      const menu = document.getElementById('mobileNavMenu');
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      
-      // Close mobile menu on desktop view
-      if (window.innerWidth >= 1024) {
-        menu.classList.add('hidden');
-      }
-      
-      // Update spacer height
-      navSpacer.style.height = nav.offsetHeight + 'px';
-    });
-
-    // Add shadow on scroll
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('stickyNav');
-      if (window.scrollY > 10) {
-        nav.classList.add('shadow-md');
-      } else {
-        nav.classList.remove('shadow-md');
-      }
-    });
-  </script>
-
-
-
-   <section class="w-full bg-white">
-  <!-- Mobile Design (default) -->
-  <div class="md:hidden px-4 py-8 flex flex-col items-center">
-    <img src="img/meeting-2.png" alt="Meeting" class="w-full mb-4">
-    <h1 class="text-3xl text-center mt-4 mb-2">Check out our events and sign up</h1>
-    <p class="mx-5 text-lg mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.  Bla bla Find out about the schedule and join.</p>
-
-  </div>
-
-  <!-- Tablet Design -->
-<div class="hidden md:block lg:hidden">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-8 py-12 flex flex-col justify-center">
-      <h1 class="text-3xl mb-4">Check out our events and sign up</h1>
-      <p class="text-base mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.  Bla bla Find out about the schedule and join.</p>
-    </div>
-    <div class="w-1/2">
-      <img src="img/meeting-2.png" alt="People Guiding" class="h-full w-full object-cover">
+  <!-- Mobile/Tablet Menu (hidden by default) -->
+  <div id="mobileNavMenu" class="hidden fixed top-0 h-3/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center p-4">
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-[#ededed] text-2xl" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="m-t-menu flex flex-col items-center gap-6 p-2 uppercase">
+      <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+      <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+      <li><a href="events.html"><h4>Events</h4></a></li>
+      <li><a href="membership.html"><h4>Membership</h4></a></li>
+      <li><a href="videos.html"><h4>Videos</h4></a></li>
+      <li><a href="#"><h4>More</h4></a></li>
+      <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
+    </ul>
+    <div class="m-t-login flex mt-4 cursor-pointer gap-2 border border-[#ededed] rounded-md py-2 px-4 w-auto items-center">
+      <i class="fas fa-sign-in-alt"></i>
+      <span class="uppercase"><h4>LOG IN</h4></span>
     </div>
   </div>
-</div>
+</nav>
 
-  <!-- Desktop Design -->
-<div class="hidden lg:block">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
-      <h1 class="text-4xl mb-25">Check out our events and sign up</h1>
-      <p class="text-xl mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.  Bla bla Find out about the schedule and join.</p>
+
+
+  <!-- Hero Section -->
+
+<section class="flex flex-col items-center mt-12 sm:mt-13 md:mt-14 lg:mt-15">
+  <div class="flex flex-col-reverse md:flex-row w-full">
+    <div class="w-full md:w-1/2 px-12 py-16 flex flex-col items-center justify-center">
+      <h1 class="text-center mb-8 md:mb-15 lg:mb-17 py-3">Join our upcoming cancer support events and workshops</h1>
+      <p class="text-left mb-6">At Tidslerne, we offer a diverse range of events and workshops designed to support individuals affected by cancer. Our programs encompass self-help courses, educational lectures, creative workshops, and wellness activities, available both in-person and online via Zoom.</p>
     </div>
-    <div class="w-1/2 h-full">
-      <img src="img/meeting-2.png" alt="People Guiding" class="h-full w-full object-cover">
+    <div class="w-full md:w-1/2 aspect-[4/3] md:aspect-auto">
+      <img src="img/events-page-hero.jpg" alt="fill" class="h-full w-full mb-4 md:mb-0 object-cover">
     </div>
   </div>
-</div>
 </section>
 
-<section class="flex flex-col items-center min-h-[520px] bg-gray-200 px-4 py-8 md:py-12">
+
+
+  <!-- Upcoming events -->
+
+<section class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto bg-[#D9D9D9]/40 px-8 py-6 md:py-8">
   <!-- Heading -->
-  <div class="w-full text-center mb-6">
-    <h2 class="text-3xl">Upcoming events</h2>
+  <div class="w-full text-center py-2 my-8 md:my-10">
+    <h2>Tidslerne event calendar</h2>
   </div>
   
 
   <!-- Cards div -->
-  <div class="flex flex-col gap-8 w-full max-w-7xl sm:flex-row lg:flex-row lg:flex-wrap">
+  <div class="grid gap-8 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 px-8 sm:px-10">
 
     <!-- Card 1 -->
-    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-purple-100 w-full p-4">
-    
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
       <!-- Image -->
-      <div class="flex items-center justify-center w-full h-auto p-2 md:p-4">
-        <img src="img/frame-82.png" alt="Person leaning against tree in nature" class="max-h-[360px] w-auto object-cover" />
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-walking.jpg" alt="fill" class="h-full w-full object-cover" />
       </div>
 
       <!-- Content -->
-      <div class="flex flex-col flex-grow justify-between w-full p-4 md:p-6">
-          <div>
-            <!-- Tags -->
-            <div class="mb-2 flex gap-4">
-              <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white">FOR EVERYONE</span>
-              <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white">3 AVAILABLE SPOTS</span>  
-            </div>
-            <!-- Text -->
-            <p class="mb-2 text-lg font-medium text-gray-800">Sunday, 4th May</p>
-            <h3 class="mb-2 text-2xl text-gray-900">Walking Meditation by Jeanette Jensen</h3>
-            <p class="text-gray-700 mb-4">Jeanette uses nature to de-stress and create clarity and peace of mind. She will make a small route, in the beautiful nature. Here she will guide us and we will walk together in silence...</p>
-            <div class="inline-block rounded bg-[#DB85F2] px-4 py-2">
-              <p class="font-medium text-black">PRICE: 70 KR.</p>
-            </div>
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">FOR EVERYONE</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">3 AVAILABLE SPOTS</span>
           </div>
-
-      </div>
-
+          <!-- Text -->
+          <p class="date mb-2">Sunday, 4th May</p>
+          <h3 class="mb-2">Walking Meditation by Jeanette Jensen</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Jeanette uses nature to de-stress and create clarity and peace of mind. She will make a small route, in the beautiful nature. Here she will guide us and we will walk together in silence with a sentence or a word. Our senses want to interact with nature.</p>
+          <div class="inline-block rounded bg-[#DB85F2] px-4 py-2">
+            <p class="font-medium uppercase">PRICE: 70 KR.</p>
+          </div>
+        </div>
+      </div> 
+      
       <!-- Button -->
       <div class="flex flex-col items-center justify-center w-auto p-4">
-        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium text-white hover:bg-purple-900">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
           MORE DETAILS
-        </button>
+        </a>
       </div>
 
     </div>
     
     <!--Card 2-->
-    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-purple-100 w-full p-4">
-    
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
       <!-- Image -->
-      <div class="flex items-center justify-center w-full h-auto p-2 md:p-4">
-        <img src="img/frame-82.png" alt="Person leaning against tree in nature" class="max-h-[360px] w-auto object-cover" />
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-cafe.jpg" alt="fill" class="h-full w-full object-cover" />
       </div>
 
       <!-- Content -->
-      <div class="flex flex-col flex-grow justify-between w-full p-4 md:p-6">
-          <div>
-            <!-- Tags -->
-            <div class="mb-2 flex gap-4">
-              <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white">FOR EVERYONE</span>
-              <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white">3 AVAILABLE SPOTS</span>  
-            </div>
-            <!-- Text -->
-            <p class="mb-2 text-lg font-medium text-gray-800">Sunday, 4th May</p>
-            <h3 class="mb-2 text-2xl text-gray-900">Walking Meditation by Jeanette Jensen</h3>
-            <p class="text-gray-700 mb-4">Jeanette uses nature to de-stress and create clarity and peace of mind. She will make a small route, in the beautiful nature. Here she will guide us and we will walk together in silence...</p>
-            <div class="inline-block rounded bg-[#DB85F2] px-4 py-2">
-              <p class="font-medium text-black">PRICE: 70 KR.</p>
-            </div>
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">FOR EVERYONE</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">15 AVAILABLE SPOTS</span>
           </div>
-
-      </div>
-
+          <!-- Text -->
+          <p class="date mb-2">Wednesday, 28th May</p>
+          <h3 class="mb-2">TidselCafé Bornholm - Meditation with Tibetan sound bowlsn</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Relaxing and healing sound meditation with Tibetan sound bowls, wind chimes and other sound effects. The sound vibrations from the sound bowls go in and work at the cellular level in the body. It is very stress-relieving and healing for imbalances in the body.</p>
+          <div class="inline-block rounded bg-[#DB85F2] px-4 py-2">
+            <p class="font-medium uppercase">FREE</p>
+          </div>
+        </div>
+      </div> 
+      
       <!-- Button -->
       <div class="flex flex-col items-center justify-center w-auto p-4">
-        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium text-white hover:bg-purple-900">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
           MORE DETAILS
-        </button>
+        </a>
+      </div>
+
+    </div>
+
+    <!--Card 3-->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-hypnosis.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">Members only</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">NO AVAILABLE SPOTS</span>
+          </div>
+          <!-- Text -->
+          <p class="date mb-2">Friday, 1st August - Sunday, 3rd August</p>
+          <h3 class="mb-2">Learn Self-Hypnosis in an easy way - 3-day self-help course</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Learn to use self-hypnosis as a tool for healing, better sleep and greater self-esteem. Join us on an inner journey in your unconscious mind and learn how you can better make your unconscious patterns play together with your conscious mind and achieve greater balance</p>
+          <div class="inline-block rounded bg-[#DB85F2] px-4 py-2">
+            <p class="font-medium uppercase">Price : 500 kr.</p>
+          </div>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
+    </div>
+
+    <!--Card 4-->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-cannabis.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">FOR EVERYONE</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">30 AVAILABLE SPOTS</span>
+          </div>
+          <!-- Text -->
+          <p class="date mb-2">Monday, 8th September</p>
+          <h3 class="mb-2">Walking Meditation by Jeanette Jensen</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">What can cannabis and TurkeyTail mushrooms do for you? Many patients experience great benefits from cannabis for pain, sleep, nausea, racing thoughts, etc. Learn more about what cannabis can do for you.</p>
+          <div class="inline-block rounded bg-[#DB85F2] px-4 py-2">
+            <p class="font-medium uppercase">Price : 25 kr.</p>
+          </div>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
       </div>
 
     </div>
     
+    
+    
   </div>
 
-
   <!-- CTA Button -->
-  <div class="flex justify-center w-auto mt-8">
-    <a href="#" class="bg-[#580259] text-white text-center py-4 px-8 rounded-full uppercase font-medium text-sm md:text-base">
-      See all upcoming events
+  <div class="flex justify-center w-full md:mt-8 md:mb-8">
+    <a href="#"
+      class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+      See all upcoming events 
     </a>
   </div>
 
-</section>  
+  
+</section> 
 
 
- <section class="flex flex-col items-center mb-10  p-30">
-  <div class="max-w-md text-center">
-    <h2 class="text-4xl md:text-3xl mt-8">Who can register?</h2>
+
+<!--Info section -->
+
+<section class="min-h-[230px] flex flex-col justify-center items-center p-6 md:p-10 lg:p-15">
+
+  <div class="w-full text-center mt-2 md:mt-4">
+    <h2>Who can join the events and courses?</h2>
   </div>
-       <div class="flex items-center justify-center ml-7">
-  <p class="text-[#121212] text-xl mt-10 leading-relaxed">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
- Vestibulum vitae accumsan lacus. 
-  Bla bla Talk about members having a discount; and that there are some that are only for members participation allowed; other for anyone... 
-  mention nemTilmed-the site that manages the event registering process....bla bla  </p>
-</div>
- </section>
+  <div class="flex items-center justify-center my-8 md:my-15 max-w-[75vw]">
+    <p>
+      Tidslerne welcomes everyone interested in integrative approaches to cancer support. Our community thrives on shared experiences, knowledge exchange, and mutual support. Membership is not a prerequisite for participation, but members enjoy additional benefits and discounts.
+    </p>
+  </div>
+  
+</section>
 
-<section class="flex flex-col items-center justify-center bg-gray-100 p-4 md:p-8 lg:p-10">
+
+
+<!--Zoom instructions section -->
+
+<section class="flex flex-col items-center justify-center bg-[#D9D9D9]/40 p-4 md:p-8 lg:p-10">
   <!-- Heading Section -->
   <div class="text-center mb-4 md:mb-6">
-    <h2 class="text-2xl md:text-3xl mb-2">Need help with Zoom events?</h2>
-    <p class="text-lg md:text-xl text-[#2B682C] font-medium">Check our pdf Zoom instructions for iPad and PC users</p>
+    <h2 class="mb-2">Need help with Zoom events?</h2>
+    <h3 class="text-[#2B682C]">Check our pdf Zoom instructions for iPad and PC users</h3>
   </div>
 
-  <!-- Instructions Section -->
-  <div class="w-full flex flex-col lg:flex-row justify-center items-center mt-2 md:mt-6 gap-15">
-    <!-- iPad Section -->
-    <div class="flex flex-col items-center w-auto p-6 lg:p-15">
-      <span class="text-[#05B505] uppercase font-medium mb-3">iPad</span>
-      <div class="mb-6 w-28 h-32 rounded-md flex flex-col items-center justify-center">
-        <div class="flex-grow flex items-center justify-center w-full">
-          <img src="icons/Tablet_Zoom.svg" alt="Tablet Icon" class="w-30 h-30">
-        </div>
 
+  <div class="w-full flex flex-col lg:flex-row justify-center items-center mt-6 md:mt-10 mb-6 md:mb-10 sm:gap-8 md:gap-15">
+    <!--iPad Section -->
+    <div class="flex flex-col items-center w-full gap-4 max-w-sm mb-8 sm:mb-10 md:mb-0">
+      <h3 class="text-[#356902] text-center">iPad</h3>
+      <div class="mb-2 md:mb-8 h-15 w-20 sm:h-20 sm:w-25 md:w-[200px] md:h-[120px] flex justify-center items-center">
+        <img src="img/iPad-icon.png" alt="Tablet Icon" class="max-h-full max-w-full object-contain">
       </div>
-      <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-2 px-4 rounded-lg w-45 h-13">
-        <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
-        <span>Get instructions</span>
-      </button>
+      <div class="flex justify-center w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-[#ededed] py-3 px-6 rounded-md cursor-pointer">
+          <img src="img/download-icon.png" alt="Download PDF" class="w-5 h-5">
+          <span>Get PDF</span>
+        </button>
+      </div>
     </div>
 
     <!-- PC Section -->
-    <div class="flex flex-col items-center w-auto p-6 lg:p-15">
-      <span class="text-[#05B505] uppercase font-medium">PC</span>
-      <div class="mb-6">
-        <div class="h-24 flex items-center justify-center mt-10">
-          <img src="icons/Laptop_Zoom.svg" alt="Laptop Icon" class="w-35 h-35">
-        </div>
+    <div class="flex flex-col items-center w-full gap-4 max-w-sm">
+      <h3 class="text-[#356902] text-center">PC</h3>
+      <div class="mb-2 md:mb-8 h-15 w-20 sm:h-20 sm:w-25 md:w-[200px] md:h-[120px] flex justify-center items-center">
+        <img src="img/pc-icon.png" alt="Laptop Icon" class="max-h-full max-w-full object-contain">
       </div>
-      <button class="flex items-center justify-center bg-[#2B682C] text-white py-2 px-4 rounded-lg w-45 h-13 mt-1">
-        <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
-        <span>Get instructions</span>
-      </button>
+      <div class="flex justify-center w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-[#ededed] py-3 px-6 rounded-md cursor-pointer">
+          <img src="img/download-icon.png" alt="Download PDF" class="w-5 h-5">
+          <span>Get PDF</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="flex flex-col items-center min-h-[520px] px-4 py-8 md:py-12">
+
+
+<!-- Previous events -->
+
+<section class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto bg-[#D9D9D9]/40 px-8 py-6 md:py-8">
   <!-- Heading -->
-  <div class="w-full text-center mb-6">
-    <h2 class="text-3xl">Previous events</h2>
+  <div class="w-full text-center py-2 my-8 md:my-10">
+    <h2>Highlights from previous events</h2>
   </div>
   
-    <!-- Cards div -->
-    <div class="flex flex-col gap-8 w-full max-w-7xl sm:flex-row lg:flex-row lg:flex-wrap">
 
-      <!-- Card 1 -->
-      <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-green-100 w-full p-4">
-      
-        <!-- Image -->
-        <div class="flex items-center justify-center w-full h-auto p-2 md:p-4">
-          <img src="img/frame-82.png" alt="Person leaning against tree in nature" class="max-h-[360px] w-auto object-cover" />
-        </div>
+  <!-- Cards div -->
+  <div class="grid gap-8 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 px-8 sm:px-10">
 
-        <!-- Content -->
-        <div class="flex flex-col flex-grow justify-center w-full p-4 md:p-6">
-            <div>
-              <!-- Text -->
-              <h3 class="mb-2 text-2xl text-gray-900">Walking Meditation by Jeanette Jensen</h3>
-              <p class="text-gray-700">Jeanette uses nature to de-stress and create clarity and peace of mind. She will make a small route, in the beautiful nature. Here she will guide us and we will walk together in silence...</p>
-            </div>
-
-        </div>
-
-        <!-- Button -->
-        <div class="flex flex-col items-center justify-center w-auto p-4">
-          <button class="rounded-md bg-[#2B682C] px-6 py-3 font-medium text-white hover:bg-purple-900">
-            MORE DETAILS
-          </button>
-        </div>
-
+    <!-- Card 1 -->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#2EA836]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-preventive-measures.jpg" alt="fill" class="h-full w-full object-cover" />
       </div>
 
-      <!-- Card 2 -->
-       <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-green-100 w-full p-4">
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Text -->
+          <h3 class="mb-2">More healthy and active years - with preventive measures</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Would you like more energy and surplus? Are you eating right, or are you lacking vitamins, minerals or fatty acids? Diet, nutrients and supplements can be a jungle to find your way around - and if you get sick, it is only more confusing.</p>
+        </div>
+      </div> 
       
-        <!-- Image -->
-        <div class="flex items-center justify-center w-full h-auto p-2 md:p-4">
-          <img src="img/frame-82.png" alt="Person leaning against tree in nature" class="max-h-[360px] w-auto object-cover" />
-        </div>
-
-        <!-- Content -->
-        <div class="flex flex-col flex-grow justify-center w-full p-4 md:p-6">
-            <div>
-              <!-- Text -->
-              <h3 class="mb-2 text-2xl text-gray-900">Walking Meditation by Jeanette Jensen</h3>
-              <p class="text-gray-700">Jeanette uses nature to de-stress and create clarity and peace of mind. She will make a small route, in the beautiful nature. Here she will guide us and we will walk together in silence...</p>
-            </div>
-
-        </div>
-
-        <!-- Button -->
-        <div class="flex flex-col items-center justify-center w-auto p-4">
-          <button class="rounded-md bg-[#2B682C] px-6 py-3 font-medium text-white hover:bg-purple-900">
-            MORE DETAILS
-          </button>
-        </div>
-
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
       </div>
+
+    </div>
+    
+    <!--Card 2-->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#2EA836]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-self-help-course-stress.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Text -->
+          <h3 class="mb-2">Existential stress management - Course for Couples - 3-day self-help course </h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Course for Couples - Stress management and shared healing energy through meditation, visualization, play, dance, singing, presence and exercises with the Five Tibetans in beautiful, natural surroundings that promote contemplation and restoration of balance - together.</p>
+        </div>
+      </div> 
       
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
     </div>
 
+    <!--Card 3-->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#2EA836]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/event-dance.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
 
-    <div class="flex justify-center w-auto mt-8">
-      <a href="#" class="bg-[#580259] text-white text-center py-4 px-8 rounded-full uppercase font-medium text-sm md:text-base w-full">
-        See all previous events
-      </a>
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Text -->
+          <h3 class="mb-2">Workshop "Dance as Therapy"</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Dance and movement therapy is a form of treatment that offers the therapeutic use of movement based on the fact that body and soul are integrated. Elena will guide and lead us warmly and inclusively through a process where movement comes before speech.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          MORE DETAILS
+        </a>
+      </div>
+
     </div>
+   
   </div>
-</section>
+
+  <!-- CTA Button -->
+  <div class="flex justify-center w-full md:mt-8 md:mb-8">
+    <a href="#"
+      class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+      SEE ALL PREVIOUS EVENTS 
+    </a>
+  </div>
+
+  
+</section> 
 
 
 
 
 
-
-<footer class="bg-[#2B682C] text-white py-8 px-6">
+<footer class="bg-[#121212] text-[#ededed] py-8 px-4 md:px-6">
   <div class="container mx-auto">
     <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
-    <div class="flex flex-col md:flex-row md:justify-between">
+    <div class="flex flex-col md:flex-row md:justify-between gap-8">
       
       <!-- Protector Section -->
-      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
-        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
-        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
-        <div class="md:text-left mx-auto">
-          <p class="font-medium text-center">GHITA NØRBY</p>
-          <p class="text-sm text-center">Commander of the Order</p>
-          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
-          <p class="text-sm text-center">Danish Theatre</p>
+      <div class="flex flex-col items-center md:w-1/3">
+        <h3 class="mb-6">Protector</h3>
+        <img src="img/footer-protector.jpg" alt="Protector Photo" class="w-32 h-auto mb-4">
+        <div class="text-center">
+          <p>GHITA NØRBY</p>
+          <p>Commander of the Order</p>
+          <p>of the Dannebrog Actor at the Royal</p>
         </div>
       </div>
 
       <!-- Contact Section -->
-      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
-        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
+      <div class="md:w-1/3 flex flex-col items-center">
+        <h3 class="mb-6">Contact us</h3>
         <div class="text-center">
-          <p class="mb-2">The Danish Cancer Society Thistles</p>
+          <p>The Danish Cancer Society Thistles</p>
           <p class="mb-4">by Chairman Mai Nielsen</p>
           
-          <p class="mb-1">Ådalsparken 29,</p>
+          <p>Ådalsparken 29,</p>
           <p class="mb-4">6710 Esbjerg V</p>
           
-          <p class="mb-1">CVR 1742 0291</p>
-          <p class="mb-1">T: 7020-0515</p>
-          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+          <p>CVR 1742 0291</p>
+          <p>T: 7020-0515</p>
+          <p>E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
           
-          <p class="mt-4 mb-1">Electronic invoicing:</p>
+          <p class="mb-1">Electronic invoicing:</p>
           <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
         </div>
       </div>
 
       <!-- Social Media Section -->
-      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
-        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+      <div class="md:w-1/3 flex flex-col items-center">
+        <h3 class="mb-6">Our Social Media</h3>
         
-        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
-        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
+        <div class="flex flex-col items-center md:items-start gap-6">
           <!-- Instagram -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <i class="fab fa-instagram text-[#2EA836] text-3xl"></i>
+            <a href="#">Instagram</a>
           </div>
           
           <!-- Facebook -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+            <a href="https://www.facebook.com/tidslernedk/">Facebook</a>
           </div>
           
           <!-- Facebook Closed Group -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header">Facebook closed group</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Copyright -->
-    <div class="text-xs text-center mt-16">
+    <div class="copyright text-center mt-12  md:mt-16">
       © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
     </div>
   </div>
 </footer>
+
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobileMenuBtn').onclick = function() {
+    document.getElementById('mobileNavMenu').classList.remove('hidden');
+  };
+  document.getElementById('closeMobileMenu').onclick = function() {
+    document.getElementById('mobileNavMenu').classList.add('hidden');
+  };
+
+  // Hide "Frontpage" link on index.html only
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+    var frontpageLink = document.getElementById('frontpage-link');
+    if(frontpageLink) frontpageLink.style.display = 'none';
+    var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
+    if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
+  }
+</script>
 
 
 </body>

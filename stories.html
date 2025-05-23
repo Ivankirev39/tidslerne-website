@@ -12,483 +12,1066 @@
 </head>
 <body>
  <!-- Navigation Bar -->
-  <nav id="stickyNav" class="bg-[#2B682C] text-white fixed top-0 w-full z-50 transition-all duration-300">
-    <!-- Mobile Nav (Default) -->
-    <div class="flex items-center justify-between px-4 py-3 md:hidden">
+ <nav class="w-full bg-[#2B682C] text-[#ededed] fixed top-0 z-50 shadow-md">
+    <div class="flex items-center justify-between h-auto mx-auto px-8 py-2">
+      <!-- Logo Left -->
       <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
+        <a href="index.html" class="flex items-center">
+          <img src="img/Logo_white.png" alt="Tidslerne Logo" class="h-8 md:h-10 lg:h-12 w-auto" />
         </a>
       </div>
-      <button id="mobileMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
+      <!-- Menu Center -->
+      <div class="flex justify-center">
+        <ul class="desktop-menu hidden lg:flex items-center gap-10 p-2 uppercase">
+          <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+          <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+          <li><a href="events.html"><h4>Events</h4></a></li>
+          <li><a href="membership.html"><h4>Membership</h4></a></li>
+          <li><a href="videos.html"><h4>Videos</h4></a></li>
+          <li><a href="#"><h4>More</h4></a></li>
+          <li><a id="frontpage-link" href="index.html"><h4>Frontpage</h4></a></li>
+        </ul>
+      </div>
+      <!-- Login Right -->
+      <div class="flex justify-end items-center cursor-pointer">
+        <div class="desktop-login hidden lg:flex items-center border border-[#ededed] rounded-md py-2 px-4 w-auto gap-2 hover:bg-[#ededed] hover:text-[#2B682C] transition duration-300">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="uppercase"><h4>LOG IN</h4></span>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-[#ededed] text-2xl ml-4" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile/Tablet Menu (hidden by default) -->
+    <div id="mobileNavMenu" class="hidden fixed top-0 h-3/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center p-4">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-[#ededed] text-2xl" aria-label="Close menu">
+        <i class="fas fa-times"></i>
       </button>
-    </div>
-
-    <!-- Tablet Nav -->
-    <div class="hidden md:flex lg:hidden items-center justify-between px-6 py-2">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-        </a>
-      </div>
-      <button id="tabletMenuBtn" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center justify-between px-8 py-2">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="img/Logo_white.png" alt="Tidslerne Full Logo" class="h-10 lg:h-14 w-auto transition-all duration-300">
-        </a>
-      </div>
-      
-      <!-- Menu items centered -->
-      <ul class="flex space-x-8 text-lg uppercase tracking-wide mx-auto">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="treatments.html">TREATMENTS</a></li>
-        <li><a href="events.html">EVENTS</a></li>
-        <li><a href="membership.html">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="#">MORE</a></li>
+      <ul class="m-t-menu flex flex-col items-center gap-6 p-2 uppercase">
+        <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+        <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+        <li><a href="events.html"><h4>Events</h4></a></li>
+        <li><a href="membership.html"><h4>Membership</h4></a></li>
+        <li><a href="videos.html"><h4>Videos</h4></a></li>
+        <li><a href="#"><h4>More</h4></a></li>
+        <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
       </ul>
-      
-      <!-- Login button on the right -->
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
+      <div class="m-t-login flex mt-4 cursor-pointer gap-2 border border-[#ededed] rounded-md py-2 px-4 w-auto items-center">
+        <i class="fas fa-sign-in-alt"></i>
+        <span class="uppercase"><h4>LOG IN</h4></span>
       </div>
     </div>
+</nav>
 
-    <!-- Mobile/Tablet Menu (Hidden by default) -->
-    <div id="mobileNavMenu" class="hidden flex-col space-y-4 px-6 py-4 bg-[#2B682C] md:items-end">
-      <ul class="flex flex-col space-y-4 text-lg uppercase w-full md:text-left">
-        <li><a href="index.html">STORIES AND GUIDES</a></li>
-        <li><a href="treatments.html">TREATMENTS</a></li>
-        <li><a href="events.html">EVENTS</a></li>
-        <li><a href="membership.html">MEMBERSHIP</a></li>
-        <li><a href="videos.html">VIDEOS</a></li>
-        <li><a href="#">MORE</a></li>
-      </ul>
-      <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 w-fit md:self-end">
-        <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-        <span class="text-lg uppercase">LOG IN</span>
-      </div>
+
+
+  <!-- Hero Section -->
+
+<section class="flex flex-col items-center mt-12 sm:mt-13 md:mt-14 lg:mt-15">
+  <div class="flex flex-col-reverse md:flex-row w-full">
+    <div class="w-full md:w-1/2 px-12 py-16 flex flex-col items-center justify-center">
+      <h1 class="text-center mb-8 md:mb-15 lg:mb-17 py-3">Real patient stories and expert cancer support guides</h1>
+      <p class="text-left mb-6">Read powerful stories from cancer patients and caregivers alongside expert-written guides. These resources offer hope, motivation, and practical tips to help you navigate treatment and improve your quality of life.</p>
     </div>
-  </nav>
-
-  <!-- Spacer to prevent content from being hidden under navbar -->
-  <div id="navSpacer" class="h-16 md:h-14 lg:h-16"></div>
-  
-
-
-  <script>
-    // Toggle mobile/tablet menu
-    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMenu);
-    document.getElementById('tabletMenuBtn').addEventListener('click', toggleMenu);
-
-    function toggleMenu() {
-      const menu = document.getElementById('mobileNavMenu');
-      menu.classList.toggle('hidden');
-      
-      // Adjust navigation spacer height when menu is open/closed
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      setTimeout(() => {
-        navSpacer.style.height = nav.offsetHeight + 'px';
-      }, 10);
-    }
-
-    // Window resize handler
-    window.addEventListener('resize', function() {
-      const menu = document.getElementById('mobileNavMenu');
-      const nav = document.getElementById('stickyNav');
-      const navSpacer = document.getElementById('navSpacer');
-      
-      // Close mobile menu on desktop view
-      if (window.innerWidth >= 1024) {
-        menu.classList.add('hidden');
-      }
-      
-      // Update spacer height
-      navSpacer.style.height = nav.offsetHeight + 'px';
-    });
-
-    // Add shadow on scroll
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('stickyNav');
-      if (window.scrollY > 10) {
-        nav.classList.add('shadow-md');
-      } else {
-        nav.classList.remove('shadow-md');
-      }
-    });
-  </script>
-
-  <!-- Hero Section Container -->
-<section class="w-full bg-white">
-  <!-- Mobile Design (default) -->
-  <div class="md:hidden px-4 py-8 flex flex-col items-center">
-    <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="w-full mb-4">
-    <h1 class="text-3xl text-center mt-4 mb-2">Stories and Guides</h1>
-    <p class="text-base mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
-  </div>
-
-  <!-- Tablet Design -->
-<div class="hidden md:block lg:hidden">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-8 py-12 flex flex-col justify-center">
-      <h1 class="text-3xl mb-4">Stories and Guides</h1>
-      <p class="text-base mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
-    </div>
-    <div class="w-1/2">
-      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="h-full w-full object-cover">
+    <div class="w-full md:w-1/2 aspect-[4/3] md:aspect-auto">
+      <img src="img/patient-stories.jpg" alt="Woman Smiling" class="h-full w-full mb-4 md:mb-0 object-cover">
     </div>
   </div>
-</div>
-
-  <!-- Desktop Design -->
-<div class="hidden lg:block">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
-      <h1 class="text-4xl mb-25">Stories and Guides</h1>
-      <p class="text-xl mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Bla bla Find out about the schedule and join.</p>
-    </div>
-    <div class="w-1/2 h-full">
-      <img src="img/tim-mossholder-geekin.png" alt="Woman Smiling" class="h-full w-full object-cover">
-    </div>
-  </div>
-</div>
 </section>
 
 
-<section class="flex min-h-[520px] flex-col items-center bg-gray-200 px-4 py-8 md:py-12">
 
 
+  <!-- Patient Stories -->
+
+<section class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] bg-[#D9D9D9]/40 mx-auto px-4 py-6 md:py-8">
   <!-- Heading -->
-
-
-  
-  <div class="w-full text-center mb-6">
-    <h2 class="text-3xl">Our patients' stories</h2>
+  <div class="w-full text-center py-2 my-8 md:my-12">
+    <h2>Inspiring Cancer Journeys and Experiences</h2>
   </div>
   
 
-
-
   <!-- Cards div -->
-  <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
+  <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
     <!-- Card 1 -->
-    <div class="flex h-auto w-full flex-col justify-center overflow-hidden rounded-md bg-purple-100 p-4 md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap">
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
       <!-- Image -->
-      <div class="flex h-auto w-full items-center justify-center p-2 md:p-4">
-        <img src="img/nature-pic.png" alt="Picture of a woman in the nature" class="max-h-[360px] w-auto object-cover" />
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/treatments-brest-cancer.jpeg" alt="fill" class="h-full w-full object-cover" />
       </div>
 
       <!-- Content -->
-      <div class="flex w-full flex-grow flex-col justify-between p-4 md:p-6">
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
         <div>
           <!-- Tags -->
-          <div class="mb-2 flex gap-4">
-            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
-            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">Complementary</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
           </div>
           <!-- Text -->
-          <p class="mb-2 text-lg font-medium text-gray-800">Christina Bauer</p>
-           <p class="mb-2 text-sm font-medium text-gray-800">June 10, 2024</p>
-          <h3 class="mb-2 text-2xl text-gray-900">Breast cancer – cancer-free without chemo and radiation</h3>
-          <p class="mb-4 text-gray-700">I believe that making healthy decisions is of great importance for our health and well-being. I have discovered that my body responds positively when I give the body the right messages and support the body...</p>
+          <p class="author mb-2">Christina Bauer</p>
+          <p class="mb-2">June 10, 2024</p>
+          <h3 class="mb-2">Breast cancer – cancer-free without chemo and radiation</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">I believe that making healthy decisions is of great importance for our health and well-being. I have discovered that my body responds positively when I give the body the right messages and support the body with a healthy lifestyle.</p>
         </div>
-      </div>
-
+      </div> 
+      
       <!-- Button -->
-      <div class="flex w-auto flex-col items-center justify-center p-4">
-        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium uppercase text-white hover:bg-purple-900">Read article</Article></button>
-      </div>
-    </div>
-  </div>
-
-<div class="flex flex-col mt-10 items-center justify-center w-auto p-4">
-        <a href="#" class="rounded-full bg-[#580259] px-6 py-3 font-medium text-white text-xl hover:bg-purple-900">
-          ALL PATIENTS' STORIES
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          READ ARTICLE
         </a>
       </div>
 
+    </div>
+    
+    <!--Card 2-->
+   <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/treatments-mushrooms.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">Complementary</span>
+          </div>
+          <!-- Text -->
+          <p class="author mb-2">Dorthe Helbring</p>
+          <p class="mb-2">January 14, 2024</p>
+          <h3 class="mb-2">The magic mushrooms clean up</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">In 2004, Leonora Sperling was diagnosed with an aggressive form of breast cancer and was treated conventionally with breast-conserving surgical treatment as well as powerful chemotherapy and radiation. Inspections from the hospital are quickly dropped, and it is not considered necessary.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          READ ARTICLE
+        </a>
+      </div>
+
+    </div>
+
+    <!--Card 3-->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/treatments-prostate-cancer.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span>  
+          </div>
+          <!-- Text -->
+          <p class="author mb-2">Prof. Torben Bager</p>
+          <p class="mb-2">November 11, 2020</p>
+          <h3 class="mb-2">Prostate Cancer</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">On Constitution Day 2019, I received a shocking message from the hospital doctor: "You have aggressive prostate cancer and it has spread to the bones". A little later, he added: "You can live many more years, there are many new treatment methods on the way". On the same day, they gave me a double dose of anti-hormone injection.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          READ ARTICLE
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Card 4 -->
+    <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+      <!-- Image -->
+      <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+        <img src="img/patient-story-visions.jpg" alt="fill" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+        <div>
+          <!-- Tags -->
+          <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+            <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">patient story</span> 
+          </div>
+          <!-- Text -->
+          <p class="author mb-2">Member</p>
+          <p class="mb-2">April 15, 2020</p>
+          <h3 class="mb-2"> Visions for the Danish healthcare system</h3>
+          <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">When I write this letter, it is in the hope of helping the many other elderly people who have found themselves in the same situation that I was in when I was 85 years old when I got cancer. The hospitals could only offer me a treatment whose effect was worse than the disease itself. It is difficult for old people to cope with the tough chemotherapy. It is inhumane and totally undignified for a country like Denmark that doctors do not want to open up to other mild human and life-prolonging methods, especially in light of the fact that the methods are widespread in our neighboring countries, such as Germany, Switzerland, England and Austria.</p>
+        </div>
+      </div> 
+      
+      <!-- Button -->
+      <div class="flex flex-col items-center justify-center w-auto p-4">
+        <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+          READ ARTICLE
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CTA Button -->
+  <div class="flex justify-center w-full md:mt-8">
+    <a href="#"
+      class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+      ALL PATIENTS’ STORIES 
+    </a>
+  </div>
 
 </section>
 
-<section class="flex flex-col items-center justify-center p-4 md:p-8 lg:p-10">
+
+
+
+  <!-- Leaflet + Magazine download section -->
+
+
+<section class="flex flex-col items-center justify-center p-8 md:p-10 lg:p-12">
   <!-- Heading Section -->
-  <div class="text-center mb-8 md:mb-12">
-    <h2 class="text-2xl md:text-3xl font-medium">Diet and body</h2>
+  <div class="w-full text-center py-2 my-4 md:my-6">
+    <h2>Updated Resources and Articles from Tidslerne</h2>
   </div>
 
   <!-- Publications Section -->
-  <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-24">
+  <div class="w-full flex flex-col lg:flex-row justify-center items-center p-10 mb-6 md:mb-10 md:gap-16 lg:gap-24">
     <!-- Leaflet Section -->
-    <div class="flex flex-col items-center w-full max-w-sm">
-      <span class="text-[#356902] font-medium text-lg mb-6 text-center">Our new leaflet</span>
-      <div class="mb-8 w-full max-w-xs mt-20 flex justify-center">
-        <img src="img/Tidslerne-folder-2024-grafik.jpg" alt="Leaflet Image" class="w-full h-auto max-h-[240px] object-contain mx-auto">
+    <div class="flex flex-col items-center w-full max-w-sm mb-20 md:mb-0">
+      <h3 class="text-[#356902] text-center">Our new leaflet</h3>
+      <div class="mb-8 w-full max-w-xs flex justify-center">
+        <img src="img/Leaflet.png" alt="Leaflet Image" class="w-full h-auto max-h-[240px] object-contain mx-auto">
       </div>
-      <div class="flex justify-center mt-7 w-full">
-        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-3 px-6 rounded-lg">
-          <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
+      <div class="flex justify-center w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-[#ededed] py-3 px-6 rounded-md cursor-pointer">
+          <img src="img/download-icon.png" alt="Download PDF" class="w-5 h-5">
           <span>Get leaflet</span>
         </button>
       </div>
     </div>
 
     <!-- Magazine Section -->
-    <div class="flex flex-col items-center w-full max-w-sm mt-8 lg:mt-0">
-      <span class="text-[#356902] font-medium text-lg mb-6 text-center">New magazine number</span>
+    <div class="flex flex-col items-center w-full max-w-sm">
+      <h3 class="text-[#356902] text-center">New magazine 2025 | 1</h3>
       <div class="mb-8 w-full max-w-xs flex justify-center">
-        <img src="img/forside_1_25_mini.jpg" alt="Magazine Image" class="w-full h-auto max-h-[320px] object-contain mx-auto">
+        <img src="img/Magazine-cover.png" alt="Magazine Image" class="w-full h-auto max-h-[240px] object-contain mx-auto">
       </div>
       <div class="flex justify-center w-full">
-        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-3 px-6 rounded-lg">
-          <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-[#ededed] py-3 px-6 rounded-md cursor-pointer">
+          <img src="img/download-icon.png" alt="Download PDF" class="w-5 h-5">
           <span>Get magazine</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Read All Magazines Button -->
-  <div class="mt-16 flex justify-center w-full">
-    <a href="#" class="bg-[#580259] text-white py-4 px-8 rounded-full uppercase font-semibold text-lg tracking-wide flex items-center justify-center w-[320px] max-w-md mx-auto">
-      See all our magazines
+  <!-- CTA Button -->
+ <div class="flex justify-center w-full md:mt-10">
+    <a href="#"
+      class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+      SEE ALL OUR MAGAZINES 
     </a>
+  </div>
+  
+</section>
+
+
+
+
+<!-- Diet and Body categories section -->
+
+<section class="tab-section">
+  <!-- Tab selector container with heading -->
+  <div class="w-full bg-[#D9D9D9]/40 py-8 px-4">
+        <div class="w-full text-center mt-5 mb-10">
+      <h2>Healthy tips to support your body</h2>
+    </div>
+    <h3 class="text-center text-[#2B682C] mb-6 md:mb-8 lg:mb-10">Choose a category</h3>
+    
+
+    <div class="tab-container flex flex-wrap justify-center gap-4 w-full px-4">
+      <button class="bg-[#580259] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="1">
+        BUDWIG CURE
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="2">
+        DIETARY ADVICE
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="3">
+        VITAMINS
+      </button>
+      <button class="bg-[#2B682C] text-[#ededed] rounded-xl px-6 py-3 uppercase text-center cursor-pointer" key="4">
+        BODY
+      </button>
+    </div>
+
   </div>
 </section>
 
 
 
-<!-- Tab selector container with heading -->
-<div class="w-full bg-gray-200 py-8 px-4">
-      <div class="w-full text-center mt-5 mb-10">
-    <h2 class="text-4xl">Our patients' stories</h2>
-  </div>
-  <h2 class="text-center text-2xl md:text-2xl lg:text-3xl font-medium text-[#2B682C] mb-6 md:mb-8 lg:mb-10">Choose a category</h2>
-  
-  <!-- Mobile layout (stacked 2x3) -->
-  <div class="tab-container flex flex-wrap justify-center gap-4 w-full md:hidden">
-    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#580259] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>BUDWIG CURE</button>
-    <button class="w-[calc(45%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>DIETARY ADVICE</button>
-    <button class="w-[calc(30%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>VITAMINS</button>
-    <button class="w-[calc(25%-0.5rem)] px-4 py-4 bg-[#2B682C] text-white rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>BODY</button>
-  </div>
-  
-  <!-- Tablet layout (horizontal row with smaller buttons) -->
-  <div class="tab-container hidden md:flex lg:hidden flex-nowrap justify-center space-x-2 w-full px-4">
-    <button class="flex-1 px-2 py-3 bg-[#580259] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=1>BUDWIG CURE</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=2>DIETARY ADVICE</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=3>VITAMINS</button>
-    <button class="flex-1 px-2 py-3 bg-[#2B682C] text-white text-sm  rounded-lg transition duration-200 text-center cursor-pointer hover:opacity-90" key=4>BODY</button>
-  </div>
-  
-  <!-- Desktop layout (horizontal row with larger buttons) -->
-  <div class="tab-container hidden lg:flex flex-nowrap justify-center space-x-4 w-full max-w-none px-8 lg:px-24">
-    <button class="flex-1 px-4 py-4 bg-[#580259] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=1>BUDWIG CURE</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=2>DIETARY ADVICE</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=3>VITAMINS</button>
-    <button class="flex-1 px-4 py-4 bg-[#2B682C] text-xl text-white  rounded-lg transition duration-200 text-center max-w-xs cursor-pointer hover:opacity-90" key=4>BODY</button>
-  </div>
-</div>
+<section class="content-section">
 
-<!-- Content panels -->
- <div class="bg-gray-200 w-full">
-<div class="panels container mx-auto">
-  <div class="panel" key="1">
-    <p>Content for BUDWIG CURE</p>
-  </div>
-  <p class="panel hidden" key="2">Content for CONVENTIONAL</p>
-  <p class="panel hidden" key="3">Content for CANNABIS</p>
-  <div class="panel hidden" key="4">
-    <div class="flex min-h-[520px] flex-col items-center bg-gray-200 px-4 py-8 md:py-12">
-  <!-- Cards div -->
-  <div class="flex w-full max-w-7xl flex-col gap-8 sm:flex-row lg:flex-row lg:flex-wrap">
-    <!-- Card 1 -->
-    <div class="flex h-auto w-full flex-col justify-center overflow-hidden rounded-md bg-purple-100 p-4 md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap">
-      <!-- Image -->
-      <div class="flex h-auto w-full items-center justify-center p-2 md:p-4">
-        <img src="img/rlx-560x416 1.png" alt="Treatment Picture" class="max-h-[360px] w-full object-cover" />
-      </div>
+  <!-- Content panels for each category -->
+ <div class="bg-[#D9D9D9]/40 w-full">
+    <div class="panels container mx-auto">
+      <div class="panel" key="1">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
 
-      <!-- Content -->
-      <div class="flex w-full flex-grow flex-col justify-between p-4 md:p-6">
-        <div>
-          <!-- Tags -->
-          <div class="mb-2 flex gap-4">
-            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Complementary</span>
-            <span class="rounded bg-[#580259] px-4 py-2 text-sm font-medium text-white uppercase">Body</span>
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Ignore/Change</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-quality-of-life.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cancer.dk</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Quality of life and late effects</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Fortunately, there has been greater interest in late effects of and quality of life after cancer treatment in recent years. Now, researchers at Aalborg University Hospital want to investigate what chemo and radiation mean for lymphoma patients' risk of serious heart disease many years later. </p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-qi-gong.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lars Henrik Rasmussen</p>
+                  <p class="mb-2">June 4, 2021</p>
+                  <h3 class="mb-2">Qi Gong – let the life energy flow</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">We probably all know the feeling of being beside ourselves. The feeling of being out of balance, that it doesn't run like clockwork in oil. QiGong is one of the four cornerstones of Traditional Chinese Medicine (TCM), along with acupuncture, herbal medicine, and TuiNa (a Chinese form of massage). QiGong can be translated as energy gymnastics or the art of cultivating our Qi, our life energy and vitality. They say that if you always follow Yin and Yang, you will never get sick.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-hugs.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Annette Harbech Olesen</p>
+                  <p class="mb-2">April 27, 2020</p>
+                  <h3 class="mb-2">Hugs are healthy</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Hugs, kisses and hugs are healthy and promote the body's production of the happiness and love hormone oxytocin. The same goes for close relationships, trust and confidentiality.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
           </div>
-          <!-- Text -->
-          <p class="mb-2 text-lg font-medium text-gray-800">Lisbeth Becker-Christensen</p>
-           <p class="mb-2 text-sm font-medium text-gray-800">January 14th 2024</p>
-          <h3 class="mb-2 text-2xl text-gray-900">RLD – Reflexology Lymphatic Drainage</h3>
-          <p class="mb-4 text-gray-700">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both...</p>
+
+           <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL ARTICLES 
+            </a>
+          </div>
+
         </div>
       </div>
 
-      <!-- Button -->
-      <div class="flex w-auto flex-col items-center justify-center p-4">
-        <button class="rounded-md bg-[#580259] px-6 py-3 font-medium uppercase text-white hover:bg-purple-900">Read article</Article></button>
+
+      <div class="panel hidden" key="2">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Ignore/Change</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-quality-of-life.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cancer.dk</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Quality of life and late effects</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Fortunately, there has been greater interest in late effects of and quality of life after cancer treatment in recent years. Now, researchers at Aalborg University Hospital want to investigate what chemo and radiation mean for lymphoma patients' risk of serious heart disease many years later. </p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-qi-gong.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lars Henrik Rasmussen</p>
+                  <p class="mb-2">June 4, 2021</p>
+                  <h3 class="mb-2">Qi Gong – let the life energy flow</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">We probably all know the feeling of being beside ourselves. The feeling of being out of balance, that it doesn't run like clockwork in oil. QiGong is one of the four cornerstones of Traditional Chinese Medicine (TCM), along with acupuncture, herbal medicine, and TuiNa (a Chinese form of massage). QiGong can be translated as energy gymnastics or the art of cultivating our Qi, our life energy and vitality. They say that if you always follow Yin and Yang, you will never get sick.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-hugs.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Annette Harbech Olesen</p>
+                  <p class="mb-2">April 27, 2020</p>
+                  <h3 class="mb-2">Hugs are healthy</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Hugs, kisses and hugs are healthy and promote the body's production of the happiness and love hormone oxytocin. The same goes for close relationships, trust and confidentiality.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+           <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL ARTICLES 
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="panel hidden" key="3">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Ignore/Change</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-quality-of-life.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cancer.dk</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Quality of life and late effects</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Fortunately, there has been greater interest in late effects of and quality of life after cancer treatment in recent years. Now, researchers at Aalborg University Hospital want to investigate what chemo and radiation mean for lymphoma patients' risk of serious heart disease many years later. </p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-qi-gong.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lars Henrik Rasmussen</p>
+                  <p class="mb-2">June 4, 2021</p>
+                  <h3 class="mb-2">Qi Gong – let the life energy flow</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">We probably all know the feeling of being beside ourselves. The feeling of being out of balance, that it doesn't run like clockwork in oil. QiGong is one of the four cornerstones of Traditional Chinese Medicine (TCM), along with acupuncture, herbal medicine, and TuiNa (a Chinese form of massage). QiGong can be translated as energy gymnastics or the art of cultivating our Qi, our life energy and vitality. They say that if you always follow Yin and Yang, you will never get sick.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-hugs.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Annette Harbech Olesen</p>
+                  <p class="mb-2">April 27, 2020</p>
+                  <h3 class="mb-2">Hugs are healthy</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Hugs, kisses and hugs are healthy and promote the body's production of the happiness and love hormone oxytocin. The same goes for close relationships, trust and confidentiality.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+           <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL ARTICLES 
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="panel hidden" key="4">
+        <div class="flex flex-col items-center lg:min-h-[600px] sm:min-h-[400px] min-h-[300px] mx-auto px-4 py-6 md:py-8">
+          <!-- Cards div -->
+          <div class="grid gap-10 w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 mb-8 sm:px-10">
+
+            <!-- Card 1 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/treatments-reflexology.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">complementary</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lisbeth Becker-Christensen</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">RLD – Reflexology Lymphatic Drainage</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Do you have lymphedema and are you looking for new treatment methods that can alleviate and help to manage/treat your lymphedema? Is there a lack of treatment options for you that are both easy and pleasant to receive and that rest on well-documented studies? Then reflexology lymphatic drainage might be something for you.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-quality-of-life.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">sequelae</span>
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Cancer.dk</p>
+                  <p class="mb-2">January 14, 2024</p>
+                  <h3 class="mb-2">Quality of life and late effects</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Fortunately, there has been greater interest in late effects of and quality of life after cancer treatment in recent years. Now, researchers at Aalborg University Hospital want to investigate what chemo and radiation mean for lymphoma patients' risk of serious heart disease many years later. </p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-qi-gong.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Lars Henrik Rasmussen</p>
+                  <p class="mb-2">June 4, 2021</p>
+                  <h3 class="mb-2">Qi Gong – let the life energy flow</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">We probably all know the feeling of being beside ourselves. The feeling of being out of balance, that it doesn't run like clockwork in oil. QiGong is one of the four cornerstones of Traditional Chinese Medicine (TCM), along with acupuncture, herbal medicine, and TuiNa (a Chinese form of massage). QiGong can be translated as energy gymnastics or the art of cultivating our Qi, our life energy and vitality. They say that if you always follow Yin and Yang, you will never get sick.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex flex-col md:flex-col md:flex-wrap lg:flex-row lg:flex-nowrap justify-center h-auto overflow-hidden rounded-md bg-[#DB85F2]/20 w-full">
+              <!-- Image -->
+              <div class="flex items-center justify-center w-full h-[220px] sm:h-[230px] md:h-[250px] lg:h-[280px] lg:h-full p-4">
+                <img src="img/diet-and-body-hugs.jpg" alt="fill" class="h-full w-full object-cover" />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col flex-grow items-center justify-center w-full p-4 md:p-6">
+                <div>
+                  <!-- Tags -->
+                  <div class="tags mb-2 flex flex-wrap gap-2 md:gap-4">
+                    <span class="rounded bg-[#580259] px-4 py-2 text-[#ededed] uppercase">body</span>  
+                  </div>
+                  <!-- Text -->
+                  <p class="author mb-2">Annette Harbech Olesen</p>
+                  <p class="mb-2">April 27, 2020</p>
+                  <h3 class="mb-2">Hugs are healthy</h3>
+                  <p class="mb-4 line-clamp-3 sm:line-clamp-4 lg:line-clamp-5">Hugs, kisses and hugs are healthy and promote the body's production of the happiness and love hormone oxytocin. The same goes for close relationships, trust and confidentiality.</p>
+                </div>
+              </div> 
+              
+              <!-- Button -->
+              <div class="flex flex-col items-center justify-center w-auto p-4">
+                <a href="#" class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto px-6 py-3 uppercase text-center text-nowrap">
+                  MORE DETAILS
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+           <!-- CTA Button -->
+          <div class="flex justify-center w-full md:mt-10">
+            <a href="#"
+              class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+              ALL ARTICLES 
+            </a>
+          </div>
+
+        </div>
+
       </div>
     </div>
-  </div>
-</div>
-  </div>
-</div>
  </div>
 
-
-<script>
-const tabs = document.querySelectorAll(".tab-container button");
-const panels = document.getElementsByClassName("panel");
-
-tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
-
-function handleTabClick(e) {
-  const targetKey = e.target.getAttribute("key");
-  
-  tabs.forEach((tab) => {
-    tab.classList.remove("bg-[#580259]");
-    tab.classList.add("bg-[#2B682C]");
-  });
-  
-  document.querySelectorAll(`.tab-container button[key="${targetKey}"]`).forEach(tab => {
-    tab.classList.remove("bg-[#2B682C]");
-    tab.classList.add("bg-[#580259]");
-  });
-  
-  for (const panel of panels) {
-    const key = panel.getAttribute("key");
-    if (key === targetKey) {
-      panel.classList.remove("hidden");
-    } else {
-      panel.classList.add("hidden");
-    }
-  }
-}
-</script>
-
-<div class="flex bg-gray-200 justify-center">
-         <a href="#" class="bg-[#580259] text-[#F5F5F5] w-[300px] mb-10 h-[70px] flex items-center justify-center rounded-full uppercase font-semibold text-xl">
-          All Articles
-         </a>
-        </div>
+</section>
 
 
-<section class="flex flex-col items-center justify-center p-4 md:p-8 lg:p-10">
+
+
+
+<section class="flex flex-col items-center justify-center p-8 md:p-10 lg:p-12">
   <!-- Heading Section -->
   <div class="text-center mb-4 md:mb-6">
-    <h2 class="text-2xl md:text-3xl mb-2">Guides</h2>
+    <h2 class="mb-2">Practical Resources and Learning Guides for Cancer Support</h2>
   </div>
 
-  <p class="text-lg md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.  Bla bla</p>
+  <p class="p-4 max-w-[80vw]">Explore a thoughtfully curated collection of practical resources and learning guides created to support cancer patients and their families. Discover valuable informative links, trusted book recommendations, and insightful articles—all designed to guide and empower you throughout your cancer journey.</p>
 
-  <!-- Instructions Section -->
-  <div class="w-full flex flex-col lg:flex-row justify-center items-center mt-2 md:mt-6 gap-15">
+  <div class="w-full flex flex-col lg:flex-row justify-center items-center mt-6 md:mt-10 mb-6 md:mb-10 sm:gap-8 md:gap-15">
     <!-- Book recommendations Section -->
-    <div class="flex flex-col items-center w-auto p-6 lg:p-15">
-      <span class="text-[#356902] font-medium mb-3">Book recommendations</span>
-      <div class="mb-6 w-28 h-32 rounded-md flex flex-col items-center justify-center">
-        <div class="flex-grow flex items-center justify-center w-full">
-          <img src="icons/Book_recommondation.svg" alt="Book Icon" class="w-60 h-60">
-        </div>
+    <div class="flex flex-col items-center w-full gap-4 max-w-sm mb-8 sm:mb-10 md:mb-0">
+      <h3 class="text-[#356902] text-center">Book recommendations</h3>
+      <div class="mb-2 md:mb-8 h-10 w-15 sm:h-20 sm:w-25 md:w-[200px] md:h-[120px] flex justify-center items-center">
+        <img src="img/Booklist-icon.png" alt="Book Icon" class="max-h-full max-w-full object-contain">
       </div>
-      <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-2 px-4 rounded-lg w-35 h-13">
-        <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
-        <span>Get PDF</span>
-      </button>
+      <div class="flex justify-center w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-[#ededed] py-3 px-6 rounded-md cursor-pointer">
+          <img src="img/download-icon.png" alt="Download PDF" class="w-5 h-5">
+          <span>Get PDF</span>
+        </button>
+      </div>
     </div>
 
     <!-- Informative links Section -->
-    <div class="flex flex-col items-center w-auto p-6 lg:p-15">
-      <span class="text-[#356902] font-medium">Informative links</span>
-      <div class="mb-6">
-        <div class="h-24 flex items-center justify-center mt-10">
-          <img src="icons/Link.svg" alt="Hyperink Icon" class="w-35 h-35">
-        </div>
+    <div class="flex flex-col items-center w-full gap-4 max-w-sm">
+      <h3 class="text-[#356902] text-center">Informative links</h3>
+      <div class="mb-2 md:mb-8 h-10 w-15 sm:h-20 sm:w-25 md:w-[200px] md:h-[120px] flex justify-center items-center">
+        <img src="img/Link-icon.png" alt="Hyperlink Icon" class="max-h-full max-w-full object-contain">
       </div>
-      <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-white py-2 px-4 rounded-lg w-35 h-13">
-        <img src="icons/Download_PDF.svg" alt="Download PDF" class="w-5 h-5">
-        <span>Get PDF</span>
-      </button>
+      <div class="flex justify-center w-full">
+        <button class="flex items-center justify-center gap-2 bg-[#2B682C] text-[#ededed] py-3 px-6 rounded-md cursor-pointer">
+          <img src="img/download-icon.png" alt="Download PDF" class="w-5 h-5">
+          <span>Get PDF</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
 
 
-<footer class="bg-[#2B682C] text-white py-8 px-6">
-  <div class="container mx-auto">
-    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
-    <div class="flex flex-col md:flex-row md:justify-between">
-      
-      <!-- Protector Section -->
-      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
-        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
-        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
-        <div class="md:text-left mx-auto">
-          <p class="font-medium text-center">GHITA NØRBY</p>
-          <p class="text-sm text-center">Commander of the Order</p>
-          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
-          <p class="text-sm text-center">Danish Theatre</p>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
-        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
-        <div class="text-center">
-          <p class="mb-2">The Danish Cancer Society Thistles</p>
-          <p class="mb-4">by Chairman Mai Nielsen</p>
-          
-          <p class="mb-1">Ådalsparken 29,</p>
-          <p class="mb-4">6710 Esbjerg V</p>
-          
-          <p class="mb-1">CVR 1742 0291</p>
-          <p class="mb-1">T: 7020-0515</p>
-          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
-          
-          <p class="mt-4 mb-1">Electronic invoicing:</p>
-          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
-        </div>
-      </div>
-
-      <!-- Social Media Section -->
-      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
-        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+  <footer class="bg-[#121212] text-[#ededed] py-8 px-4 md:px-6">
+    <div class="container mx-auto">
+      <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+      <div class="flex flex-col md:flex-row md:justify-between gap-8">
         
-        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
-        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
-          <!-- Instagram -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+        <!-- Protector Section -->
+        <div class="flex flex-col items-center md:w-1/3">
+          <h3 class="mb-6">Protector</h3>
+          <img src="img/footer-protector.jpg" alt="Protector Photo" class="w-32 h-auto mb-4">
+          <div class="text-center">
+            <p>GHITA NØRBY</p>
+            <p>Commander of the Order</p>
+            <p>of the Dannebrog Actor at the Royal</p>
           </div>
-          
-          <!-- Facebook -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="md:w-1/3 flex flex-col items-center">
+          <h3 class="mb-6">Contact us</h3>
+          <div class="text-center">
+            <p>The Danish Cancer Society Thistles</p>
+            <p class="mb-4">by Chairman Mai Nielsen</p>
+            
+            <p>Ådalsparken 29,</p>
+            <p class="mb-4">6710 Esbjerg V</p>
+            
+            <p>CVR 1742 0291</p>
+            <p>T: 7020-0515</p>
+            <p>E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+            
+            <p class="mb-1">Electronic invoicing:</p>
+            <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
           </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="md:w-1/3 flex flex-col items-center">
+          <h3 class="mb-6">Our Social Media</h3>
           
-          <!-- Facebook Closed Group -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          <div class="flex flex-col items-center md:items-start gap-6">
+            <!-- Instagram -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-instagram text-[#2EA836] text-3xl"></i>
+              <a href="#">Instagram</a>
+            </div>
+            
+            <!-- Facebook -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+              <a href="https://www.facebook.com/tidslernedk/">Facebook</a>
+            </div>
+            
+            <!-- Facebook Closed Group -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+              <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header">Facebook closed group</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Copyright -->
-    <div class="text-xs text-center mt-16">
-      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+      <!-- Copyright -->
+      <div class="copyright text-center mt-12  md:mt-16">
+        © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').onclick = function() {
+      document.getElementById('mobileNavMenu').classList.remove('hidden');
+    };
+    document.getElementById('closeMobileMenu').onclick = function() {
+      document.getElementById('mobileNavMenu').classList.add('hidden');
+    };
+
+    // Hide "Frontpage" link on index.html only
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+      var frontpageLink = document.getElementById('frontpage-link');
+      if(frontpageLink) frontpageLink.style.display = 'none';
+      var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
+      if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
+    }
+
+
+
+    
+    const tabs = document.querySelectorAll(".tab-container button");
+    const panels = document.getElementsByClassName("panel");
+
+    tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
+
+    function handleTabClick(e) {
+      const targetKey = e.target.getAttribute("key");
+      
+      tabs.forEach((tab) => {
+        tab.classList.remove("bg-[#580259]");
+        tab.classList.add("bg-[#2B682C]");
+      });
+      
+      document.querySelectorAll(`.tab-container button[key="${targetKey}"]`).forEach(tab => {
+        tab.classList.remove("bg-[#2B682C]");
+        tab.classList.add("bg-[#580259]");
+      });
+      
+      for (const panel of panels) {
+        const key = panel.getAttribute("key");
+        if (key === targetKey) {
+          panel.classList.remove("hidden");
+        } else {
+          panel.classList.add("hidden");
+        }
+      }
+    }
+
+  </script>
+
+</body>

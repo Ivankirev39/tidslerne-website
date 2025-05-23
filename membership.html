@@ -1,362 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/@heroicons/vue@2"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/@heroicons/vue@2"></script>
 </head>
+
 <body>
  <!-- Navigation Bar -->
- <nav class="w-full p-0 m-0 relative z-50 bg-[#2B682C] text-white">
-  <div class="max-w-7xl mx-auto px-4 lg:px-8">
-    <div class="flex items-center justify-between py-2 lg:py-0 min-h-[56px]">
+ <nav class="w-full bg-[#2B682C] text-[#ededed] fixed top-0 z-50 shadow-md">
+    <div class="flex items-center justify-between h-auto mx-auto px-8 py-2">
       <!-- Logo Left -->
-      <div class="flex-1 flex items-center min-w-[120px]">
+      <div class="flex items-center">
         <a href="index.html" class="flex items-center">
-          <img src="img/Logo_white.png" alt="Tidslerne Logo"
-               class="h-10 md:h-12 lg:h-14 xl:h-16 w-auto transition-all duration-300" />
+          <img src="img/Logo_white.png" alt="Tidslerne Logo" class="h-8 md:h-10 lg:h-12 w-auto" />
         </a>
       </div>
       <!-- Menu Center -->
-      <div class="flex-1 flex justify-center">
-        <div class="hidden lg:flex items-center gap-x-8">
-          <a href="stories.html"><h4>Stories and Guides</h4></a>
-          <a href="treatments.html"><h4>Treatments</h4></a>
-          <a href="events.html"><h4>Events</h4></a>
-          <a href="membership.html"><h4>Membership</h4></a>
-          <a href="videos.html"><h4>Videos</h4></a>
-          <a href="#"><h4>More</h4></a>
-          <a id="frontpage-link" href="index.html" class="ml-2"><h4>Frontpage</h4></a>
-        </div>
+      <div class="flex justify-center">
+        <ul class="desktop-menu hidden lg:flex items-center gap-10 p-2 uppercase">
+          <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+          <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+          <li><a href="events.html"><h4>Events</h4></a></li>
+          <li><a href="membership.html"><h4>Membership</h4></a></li>
+          <li><a href="videos.html"><h4>Videos</h4></a></li>
+          <li><a href="#"><h4>More</h4></a></li>
+          <li><a id="frontpage-link" href="index.html"><h4>Frontpage</h4></a></li>
+        </ul>
       </div>
       <!-- Login Right -->
-      <div class="flex-1 flex justify-end">
-        <div class="hidden lg:flex items-center border-2 border-[#2EA836] px-4 py-1 rounded transition-all duration-200 hover:bg-[#2EA836] hover:text-white hover:shadow-lg cursor-pointer">
-          <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-          <span class="uppercase">LOG IN</span>
+      <div class="flex justify-end items-center cursor-pointer">
+        <div class="desktop-login hidden lg:flex items-center border border-[#ededed] rounded-md py-2 px-4 w-auto gap-2 hover:bg-[#ededed] hover:text-[#2B682C] transition duration-300">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="uppercase"><h4>LOG IN</h4></span>
         </div>
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl ml-4">
-          <span class="sr-only">Open menu</span>
+        <button id="mobileMenuBtn" class="lg:hidden text-[#ededed] text-2xl ml-4" aria-label="Open menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
-  </div>
-  <!-- Mobile/Tablet Menu (hidden by default) -->
-  <div id="mobileNavMenu" class="hidden fixed inset-0 z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center">
-    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white text-3xl">
-      <span class="sr-only">Close menu</span>
-      <i class="fas fa-times"></i>
-    </button>
-    <ul class="flex flex-col items-center gap-6 uppercase text-lg">
-      <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
-      <li><a href="treatments.html"><h4>Treatments</h4></a></li>
-      <li><a href="events.html"><h4>Events</h4></a></li>
-      <li><a href="membership.html"><h4>Membership</h4></a></li>
-      <li><a href="videos.html"><h4>Videos</h4></a></li>
-      <li><a href="#"><h4>More</h4></a></li>
-      <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
-    </ul>
-    <div class="flex items-center border-2 border-[#2EA836] px-4 py-1 mt-8 rounded transition-all duration-200 hover:bg-[#2EA836] hover:text-white hover:shadow-lg cursor-pointer">
-      <i class="fas fa-sign-in-alt text-lg mr-2"></i>
-      <span class="uppercase">LOG IN</span>
+    <!-- Mobile/Tablet Menu (hidden by default) -->
+    <div id="mobileNavMenu" class="hidden fixed top-0 h-3/6 w-full z-50 bg-[#2B682C]/95 flex flex-col items-center justify-center p-4">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-[#ededed] text-2xl" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="m-t-menu flex flex-col items-center gap-6 p-2 uppercase">
+        <li><a href="stories.html"><h4>Stories and Guides</h4></a></li>
+        <li><a href="treatments.html"><h4>Treatments</h4></a></li>
+        <li><a href="events.html"><h4>Events</h4></a></li>
+        <li><a href="membership.html"><h4>Membership</h4></a></li>
+        <li><a href="videos.html"><h4>Videos</h4></a></li>
+        <li><a href="#"><h4>More</h4></a></li>
+        <li><a id="frontpage-link-mobile" href="index.html"><h4>Frontpage</h4></a></li>
+      </ul>
+      <div class="m-t-login flex mt-4 cursor-pointer gap-2 border border-[#ededed] rounded-md py-2 px-4 w-auto items-center">
+        <i class="fas fa-sign-in-alt"></i>
+        <span class="uppercase"><h4>LOG IN</h4></span>
+      </div>
     </div>
-  </div>
 </nav>
 
 
 
+  <!-- Hero Section -->
 
-<!-- Hero Section Container -->
-<section class="w-full bg-white">
-  <!-- Mobile Design (default) -->
-  <div class="md:hidden px-4 py-8 flex flex-col items-center">
-    <img src="img/dorota-trzaska.png" alt="People Guiding" class="w-full mb-4">
-    <h1 class="text-3xl text-center mt-4 mb-2">Take advantage of our membership benefits</h1>
-    <a href="#" class="bg-[#580259] text-white text-center font-medium rounded-full py-3 px-8 mt-6 w-64">BECOME A MEMBER</a>
-  </div>
-
-  <!-- Tablet Design -->
-<div class="hidden md:block lg:hidden">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-8 py-12 flex flex-col justify-center">
-      <h1 class="text-3xl mb-4">Take advantage of our membership benefits</h1>
-      <p class="text-base mb-6">As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.</p>
-      <a href="#" class="bg-[#580259] text-white text-center font-medium rounded-full py-3 px-8 w-64 mx-auto">BECOME A MEMBER</a>
+<section class="flex flex-col items-center mt-12 sm:mt-13 md:mt-14 lg:mt-15">
+  <div class="flex flex-col-reverse md:flex-row w-full">
+    <div class="w-full md:w-1/2 px-12 py-16 flex flex-col items-center justify-center">
+      <h1 class="text-center mb-8 md:mb-15 lg:mb-17 py-3">Why becoming a Tidslerne member matters</h1>
+      <p class="text-left mb-6">Becoming a member of Tidslerne means joining a community that understands the journey through cancer — whether you're a patient, survivor, or a loved one.</p>
     </div>
-    <div class="w-1/2">
-      <img src="img/dorota-trzaska.png" alt="People Guiding" class="h-full w-full object-cover">
+    <div class="w-full md:w-1/2 aspect-[4/3] md:aspect-auto">
+      <img src="img/membership-page-hero.jpg" alt="fill" class="h-full w-full mb-4 md:mb-0 object-cover">
     </div>
   </div>
-</div>
+</section>
 
-  <!-- Desktop Design -->
-<div class="hidden lg:block">
-  <div class="flex flex-row w-full">
-    <div class="w-1/2 px-12 py-16 flex flex-col justify-center">
-      <h1 class="text-4xl mb-25">Take advantage of our membership benefits</h1>
-      <p class="text-xl mb-6">As a member of the Cancer Society Thistles, there are a number of benefits that you can immediately take advantage of after signing up for a membership.</p>
-      <a href="#" class="bg-[#580259] text-white text-center w-[320px] h-[76px] font-medium rounded-full text-xl flex items-center justify-center mx-auto">
-        BECOME A MEMBER
+
+
+<!--Info section -->
+
+<section class="min-h-[230px] flex flex-col justify-center items-center bg-[#D9D9D9]/40 p-6 md:p-12 lg:p-14">
+
+  <div class="w-full text-center mt-2 md:mt-4">
+    <h2>Why should you sign up? </h2>
+  </div>
+  
+  <!-- Text Content -->
+  <div class="flex flex-col md:flex-row mt-4 md:mt-8">
+    <div class="w-full md:w-1/2 p-4 md:p-8 lg:px-12">
+      <p>
+        We offer regular self-help workshops, webinars, and local events — both in person and online. Topics range from plant-based nutrition to mindfulness and holistic practices. These programs are crafted to support both your physical and emotional recovery.
+      </p>
+    </div>
+    <div class="w-full md:w-1/2 p-4 md:p-8 lg:px-12">
+      <p>
+        By becoming a member, you’re also supporting a bigger mission: promoting patient rights, contributing to national health discussions, and encouraging broader awareness of integrative cancer care. Your voice matters — and with us, it’s heard.
+      </p>
+    </div>
+  </div>
+  
+</section>
+
+<!-- Fees - payment section -->
+
+<section class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 lg:min-h-[320px] sm:min-h-[260px] min-h-[230px] mx-auto px-4 py-8 md:py-10">
+  <div class="flex flex-col items-center justify-center md:w-2/3 w-full p-2 md:p-10">
+    <div class="w-full text-center">
+      <h2 class="p-4 md:p-8">Membership fees – What does it cost to join Tidslerne?</h2>
+      <p class="text-left" >
+        The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
+        If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household    
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center justify-center md:w-1/3 w-full p-2 md:p-10">
+    <div class="mb-6 md:mb-10 h-15 w-20 sm:h-20 sm:w-25 md:w-[200px] md:h-[120px] flex justify-center items-center">
+      <img src="img/payment-card-icon.png" alt="Payment Card" class="max-h-full max-w-full object-contain">
+    </div>
+    <div class="flex justify-center w-full">
+      <a href="#"
+        class="cta-btn bg-[#580259] text-[#ededed] rounded-3xl w-auto py-4 px-8 uppercase text-center text-nowrap">
+        SIGN UP FOR MEMBERSHIP
       </a>
     </div>
-    <div class="w-1/2 h-full">
-      <img src="img/dorota-trzaska.png" alt="People Guiding" class="h-full w-full object-cover">
-    </div>
   </div>
-</div>
+  
 </section>
 
 
-<section class="flex flex-col items-center min-h-[320px] bg-[#F5F5F5] px-4 py-8 md:py-12">
- 
-  <div class="w-full text-center mb-6">
-    <h2 class="text-3xl">Why should you sign up?</h2>
+
+<!-- Member benefits -->
+
+<section class="min-h-[320px] bg-[#D9D9D9]/40 px-4 py-6 md:py-8">
+  <div class="w-full text-center mb-4 mt-2 md:mt-4">
+    <h2>Member benefits as a Thistle</h2>
   </div>
 
-  <!-- Content Section -->
-  <div class="w-full max-w-6xl">
-    <h3 class="text-[#2B682C] text-xl md:text-2xl font-medium mb-4 md:mb-6">Benefits</h3>
-    
-    <!-- Text Content  -->
-    <div class="flex flex-row gap-4 md:gap-12 mb-8 md:mb-12">
-      <div class="w-1/2">
-        <p class="text-gray-800 text-lg md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
-        </p>
+  <div class="flex flex-col items-center md:flex-row justify-center gap-4 md:gap-8 my-6">
+    <div class="bg-[#2EA836]/20 w-full md:w-1/3 max-w-sm p-4 mb-4 md:mb-0 flex flex-col items-center cursor-pointer">
+      <img src="img/mambership-boat-trip.jpg" alt="Boat Picture" class="mb-4 h-full w-full object-cover" />
+      <h3 class="text-center text-[#2B682C] p-8">Boat Trip</h3>
+    </div>
+
+    <div class="bg-[#2EA836]/20 w-full md:w-1/3 max-w-sm p-4 mb-4 md:mb-0 flex flex-col items-center cursor-pointer">
+      <img src="img/membership-self-help-course.jpg" alt="Meeting" class="mb-4 h-full w-full object-cover" />
+      <h3 class="text-center text-[#2B682C] p-8">Self help course</h3>
+    </div>
+
+    <div class="bg-[#2EA836]/20 w-full md:w-1/3 max-w-sm p-4 mb-4 md:mb-0 flex flex-col items-center cursor-pointer">
+      <img src="img/mambership-facebook-group.jpg" alt="Social Media" class="mb-4 h-full w-full object-cover" />
+      <h3 class="text-center text-[#2B682C] p-8">Closed Facebook Group</h3>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Testimonials -->
+
+<section class="px-4 py-8 md:px-10 py-8 md:py-10">
+  <div class="flex flex-col items-center mx-auto max-w-[80vw]">
+
+    <div class="text-center mb-6 md:mb-8 p-10">
+      <h2>Testimonials</h2>
+    </div>
+
+    <!-- grid container -->
+    <div class="grid gap-[4rem] w-full grid-cols-1 md:grid-cols-3 py-10">
+      <!-- card 1 -->
+      <div class="bg-[#2EA836]/20 relative flex flex-col items-center pt-16 px-4 pb-8 rounded-lg h-full min-h-[260px]">
+        <div class="absolute -top-12">
+          <img src="img/membership-testimonials-Borge.jpg" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <p class="text-center mt-5">"I didn’t think a website could change how I felt—but the information, the people, and the care changed everything."</p>
+        <h3 class="mt-6 text-[#2B682C]">Børge</h3>
+      </div>
+
+      <!-- card 2 -->
+      <div class="bg-[#2EA836]/20 relative flex flex-col items-center pt-16  px-4 pb-8 rounded-lg h-full min-h-[260px]">
+        <div class="absolute -top-12">
+          <img src="img/membership-testimonials-Borge.jpg" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <p class="text-center mt-5">"I didn’t think a website could change how I felt—but the information, the people, and the care changed everything."</p>
+        <h3 class="mt-6 text-[#2B682C]">Børge</h3>
+      </div>
+
+      <!-- card 3 -->
+      <div class="bg-[#2EA836]/20 relative flex flex-col items-center pt-16  px-4 pb-8 rounded-lg h-full min-h-[260px]">
+        <div class="absolute -top-12">
+          <img src="img/membership-testimonials-Borge.jpg" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <p class="text-center mt-5">"I didn’t think a website could change how I felt—but the information, the people, and the care changed everything."</p>
+        <h3 class="mt-6 text-[#2B682C]">Børge</h3>
+      </div>
+
+      <!-- card 4 -->
+      <div class="bg-[#2EA836]/20 relative flex flex-col items-center pt-16  px-4 pb-8 rounded-lg h-full min-h-[260px]">
+        <div class="absolute -top-12">
+          <img src="img/membership-testimonials-Borge.jpg" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <p class="text-center mt-5">"I didn’t think a website could change how I felt—but the information, the people, and the care changed everything."</p>
+        <h3 class="mt-6 text-[#2B682C]">Børge</h3>
+      </div>
+
+      <!-- card 5 -->
+      <div class="bg-[#2EA836]/20 relative flex flex-col items-center pt-16  px-4 pb-8 rounded-lg h-full min-h-[260px]">
+        <div class="absolute -top-12">
+          <img src="img/membership-testimonials-Borge.jpg" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <p class="text-center mt-5">"I didn’t think a website could change how I felt—but the information, the people, and the care changed everything."</p>
+        <h3 class="mt-6 text-[#2B682C]">Børge</h3>
+      </div>
+
+      <!-- card 6 -->
+      <div class="bg-[#2EA836]/20 relative flex flex-col items-center pt-16  px-4 pb-8 rounded-lg h-full min-h-[260px]">
+        <div class="absolute -top-12">
+          <img src="img/membership-testimonials-Borge.jpg" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <p class="text-center mt-5">"I didn’t think a website could change how I felt—but the information, the people, and the care changed everything."</p>
+        <h3 class="mt-6 text-[#2B682C]">Børge</h3>
       </div>
       
-      <div class="w-1/2">
-        <p class="text-gray-800 text-lg md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae accumsan lacus.
-        </p>
-      </div>
-    </div>
-    
-  </div>
-</section>  
-
-<div class="w-full p-4">
-  <div class="max-w-6xl mx-auto">
-    <!-- Mobile -->
-    <div class="md:hidden space-y-4">
-      <h2 class="text-3xl text-center">How do we charge?</h2>
-      <p class="text-lg text-gray-700">
-        The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
-      </p>
-      <p class="text-lg text-gray-700">
-        If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household
-      </p>
-      <div class="flex justify-center mt-4">
-        <img src="icons/Payment_Card.svg" alt="Donate Icon" class="h-40 w-40"/>
-      </div>
-      <div class="flex justify-center mt-2">
-        <button class="bg-[#580259] text-white text-lg h-[55px] font-medium px-8 py-2 rounded-full">
-          SIGN UP FOR MEMBERSHIP
-        </button>
-      </div>
     </div>
 
-    <!-- Tablet -->
-    <div class="hidden md:block lg:hidden">
-      <div class="flex flex-col md:flex-row items-start">
-        <div class="md:w-2/3 pr-4">
-          <div class="w-full">
-            <h2 class="text-3xl text-center">How do we charge?</h2>
-          </div>
-          <p class="text-sm text-gray-700 mt-10">
-            The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
-          </p>
-          <p class="text-sm text-gray-700 mt-2">
-            If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household
-          </p>
-        </div>
-        <div class="md:w-1/3 flex flex-col items-center mt-4 md:mt-0">
-          <img src="icons/Payment_Card.svg" alt="Donate Icon" class="h-37 w-37"/>
-          <button class="bg-[#580259] text-white text-lg w-[294px] h-[55px] font-medium px-8 py-2 rounded-full mt-4">
-            SIGN UP FOR MEMBERSHIP
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Desktop -->
-    <div class="hidden lg:block">
-      <div class="flex items-start">
-        <div class="w-2/3 pr-8">
-          <div class="w-full">
-            <h2 class="text-3xl text-center mb-10">How do we charge?</h2>
-          </div>
-          <p class="text-base text-gray-700">
-            The membership fee is DKK 225 annually as a patient member or as a support member. New members do not pay a membership fee for the year in question, but are usually charged a membership fee in the following year.
-          </p>
-          <p class="text-base text-gray-700 mt-4">
-            If you are a support or patient member, you can sign up for a subscription as a household member for just DKK 25 for others in the household
-          </p>
-        </div>
-        <div class="w-1/3 flex flex-col items-center">
-          <img src="icons/Payment_Card.svg" alt="Donate Icon" class="h-50 w-50"/>
-          <button class="bg-[#580259] text-white text-lg h-[65px] font-medium px-12 py-3 rounded-full mt-6 text-lg">
-            SIGN UP FOR MEMBERSHIP
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="min-h-[320px] bg-[#F5F5F5] px-4 py-8 md:py-12">
-  <div class="w-full text-center mb-6">
-    <h2 class="text-3xl">Why should you sign up?</h2>
   </div>
 
-  <div class="flex flex-col items-center md:flex-row justify-center mb-20 gap-4 mt-10">
-    <div class="bg-purple-100 w-full md:w-1/3 max-w-sm p-4 flex flex-col items-center">
-      <img src="img/boat-trip.png" alt="Boat Picture" class="mb-4 h-full w-full object-cover" />
-      <p class="text-center text-[#580259] text-xl">Boat Trip</p>
-    </div>
-
-    <div class="bg-purple-100 w-full md:w-1/3 max-w-sm p-4 flex flex-col items-center">
-      <img src="img/meeting.png" alt="Meeting" class="mb-4 h-full w-full object-cover" />
-      <p class="text-center text-[#580259] text-xl">Self help course</p>
-    </div>
-
-    <div class="bg-purple-100 w-full md:w-1/3 max-w-sm p-4 flex flex-col items-center">
-      <img src="img/socialmedia.png" alt="Social Media" class="mb-4 h-full w-full object-cover" />
-      <p class="text-center text-[#580259] text-xl">Closed Facebook Group</p>
-    </div>
-  </div>
-</section>
-
- <!-- Gonna delete the other three when we are converting it to WORDPRESS -->
-
-<section class="px-4 py-8 max-w-7xl mx-auto">
-  <h2 class="text-4xl text-center mb-10">Testimonials</h2>
-    <div class="flex flex-col items-center md:flex-row md:justify-between md:space-x-4 lg:space-x-8 max-w-6xl mx-auto">
-    
-    <!-- Testimonials -->
-    <div class="relative flex flex-col items-center bg-green-100 mt-20 pt-16 w-[320px] md:w-1/3 h-[260px] px-4 pb-4 rounded mb-16 md:mb-0">
-      <div class="absolute -top-12">
-        <img src="https://picsum.photos/200/300" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
-      </div>
-      <p class="text-gray-700 text-center text-xl mt-5">Sentence bla bla about it</p>
-      <h3 class="text-3xl font-semibold mt-10">MIKKEL</h3>
-    </div>
-    
-    <div class="relative flex flex-col items-center bg-green-100 mt-20 pt-16 w-[320px] md:w-1/3 h-[260px] px-4 pb-4 rounded mb-16 md:mb-0">
-      <div class="absolute -top-12">
-        <img src="https://picsum.photos/200/300" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
-      </div>
-      <p class="text-gray-700 text-center text-xl mt-5">Sentence bla bla about it</p>
-      <h3 class="text-3xl font-semibold mt-10">MIKKEL</h3>
-    </div>
-    
-    <div class="relative flex flex-col items-center bg-green-100 mt-20 pt-16 w-[320px] md:w-1/3 h-[260px] px-4 pb-4 rounded">
-      <div class="absolute -top-12">
-        <img src="https://picsum.photos/200/300" alt="Testimonial Photo" class="w-24 h-24 rounded-full object-cover">
-      </div>
-      <p class="text-gray-700 text-center text-xl mt-5">Sentence bla bla about it</p>
-      <h3 class="text-3xl font-semibold mt-10">MIKKEL</h3>
-    </div>
-    
-  </div>
 </section>
 
 
 
 
-<footer class="bg-[#2B682C] text-white py-8 px-6">
-  <div class="container mx-auto">
-    <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
-    <div class="flex flex-col md:flex-row md:justify-between">
-      
-      <!-- Protector Section -->
-      <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start md:w-1/3 mr-1">
-        <h2 class="text-3xl mb-4 mx-auto">Protector</h2>
-        <img src="img/ghita_noerby.jpg" alt="Protector Photo" class="w-35 h-full object-cover mx-auto mb-4">
-        <div class="md:text-left mx-auto">
-          <p class="font-medium text-center">GHITA NØRBY</p>
-          <p class="text-sm text-center">Commander of the Order</p>
-          <p class="text-sm text-center">of the Dannebrog Actor at the Royal</p>
-          <p class="text-sm text-center">Danish Theatre</p>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div class="mb-12 md:mb-0 md:w-1/3 flex flex-col items-center md:items-center mr-1">
-        <h2 class="text-3xl font-light mb-4 text-center">Contact us</h2>
-        <div class="text-center">
-          <p class="mb-2">The Danish Cancer Society Thistles</p>
-          <p class="mb-4">by Chairman Mai Nielsen</p>
-          
-          <p class="mb-1">Ådalsparken 29,</p>
-          <p class="mb-4">6710 Esbjerg V</p>
-          
-          <p class="mb-1">CVR 1742 0291</p>
-          <p class="mb-1">T: 7020-0515</p>
-          <p class="mb-1">E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
-          
-          <p class="mt-4 mb-1">Electronic invoicing:</p>
-          <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
-        </div>
-      </div>
-
-      <!-- Social Media Section -->
-      <div class="md:w-1/3 flex flex-col items-center md:items-start mr-1">
-        <h2 class="text-3xl font-light mb-6 text-center md:text-left">Our Social Media</h2>
+  <footer class="bg-[#121212] text-[#ededed] py-8 px-4 md:px-6">
+    <div class="container mx-auto">
+      <!-- Mobile: Stacked, Tablet/Desktop: 3 columns -->
+      <div class="flex flex-col md:flex-row md:justify-between gap-8">
         
-        <!-- Social media links - Vertical on mobile (icon above text), horizontal on tablet/desktop -->
-        <div class="flex flex-col items-center md:items-start space-y-6 md:space-y-8">
-          <!-- Instagram -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-instagram text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="#" class="mt-2 md:mt-0 md:ml-4 text-xl">Instagram</a>
+        <!-- Protector Section -->
+        <div class="flex flex-col items-center md:w-1/3">
+          <h3 class="mb-6">Protector</h3>
+          <img src="img/footer-protector.jpg" alt="Protector Photo" class="w-32 h-auto mb-4">
+          <div class="text-center">
+            <p>GHITA NØRBY</p>
+            <p>Commander of the Order</p>
+            <p>of the Dannebrog Actor at the Royal</p>
           </div>
-          
-          <!-- Facebook -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/tidslernedk/" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="md:w-1/3 flex flex-col items-center">
+          <h3 class="mb-6">Contact us</h3>
+          <div class="text-center">
+            <p>The Danish Cancer Society Thistles</p>
+            <p class="mb-4">by Chairman Mai Nielsen</p>
+            
+            <p>Ådalsparken 29,</p>
+            <p class="mb-4">6710 Esbjerg V</p>
+            
+            <p>CVR 1742 0291</p>
+            <p>T: 7020-0515</p>
+            <p>E: <a href="mailto:sekretariat@tidslerne.dk" class="underline">sekretariat@tidslerne.dk</a></p>
+            
+            <p class="mb-1">Electronic invoicing:</p>
+            <p><a href="mailto:kasserer@tidslerne.dk" class="underline">kasserer@tidslerne.dk</a></p>
           </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="md:w-1/3 flex flex-col items-center">
+          <h3 class="mb-6">Our Social Media</h3>
           
-          <!-- Facebook Closed Group -->
-          <div class="flex flex-col items-center md:flex-row md:items-center">
-            <i class="fab fa-facebook-square text-[#2EA836] text-6xl md:text-5xl"></i>
-            <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header" class="mt-2 md:mt-0 md:ml-4 text-xl">Facebook closed group</a>
+          <div class="flex flex-col items-center md:items-start gap-6">
+            <!-- Instagram -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-instagram text-[#2EA836] text-3xl"></i>
+              <a href="#">Instagram</a>
+            </div>
+            
+            <!-- Facebook -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+              <a href="https://www.facebook.com/tidslernedk/">Facebook</a>
+            </div>
+            
+            <!-- Facebook Closed Group -->
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <i class="fab fa-facebook-square text-[#2EA836] text-3xl"></i>
+              <a href="https://www.facebook.com/groups/1480251482282861/?ref=group_header">Facebook closed group</a>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Copyright -->
+      <div class="copyright text-center mt-12  md:mt-16">
+        © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
+      </div>
     </div>
+  </footer>
 
-    <!-- Copyright -->
-    <div class="text-xs text-center mt-16">
-      © Tidslerne 2025 | The Danish Cancer Society Thistles. All rights reserved
-    </div>
-  </div>
-</footer>
 
-<script>
-  // Mobile menu toggle
-  document.getElementById('mobileMenuBtn').onclick = function() {
-    document.getElementById('mobileNavMenu').classList.remove('hidden');
-  };
-  document.getElementById('closeMobileMenu').onclick = function() {
-    document.getElementById('mobileNavMenu').classList.add('hidden');
-  };
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').onclick = function() {
+      document.getElementById('mobileNavMenu').classList.remove('hidden');
+    };
+    document.getElementById('closeMobileMenu').onclick = function() {
+      document.getElementById('mobileNavMenu').classList.add('hidden');
+    };
 
-  // Hide "Frontpage" link on index.html only
-  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
-    var frontpageLink = document.getElementById('frontpage-link');
-    if(frontpageLink) frontpageLink.style.display = 'none';
-    var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
-    if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
-  }
-</script>
+    // Hide "Frontpage" link on index.html only
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ) {
+      var frontpageLink = document.getElementById('frontpage-link');
+      if(frontpageLink) frontpageLink.style.display = 'none';
+      var frontpageLinkMobile = document.getElementById('frontpage-link-mobile');
+      if(frontpageLinkMobile) frontpageLinkMobile.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
